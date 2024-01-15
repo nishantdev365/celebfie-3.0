@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <BrowserRouter basename="/nishantdev365">
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<Intro />} />
