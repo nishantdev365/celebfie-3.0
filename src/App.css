@@ -1,0 +1,1254 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* font-family: Source Sans Pro; */
+    list-style: none;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #397524 #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--color-tomato);
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #ec5048;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #ec6a63;
+  }
+  
+  body {
+    font-family: var(--regular-24px-32);
+  }
+  
+  :root {
+    /* fonts */
+    --regular-24px-32: "Source Sans Pro";
+  
+    /* font sizes */
+    --font-size-mid: 17px;
+    --font-size-mini: 15px;
+    --font-size-xl: 20px;
+    --font-size-base: 16px;
+    --font-size-2xl: 21px;
+    --regular-24px-32-size: 24px;
+    --font-size-lg: 18px;
+    --font-size-9xl: 28px;
+  
+    /* Colors */
+    --color-gray-100: #0d152f;
+    /* --color-gray-200: #0b0b0b; */
+    --color-gray-200: #0A0F1F;
+    --color-gray-300: #080C19;
+    --color-light-black: #0B0B0B;
+    --color-tomato: #ec4036;
+    --color-white: #fff;
+    --color-darkslategray: #3a3a3a;
+    --color-light-blue-grey: #B5CDFF;
+    --color-dark-blue-grey: #3F5D9A;
+  
+  
+  
+  
+  
+    /* Border radiuses */
+    --br-5xs: 8px;
+    --br-xs: 12px;
+    --br-2xs: 11px;
+  }
+  
+  /* ----------intro-screen------------ */
+  
+  .intro_screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(./assets/slide-img.jpg);
+    background-size: cover;
+    z-index: 1000;
+  
+  }
+  
+  #intro_logo {
+    width: 15%;
+    left: 43%;
+    /* Start from the center */
+    position: absolute;
+    animation: slideLeft 2s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes slideLeft {
+    0% {
+      left: 43%;
+      /* Start from the center */
+    }
+  
+    100% {
+      left: 25%;
+      /* Move to the left */
+    }
+  
+  }
+  
+  #intro_signup {
+    display: none;
+    position: absolute;
+    left: 55%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    padding: 20px 40px;
+    font-size: var(--font-size-3xl);
+    color: var(--color-white);
+    font-family: var(--regular-16px-24);
+    width: 424px;
+    min-height: 483px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(8, 12, 25, 0.80);
+    animation: fadeIn 2s ease-in-out 8s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      display: flex;
+      opacity: 1;
+    }
+  }
+  
+  .signup_btn_mobile {
+    display: none;
+  }
+  
+  .please_login_intro {
+    width: 328px;
+  }
+  
+  .username_intro {
+    font-size: var(--font-size-lg);
+    width: 328px;
+    height: 20px;
+  }
+  
+  .rectangle_div_intro {
+    padding: 10px;
+    font-size: larger;
+    color: var(--color-white);
+    border-radius: var(--br-2xs);
+    border: 1px solid var(--color-white);
+    background-color: var(--color-gray-200);
+    box-sizing: border-box;
+    width: 339px;
+    height: 50px;
+  }
+  
+  .password_intro {
+    font-size: var(--font-size-lg);
+    width: 328px;
+    height: 20px;
+  }
+  
+  .frame_child3_intros {
+    padding: 10px;
+    font-size: larger;
+    color: var(--color-white);
+    border-radius: var(--br-2xs);
+    border: 1px solid var(--color-white);
+    background-color: var(--color-gray-200);
+    box-sizing: border-box;
+    width: 339px;
+    height: 50px;
+  }
+  
+  .login_container_intro {
+    background-color: var(--color-tomato);
+    border-radius: var(--br-5xs);
+    cursor: pointer;
+  }
+  
+  .or_intro {
+    text-align: center;
+    width: 339px;
+  }
+  
+  .register_container_intro {
+    border: 3px solid var(--color-tomato);
+    box-sizing: border-box;
+    color: var(--color-tomato);
+    border-radius: var(--br-5xs);
+    width: 339px;
+    height: 48px;
+    text-align: center;
+    font-size: var(--regular-20px-28-size);
+    cursor: pointer;
+  }
+  
+  .login1_intro {
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 337.1px;
+    height: 46.9px;
+    border-radius: var(--br-5xs);
+    width: 339px;
+    height: 48px;
+    text-align: center;
+    font-size: var(--regular-20px-28-size);
+  }
+  
+  nav {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-gray-100);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    padding: 0 15px 0 15px;
+    width: 100%;
+    height: 80px;
+    font-size: var(--font-size-mini);
+  }
+  
+  .burger_menu {
+    display: none;
+  }
+  
+  .menu_options {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .menu_items {
+    display: inline-flex;
+    justify-content: center;
+    height: 80px;
+  }
+  
+  
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  li:hover {
+    border-bottom: 4px solid;
+    border-color: var(--color-white);
+    background: rgba(22, 36, 79, 0.10);
+  
+  }
+  
+  
+  
+  i {
+    padding: 10px;
+    color: #0b0b0b;
+  
+  }
+  
+  .ico {
+    margin-right: 8px;
+    color: grey;
+  }
+  
+  .ico:hover {
+    color: var(--color-white);
+  }
+  
+  
+  
+  .nav_options {
+    color: grey;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  .nav_options:hover {
+    color: var(--color-white);
+  }
+  
+  
+  .register_btn,
+  .login_btn {
+    border-radius: var(--br-5xs);
+    width: 114px;
+    height: 44px;
+    text-align: center;
+    font-size: var(--font-size-mid);
+    border-color: var(--color-tomato);
+    cursor: pointer;
+  }
+  
+  .register_btn {
+    background-color: var(--color-gray-100);
+    border: 2px solid var(--color-tomato);
+    box-sizing: border-box;
+    color: var(--color-tomato);
+    margin-right: 10px;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .logo>img {
+    height: 40px;
+  }
+  
+  .login_btn {
+  
+    background-color: var(--color-tomato);
+    color: white;
+    border-style: none;
+  }
+  
+  .homepage {
+    background-color: var(--color-gray-200);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding-top: 25px;
+  }
+  
+  .mobile_banner {
+    display: none;
+  }
+  
+  .banner_section {
+    position: relative;
+    width: 90%;
+    height: 344px;
+    color: var(--color-white);
+    border-radius: var(--br-5xs);
+    background-image: url(./assets/urvashi-banner.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 42px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: var(--font-size-lg);
+  }
+  
+  .play_icon,
+  .info_icon {
+    position: absolute;
+    left: 10%;
+    height: 25px;
+    width: 25px;
+  }
+  
+  .watch-video {
+    position: absolute;
+    top: 0;
+    left: 45.8px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 121.2px;
+    height: 51.4px;
+  }
+  
+  .watch-video-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 216px;
+    left: 61px;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-tomato);
+    width: 179px;
+    height: 53px;
+  }
+  
+  .learn-more {
+    position: absolute;
+    top: 0;
+    left: 53.9px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100.8px;
+    height: 51.4px;
+  }
+  
+  .learn-more-wrapper {
+    position: absolute;
+    top: 216px;
+    left: 255px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--br-5xs);
+    border: 2px solid var(--color-white);
+    box-sizing: border-box;
+    width: 176px;
+    height: 53px;
+  }
+  
+  .blob1 {
+    position: absolute;
+    left: 0;
+    border-radius: var(--br-5xs);
+  }
+  
+  .blob2 {
+    position: absolute;
+    left: 20%;
+    border-radius: var(--br-5xs);
+  }
+  
+  .blob3 {
+    position: absolute;
+    right: 0;
+    border-radius: var(--br-5xs);
+  }
+  
+  .blob4 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--br-5xs);
+  }
+  
+  
+  
+  .chat-and-connect,
+  .experience-stardom {
+    position: absolute;
+    left: 61px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+  
+  .experience-stardom {
+    top: 68px;
+    font-size: 46px;
+    line-height: 54px;
+    font-weight: 600;
+    width: 509px;
+  }
+  
+  .chat-and-connect {
+    top: 129px;
+    font-size: var(--regular-24px-32-size);
+    line-height: 32px;
+    width: 353px;
+  }
+  
+  .explore_bollywood_section,
+  .explore_influencers_section,
+  .explore_sport_influencers_section,
+  .how_to_use_section {
+    width: 100%;
+    padding: 75px;
+  }
+  
+  .explore_influencers_section {
+    background-color: var(--color-light-black);
+    border: 1px solid #3A3A3A;
+  }
+  
+  .profile_cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .profile {
+    flex-basis: calc(20% - 16px);
+    /* width: 240px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 370px;
+    border-radius: 11px;
+    /* border: 1px solid rgba(0, 0, 0, 0.09); */
+    /* background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Taapsee\ Pannu@2x.png), lightgray 50% / cover no-repeat; */
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+  }
+  
+  .Explore_Sport_Influencers,
+  .Explore_Bollywood,
+  .Explore_Influencers {
+    font-size: 28px;
+    color: var(--color-white);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .Explore_Sport_Influencers>span,
+  .Explore_Bollywood>span,
+  .Explore_Influencers>span {
+    color: var(--color-tomato);
+  }
+  
+  
+  .taapsee_Pannu_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Taapsee-Pannu@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .urvashi_Rautela_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Urvashi-Rautela@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .sukhwinder_Singh_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Sukhwinder-Singh@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .malaika_Arora_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Malaika-Arora@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .karan_Johar_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Karan-Johar@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .agnijita_Banerjee_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Agnijita-Banerjee@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .hema_Adhikari_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Hema-Adhikari@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .rugees_Vini_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rugees-Vini@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .shalini_Chopra_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Shalini-Chopra@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .nilam_Parmar_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Nilam-Parmar@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  
+  .virat_Kohli_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Virat-Kohli@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .dhoni_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Dhoni@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .geeta_Phogat_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Geeta-Phogat@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .rani_Rampal_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rani-Rampal@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  .guru_Mann_profile {
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Guru-Mann@2x.png), lightgray 50% / cover no-repeat;
+  }
+  
+  
+  
+  .horizontal_line {
+    position: relative;
+    margin-top: 95%;
+    width: 100%;
+    height: 1px;
+    opacity: 0.4;
+    background: #FFF;
+  }
+  
+  .red_circle {
+    width: 54px;
+    height: 54px;
+    background-color: var(--color-tomato);
+    border-radius: 37px;
+    position: absolute;
+    right: 20%;
+    transform: translateY(-50%);
+  }
+  
+  .celeb_name {
+    text-align: left;
+    font-size: var(--font-size-2xl);
+    line-height: 1.6;
+  }
+  
+  .filmmaker-and-television {
+    color: var(--color-white);
+    padding: 20px;
+  
+  }
+  
+  .bottom_text {
+    font-size: 1.0rem;
+  }
+  
+  .how_to_use_section {
+    display: flex;
+    justify-content: space-between;
+    height: 529px;
+    flex-shrink: 0;
+    border: 1px solid #3A3A3A;
+    background-color: var(--color-light-black);
+  }
+  
+  .theory_how_to_use {
+    /* position: absolute;
+    top: 3487px;
+    left: 83px; */
+    font-size: var(--font-size-base);
+    line-height: 27px;
+    display: inline-block;
+    width: 508px;
+    height: 173px;
+    color: white;
+  }
+  
+  
+  .how-to-use-container {
+    /* position: absolute;
+  
+    left: 86px; */
+    font-size: 45px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    width: 900px;
+    height: 113px;
+    margin-bottom: 20px;
+  }
+  
+  .how-to-use {
+    margin: 0;
+  }
+  
+  .ai-chat {
+    margin: 0;
+    color: var(--color-tomato);
+  }
+  
+  .video_show {
+    width: 50%;
+    height: 100%;
+    background-color: #ec4036;
+    border-radius: 8px;
+    background-image: url(./assets/slide-img.jpg);
+    background-size: cover;
+    /* background: radial-gradient(50% 50% at 50% 50%, rgba(17, 17, 17, 0.00) 0%, rgba(17, 17, 17, 0.62) 100%); */
+  }
+  
+  .play_btn {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .play_btn_icon {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .mobile_footer {
+    display: none;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    width: 100%;
+    height: 391px;
+    flex-shrink: 0;
+    background-color: var(--color-gray-100);
+    color: white;
+  }
+  
+  .lorem-ipsum-dolor1 {
+    line-height: 22px;
+    width: 350px;
+    height: 109px;
+  }
+  
+  .Facebook_icon {
+    margin-right: 10px;
+  }
+  
+  .Facebook_icon,
+  .instagram_icon {
+    width: 46px;
+    height: 46px;
+  }
+  
+  .footer_left {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .footer_logo {
+    width: 213px;
+    height: 51px;
+  }
+  
+  .sitemap_parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  
+    height: inherit;
+    width: 199px;
+    height: 198px;
+    font-size: var(--font-size-mid);
+  
+  }
+  
+  .footer_sitemap_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: inherit;
+  }
+  
+  .terms_and_condidions {
+    font-size: var(--font-size-xl);
+    line-height: 38px;
+    display: inline-block;
+    height: 155px;
+  }
+  
+  .visa_icon {
+    width: 154px;
+    height: 46px;
+    object-fit: cover;
+  }
+  
+  
+  
+  
+  /* -------------chat-box------------------- */
+  
+  .chatroom_area {
+    position: absolute;
+    display: flex;
+    height: auto;
+    width: 100%;
+    height: 89%;
+  }
+  
+  .sidebar_profile_section {
+    border: 1px solid #363636;
+    min-width: 288px;
+    background-color: var(--color-gray-200);
+  
+  }
+  
+  .main_chatroom_section {
+    width: 100%;
+    background-color: var(--color-gray-300);
+  }
+  
+  .custom_input {
+    width: inherit;
+  }
+  
+  .search_bar {
+    width: 243px;
+    height: 42px;
+    flex-shrink: 0;
+    background-color: var(--color-gray-200);
+    border: 1px solid var(--color-white);
+  }
+  
+  .search_bar::placeholder {
+    padding-left: 10px;
+  }
+  
+  
+  .svg_icon {
+    position: absolute;
+    top: 72px;
+    left: 225px;
+    fill: #929292;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .search_bar_section {
+    padding: 20px;
+  }
+  
+  .chat_profile_options {
+    padding-left: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 21px;
+    flex-shrink: 0;
+    color: white;
+  
+  }
+  
+  .rectangle-icon {
+    border-radius: 37px;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  
+  .rectangle-group {
+    display: flex;
+    width: 100%;
+    height: 50px;
+  }
+  
+  .filmmaker-and-television2 {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    display: inline-block;
+    width: 175px;
+  }
+  
+  .taapsee-pannu-parent {
+    width: 175px;
+    height: 50px;
+  }
+  
+  
+  
+  /* -----------------------sign-up-page------------------------- */
+  
+  
+  .signup_section {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    background-color: var(--color-gray-200);
+    width: 424px;
+    height: 535px;
+    overflow: hidden;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: left;
+    font-size: var(--font-size-3xl);
+    color: var(--color-white);
+    font-family: var(--regular-16px-24);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .members-only {
+    position: absolute;
+    top: 35px;
+    left: 41px;
+    font-size: 28px;
+    line-height: 24px;
+    display: inline-block;
+    width: 384px;
+  }
+  
+  .please-login {
+    top: 90px;
+    left: 42px;
+    width: 328px;
+  }
+  
+  .or,
+  .password,
+  .please-login,
+  .username {
+    position: absolute;
+    line-height: 25px;
+    display: inline-block;
+  }
+  
+  .or {
+    top: 391px;
+    left: 42px;
+    text-align: center;
+    width: 339px;
+  }
+  
+  .password,
+  .username {
+    top: 129px;
+    left: 41px;
+    font-size: var(--font-size-lg);
+    width: 328px;
+    height: 20px;
+  }
+  
+  .password {
+    top: 224px;
+  }
+  
+  .frame-child3,
+  .rectangle-div {
+    position: absolute;
+    top: 160px;
+    left: 42px;
+    padding: 10px;
+    font-size: larger;
+    color: var(--color-white);
+    border-radius: var(--br-2xs);
+    border: 1px solid var(--color-white);
+    background-color: var(--color-gray-200);
+    box-sizing: border-box;
+    width: 339px;
+    height: 50px;
+  }
+  
+  .frame-child3 {
+    top: 255px;
+  }
+  
+  .login1 {
+    position: absolute;
+    top: 0;
+    left: 1.9px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 337.1px;
+    height: 46.9px;
+  }
+  
+  .login-container,
+  .register-container {
+    position: absolute;
+    left: 42px;
+    border-radius: var(--br-5xs);
+    width: 339px;
+    height: 48px;
+    text-align: center;
+    font-size: var(--regular-20px-28-size);
+  }
+  
+  .login-container {
+    top: 322.5px;
+    background-color: var(--color-tomato);
+  }
+  
+  .register-container {
+    top: 441px;
+    border: 3px solid var(--color-tomato);
+    box-sizing: border-box;
+    color: var(--color-tomato);
+  }
+  
+  .iconplus {
+    position: absolute;
+    top: 35px;
+    left: 337px;
+    width: 28.3px;
+    height: 28.3px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  
+  /* Tablet styles */
+  @media only screen and (max-width: 768px) {}
+  
+  /* Mobile styles */
+  @media only screen and (max-width: 560px) {
+    .intro_screen {
+      background: linear-gradient(1deg, #0A0F1F 0.34%, rgba(10, 15, 31, 0.21) 99.44%), url(./assets/slide-img.jpg);
+      animation: scrollBackground 60s linear infinite;
+      background-size: cover;
+    }
+  
+    @keyframes scrollBackground {
+      0% {
+        background-position: 0 0;
+      }
+  
+      100% {
+        background-position: 100% 0;
+      }
+    }
+  
+    #intro_logo {
+      width: 213px;
+      height: 51px;
+      bottom: 60%;
+      transform: translate(-35%, 50%);
+      animation: none;
+    }
+
+    #intro_signup{
+      display: none;
+    }
+  
+    .signup_btn_mobile {
+      display: block;
+      position: absolute;
+      bottom: 10%;
+      visibility: hidden;
+      opacity: 0;
+      animation: fadeIn 1s 2s forwards;
+    }
+  
+    @keyframes fadeIn {
+      to {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  
+    nav {
+      position: fixed;
+      top: 0;
+      height: 60px;
+      width: 100vw;
+    }
+  
+  
+  
+    .logo>img {
+      width: 122px;
+      height: 29px;
+  
+    }
+  
+    .burger_menu {
+      display: block;
+    }
+  
+  
+    .login_container_intro,
+    .register_container_intro {
+      color: var(--color-white);
+      background-color: var(--color-dark-blue-grey);
+      border: 2px solid var(--color-light-blue-grey);
+    }
+  
+    .banner_section,
+    .nav_list,
+    .signup_btn,
+    .how_to_use_section,
+    footer {
+      display: none;
+    }
+  
+    .mobile_banner {
+      display: flex;
+      width: 329.312px;
+      height: 175.851px;
+      background-image: url(./assets/mobile-banner.png);
+      background-size: cover;
+      margin-top: 50px;
+      border-radius: 15px;
+      border: 0.5px solid var(--color-dark-blue-grey);
+    }
+  
+    .mobile_footer {
+      display: flex;
+      position: fixed;
+      justify-content: space-around;
+      align-items: center;
+      bottom: 0;
+      width: 100vw;
+      height: 55px;
+      border: 1px solid #1C1A51;
+      background: #0D152F;
+      box-shadow: 0px 0px 61px 0px rgba(29, 54, 183, 0.25);
+    }
+  
+    .mobile_footer_icon {
+      color: var(--color-white);
+  
+    }
+  
+    .mobile_footer_icon:hover {
+      color: var(--color-tomato);
+    }
+  
+  
+    /* .explore_bollywood_section{
+      width: 100vw;
+    } */
+  
+    .explore_bollywood_section,
+    .explore_influencers_section,
+    .explore_sport_influencers_section {
+      padding: 20px 10px 20px 10px;
+      width: 100vw;
+    }
+  
+    .explore_sport_influencers_section {
+      margin-bottom: 50px;
+    }
+  
+    .explore_influencers_section {
+      background-color: var(--color-gray-200);
+      border: none;
+    }
+  
+  
+    .profile_cards {
+      /* width: auto; */
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
+  
+  
+    .profile_cards::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .profile {
+      width: 136px;
+      height: 180px;
+      box-shadow: none;
+    }
+  
+    .Explore_Sport_Influencers,
+    .Explore_Bollywood,
+    .Explore_Influencers {
+      font-size: 17px;
+    }
+  
+    .celeb_name {
+      font-size: 13px;
+      width: 118px;
+      height: 25px;
+      font-weight: 700;
+    }
+  
+    .bottom_text {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      /* line-height: 14px; */
+      /* 116.667% */
+    }
+  
+    .red_circle{
+      display: none;
+    }
+  
+    .taapsee_Pannu_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Taapsee-Pannu.png), lightgray 50% / cover no-repeat;
+    }
+  
+    .urvashi_Rautela_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Urvashi-Rautela.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .sukhwinder_Singh_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Sukhwinder-Singh.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .malaika_Arora_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Malaika-Arora.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .karan_Johar_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Karan-Johar.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .agnijita_Banerjee_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Agnijita-Banerjee.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .hema_Adhikari_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Hema-Adhikari.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .rugees_Vini_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rugees-Vini.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .shalini_Chopra_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Shalini-Chopra.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .nilam_Parmar_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Nilam-Parmar.png), lightgray 50% / cover no-repeat;
+    }
+    
+    
+    .virat_Kohli_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Virat-Kohli.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .dhoni_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Dhoni.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .geeta_Phogat_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Geeta-Phogat.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .rani_Rampal_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rani-Rampal.png), lightgray 50% / cover no-repeat;
+    }
+    
+    .guru_Mann_profile {
+      background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Guru-Mann.png), lightgray 50% / cover no-repeat;
+    }
+  
+  }
