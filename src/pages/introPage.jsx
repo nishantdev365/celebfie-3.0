@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 
 import "../App.css";
 import Logo from "../assets/Logo.png";
+
 const IntroPage = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   useEffect(() => {

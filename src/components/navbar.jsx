@@ -26,17 +26,17 @@ const Navbar = () => {
             <ul className="menu_items">
               <li>
                 <span className="material-symbols-outlined ico"> home </span>
-                <Link to="/home"> <a className="active nav_options" href="#">Home</a></Link>
+                <Link to="/home"> <b className="active nav_options" >Home</b></Link>
                 
               </li>
               <li>
                 <span className="material-symbols-outlined ico"> forum </span>
-             <Link to="/chatPage">  <a className="nav_options" href="chatbox.html">Chat</a></Link>
+             <Link to="/chatPage">  <b className="nav_options" >Chat</b></Link>
                
               </li>
               <li>
                 <span className="material-symbols-outlined ico"> search </span>
-                <a className="nav_options" href="#">Search</a>
+                <b className="nav_options" >Search</b>
               </li>
             </ul>
           </div>
