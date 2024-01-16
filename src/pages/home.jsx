@@ -308,6 +308,7 @@ const home = () => {
               </div>
               </Link>
             </div>
+            
           
 
             <div className="profile urvashi_Rautela_profile">
@@ -459,7 +460,7 @@ const home = () => {
                 <b className="celeb_name">Virat Kohli</b>
                 <br />
                 <p className="bottom_text">
-                  Indian international cricketer and former captain
+                International physique Athlete
                 </p>
               </div>
             </div>
@@ -473,7 +474,7 @@ const home = () => {
                 <b className="celeb_name">Dhoni</b>
                 <br />
                 <p className="bottom_text">
-                  Indian international cricketer and former captain
+                International physique Athlete
                 </p>
               </div>
             </div>
@@ -560,9 +561,9 @@ const home = () => {
         <span className="material-symbols-outlined mobile_footer_icon">
           explore
         </span>
-        <span className="material-symbols-outlined mobile_footer_icon">
+       <link to="/chatPage"> <span className="material-symbols-outlined mobile_footer_icon">
           forum
-        </span>
+        </span></link>
 
         <span className="material-symbols-outlined mobile_footer_icon">
           settings

@@ -24,19 +24,23 @@ const Navbar = () => {
           </div>
           <div className="nav_list">
             <ul className="menu_items">
-              <li>
-                <span className="material-symbols-outlined ico"> home </span>
-                <Link to="/home"> <b className="active nav_options" >Home</b></Link>
+            <Link to="/home">  <li>
+                
+                <b className="active nav_options" > <span className="material-symbols-outlined ico"> home </span> Home</b>
                 
               </li>
+              </Link>
+              <Link to="/chatPage">   
               <li>
-                <span className="material-symbols-outlined ico"> forum </span>
-             <Link to="/chatPage">  <b className="nav_options" >Chat</b></Link>
+          
+               <b className="nav_options" >   <span className="material-symbols-outlined ico"> forum </span> Chat</b>
                
               </li>
+
+              </Link>
               <li>
-                <span className="material-symbols-outlined ico"> search </span>
-                <b className="nav_options" >Search</b>
+               
+                <b className="nav_options" >  <span className="material-symbols-outlined ico"> search </span>Search</b>
               </li>
             </ul>
           </div>
