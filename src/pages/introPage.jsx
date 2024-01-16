@@ -20,7 +20,7 @@ const IntroPage = () => {
           setShowNavbar(false);
         } else {
           introSignup.style.display = "flex";
-          setShowNavbar(true);
+          setShowNavbar(false);
         }
       }
     };
