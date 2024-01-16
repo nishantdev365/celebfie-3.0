@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "../components/navbar";
-
 import "../App.css";
 import Logo from "../assets/logo.png";
 
 const IntroPage = () => {
   const [showNavbar, setShowNavbar] = useState(true);
+  const location = useLocation();
+
   useEffect(() => {
     const handleIntroSignupDisplay = () => {
       const introSignup = document.getElementById("intro_signup");
@@ -32,9 +33,17 @@ const IntroPage = () => {
     };
   }, []);
 
+  // Conditionally render the Navbar based on the path
+  const renderNavbar = () => {
+    if (showNavbar && location.pathname !== "/") {
+      return <Navbar />;
+    }
+    return null;
+  };
+
   return (
     <>
-      {showNavbar && <Navbar />}
+      {renderNavbar()}
       <div className="intro_screen">
         <img src={Logo} id="intro_logo" alt="Logo" />
 
