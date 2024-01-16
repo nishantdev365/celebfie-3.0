@@ -460,7 +460,7 @@ const home = () => {
                 <b className="celeb_name">Virat Kohli</b>
                 <br />
                 <p className="bottom_text">
-                International physique Athlete
+                  International physique Athlete
                 </p>
               </div>
             </div>
@@ -561,9 +561,9 @@ const home = () => {
         <span className="material-symbols-outlined mobile_footer_icon">
           explore
         </span>
-       <link to="/chatPage"> <span className="material-symbols-outlined mobile_footer_icon">
+        <span className="material-symbols-outlined mobile_footer_icon">
           forum
-        </span></link>
+        </span>
 
         <span className="material-symbols-outlined mobile_footer_icon">
           settings
