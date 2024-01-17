@@ -1,12 +1,13 @@
 // import SidePanel from "../components/SidePanel";
 
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ChatPage = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "https://cdn.machaao.com/prod/web/js/embed_v5.js";
+    script.src = "https://cdn.machaao.com/prod/web/js/embed_celebfie.js";
     script.async = true;
     script.setAttribute("mode", "embed");
     script.setAttribute("isolate", "true");
@@ -32,25 +33,27 @@ const ChatPage = () => {
 
   return (
     <>
-      
+            <div className="profile_header">
+              <Link to="/home">
+   <div className="back_btn">
+   
+   </div>
+   </Link>
+<div className="rectangle-group" id="profileName">
+      {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
+      <div className="rectangle-icon" alt="profile-pic"> </div>
+      <div className="taapsee-pannu-parent">
+        <div className="taapsee-pannu">Taapsee Pannu</div>
+        <div className="filmmaker-and-television2">
+          filmmaker and television personality
+        </div>
+      </div>
+    </div>
+
+</div>
+ 
       <section className="chatroom_area">
       {/* <SidePanel /> */}
-
-      <div className="profile_header">
-
-      <div className="rectangle-group" id="profileName">
-            {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
-            <div className="rectangle-icon" alt="profile-pic"> </div>
-            <div className="taapsee-pannu-parent">
-              <div className="taapsee-pannu">Taapsee Pannu</div>
-              <div className="filmmaker-and-television2">
-                filmmaker and television personality
-              </div>
-            </div>
-          </div>
-
-      </div>
-       
         <div
           className="main_chatroom_section"
           id="mcontext"

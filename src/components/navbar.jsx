@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom";
 import BurgerMenu from "../assets/burger-menu.svg"
 import Logo from '../assets/logo.png';
 // import { Link } from "react-router-dom";
 import Signup from "./signup";
 import { useState } from "react";
 
-import { Link, useLocation } from "react-router-dom";
+// import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const location = useLocation();
-  const isChatPage = location.pathname.includes("/chatPage");
+  // const location = useLocation();
+  // const isChatPage = location.pathname.includes("/chatPage");
 
     
   const [showSignup, setShowSignup] = useState(false);
@@ -23,10 +24,12 @@ const Navbar = () => {
       <nav>
      {showSignup && <Signup />}
         <div className="menu_options">
+        <Link to="/home"> 
           <div className="logo">
             <img src={Logo} alt="Celebfie"  />
           </div>
-          <div className="nav_list">
+          </Link>
+          {/* <div className="nav_list">
             <ul className="menu_items">
             <Link to="/home">  <li>
                 
@@ -34,7 +37,7 @@ const Navbar = () => {
                 
               </li>
               </Link>
-              <Link to="/chatPage">   
+              <Link to="/chat">   
               <li>
           
                <b className={`nav_options ${isChatPage && "active"}`}>   <span className="material-symbols-outlined ico"> forum </span> Chat</b>
@@ -47,7 +50,7 @@ const Navbar = () => {
                 <b className="nav_options" >  <span className="material-symbols-outlined ico"> search </span>Search</b>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="signup_btn">
           <button className="register_btn" id="register_btn" onClick={handleSignupButtonClick}>

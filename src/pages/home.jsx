@@ -295,7 +295,7 @@ const home = () => {
 
             <div className="profile taapsee_Pannu_profile">
             {/* <Link to="/chatPage"> */}
-            <Link to="/chatPage/taapsee_Pannu">
+            <Link to="/chat/taapsee_pannu">
               <div className="horizontal_line">
                 <div className="red_circle"></div>
               </div>

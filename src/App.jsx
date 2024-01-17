@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Intro from "./pages/introPage";
 import Home from "./pages/home";
-import ChatPage from "./pages/chatPage";
+import Chat from "./pages/chat";
 import "./App.css";
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/chatPage" element={<ChatPage />} />
-          <Route path="/chatPage/:profileName" element={<ChatPage />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/chat/:profileName" element={<Chat />} />
        
         </Routes>
       </BrowserRouter>
