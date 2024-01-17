@@ -18,11 +18,11 @@ const ChatPage = () => {
     script.setAttribute("id", "webchat");
     script.setAttribute(
       "mkey",
-      "ZDhhY2RiNDAtYjE0OS0xMWVlLTk4OGEtYTU3YjI5Y2U0NWZk"
+      "YmM0ODlhYTAtYWVjMS0xMWVlLThjMWQtMjM2MzE0Nzc1MTZh"
     );
     script.setAttribute("style", "min-height: 480px");
     script.setAttribute("chathost", "https://messengerx.io");
-    script.setAttribute("botname", "mx-jarvis_");
+    script.setAttribute("botname", "mx-tp-ai");
 
     document.getElementById("mcontext").appendChild(script);
 
