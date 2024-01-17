@@ -1,12 +1,12 @@
-import SidePanel from "../components/SidePanel";
-import Footer from "../components/Footer"
+// import SidePanel from "../components/SidePanel";
+
 import { useEffect } from "react";
 
 const ChatPage = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "https://cdn.machaao.com/prod/web/js/embed.js";
+    script.src = "https://cdn.machaao.com/prod/web/js/embed_v5.js";
     script.async = true;
     script.setAttribute("mode", "embed");
     script.setAttribute("isolate", "true");
@@ -34,15 +34,19 @@ const ChatPage = () => {
     <>
       
       <section className="chatroom_area">
-      <SidePanel />
+      {/* <SidePanel /> */}
+
+      <div className="profile_header">
+
+      </div>
        
         <div
           className="main_chatroom_section"
           id="mcontext"
-          style={{  height: "100%", position:"absolute", right:"0", padding:"20px"}}
+          style={{ width: "100%", height: "100%"}}
         ></div>
       </section>
-      <Footer />
+ 
     </>
   );
 };

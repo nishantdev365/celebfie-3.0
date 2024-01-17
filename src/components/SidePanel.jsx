@@ -40,7 +40,7 @@
 // export default SidePanel
 
 import "../App.css";
-import Tapsee from "../assets/Celebrity-profiles/Taapsee-pannu.png";
+import Tapsee from "../assets/Celebrity-profiles/taapsee-pannu.png";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 const SidePanel = () => {
@@ -87,7 +87,7 @@ const SidePanel = () => {
         {/* Chat Profile Options */}
         <div className="chat_profile_options">
           <div className="rectangle-group" id="profileName">
-            <img className="rectangle-icon" alt="" src={Tapsee} />
+            <img className="rectangle-icon" alt="profile-pic" src={Tapsee} />
             <div className="taapsee-pannu-parent">
               <div className="taapsee-pannu">Taapsee Pannu</div>
               <div className="filmmaker-and-television2">
