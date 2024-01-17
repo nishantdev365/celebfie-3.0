@@ -5,7 +5,7 @@ import Facebook from '../assets/facebook_icon.png';
 import Instagram from '../assets/instagram_icon.png';
 import Play from '../assets/play.png';
 import Visa from '../assets/visa-mastercard-icon.png';
-
+import Footer from "../components/Footer"
 
 const home = () => {
 
@@ -294,7 +294,8 @@ const home = () => {
 
 
             <div className="profile taapsee_Pannu_profile">
-            <Link to="chatPage">
+            {/* <Link to="/chatPage"> */}
+            <Link to="/chatPage/taapsee_Pannu">
               <div className="horizontal_line">
                 <div className="red_circle"></div>
               </div>
@@ -557,18 +558,22 @@ const home = () => {
         </div>
       </section>
 
-      <div className="mobile_footer">
-        <span className="material-symbols-outlined mobile_footer_icon">
+      {/* <div className="mobile_footer">
+     <Link to="/home">   <span className="material-symbols-outlined mobile_footer_icon">
           explore
-        </span>
+        </span></Link>
+        <Link to="/chatPage">
         <span className="material-symbols-outlined mobile_footer_icon">
           forum
         </span>
+        </Link>
 
         <span className="material-symbols-outlined mobile_footer_icon">
           settings
         </span>
-      </div>
+      </div> */}
+
+      <Footer />
 
       <footer>
         <div className="footer_left">
