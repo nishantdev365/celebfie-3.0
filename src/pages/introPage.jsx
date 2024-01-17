@@ -7,7 +7,7 @@ import Logo from "../assets/logo.png";
 
 const IntroPage = () => {
   const [showNavbar, setShowNavbar] = useState(true);
-  const [showSignupSection, setShowSignupSection] = useState(false); 
+  // const [showSignupSection, setShowSignupSection] = useState(false); 
   const location = useLocation();
 
   useEffect(() => {
@@ -35,10 +35,10 @@ const IntroPage = () => {
     };
   }, []);
 
-  const handleSignupButtonClick = () => {
-    alert("clicked")
-    setShowSignupSection(!showSignupSection); // Toggle the state on button click
-  };
+  // const handleSignupButtonClick = () => {
+  //   // alert("clicked")
+  //   setShowSignupSection(!showSignupSection); // Toggle the state on button click
+  // };
 
   // Conditionally render the Navbar based on the path
   const renderNavbar = () => {
@@ -76,10 +76,13 @@ const IntroPage = () => {
           </div>
         </div>
 
-     {!showSignupSection && (
+     {/* {!showSignupSection && ( */}
           <div className="signup_btn_mobile">
-            <div className="login_container_intro redirectButton" onClick={handleSignupButtonClick}>
+            {/* <div className="login_container_intro redirectButton" onClick={handleSignupButtonClick}> */}
+            <div className="login_container_intro redirectButton">
+            <Link to="/home">
               <b className="login1_intro">Login</b>
+              </Link>
             </div>
             <br />
             <div className="register_container_intro redirectButton">
@@ -88,7 +91,7 @@ const IntroPage = () => {
               </Link>
             </div>
           </div>
-        )}
+        {/* )} */}
 
         {/* <div id="intro_signup_mobile">
           <div className={`signup_section ${showSignupSection ? "show" : ""}`} >

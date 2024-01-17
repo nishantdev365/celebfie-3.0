@@ -816,6 +816,15 @@ footer {
 }
 
 
+.profile_header{
+  width: 100%;
+height: 70px;
+color: var(--color-white);
+border: 1px solid #363636;
+background: #0A0F1F;
+padding-left: 25px;
+}
+
 
 .custom_input {
   width: inherit;
@@ -906,6 +915,8 @@ footer {
 
 
 .rectangle-icon {
+  background-image: url(./assets/Celebrity-profiles/Taapsee-Pannu.png);
+  background-size: cover;
   border-radius: 37px;
   width: 45px;
   height: 45px;
@@ -915,7 +926,7 @@ footer {
 
 .rectangle-group {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
   width: 100%;
@@ -927,9 +938,9 @@ footer {
 
 }
 
-.rectangle-group:hover {
+/* .rectangle-group:hover {
   background-color: #929292;
-}
+} */
 
 /* ------------------------------------------------------------ */
 .activeProfile {
@@ -1496,6 +1507,11 @@ footer {
     line-height: 24px;
     /* 160% */
   }
+
+  .profile_header{
+   position: sticky;
+  }
+  
 
   .filmmaker-and-television2 {
     width: 100%;

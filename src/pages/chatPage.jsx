@@ -38,6 +38,17 @@ const ChatPage = () => {
 
       <div className="profile_header">
 
+      <div className="rectangle-group" id="profileName">
+            {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
+            <div className="rectangle-icon" alt="profile-pic"> </div>
+            <div className="taapsee-pannu-parent">
+              <div className="taapsee-pannu">Taapsee Pannu</div>
+              <div className="filmmaker-and-television2">
+                filmmaker and television personality
+              </div>
+            </div>
+          </div>
+
       </div>
        
         <div
