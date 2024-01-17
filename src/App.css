@@ -853,7 +853,7 @@ footer {
 
 .back_process {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   height: auto;
   width: 100%;
@@ -868,7 +868,7 @@ footer {
 
 .chats_text {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   font-size: 20px;
   font-style: normal;
@@ -900,7 +900,7 @@ footer {
   color: white;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 
 }
 
