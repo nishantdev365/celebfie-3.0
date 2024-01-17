@@ -3,7 +3,7 @@
   padding: 0;
   text-decoration: none;
   /* font-family: Source Sans Pro; */
-  list-style: none;
+  /* list-style: none; */
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: #397524 #DFE9EB;
@@ -497,7 +497,7 @@ li:hover {
 .explore_sport_influencers_section,
 .how_to_use_section {
   width: 100%;
-  padding: 75px;
+  padding: 50px 75px 50px 75px;
 }
 
 .explore_influencers_section {
@@ -933,6 +933,10 @@ footer {
 }
 
 
+.profile_page {
+  display: none;
+}
+
 .rectangle-icon {
   background-image: url(./assets/Celebrity-profiles/Taapsee-Pannu.png);
   background-size: cover;
@@ -1272,13 +1276,24 @@ footer {
 
   .mobile_banner {
     display: flex;
-    width: 329.312px;
+    /* width: 329.312px; */
+    width: 90%;
     height: 175.851px;
-    background-image: url(./assets/mobile-banner.png);
+    background-image: url(./assets/slide-img.jpg);
     background-size: cover;
     margin-top: 20px;
     border-radius: 15px;
     border: 0.5px solid var(--color-dark-blue-grey);
+
+  }
+
+  .video {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    margin-left: 0;
+    margin-right: 0;
+
   }
 
   .mobile_footer {
@@ -1297,7 +1312,10 @@ footer {
 
   .mobile_footer_icon {
     color: var(--color-white);
+  }
 
+  .mobile_footer_icon:first-child {
+    color: var(--color-tomato);
   }
 
   .mobile_footer_icon:hover {
@@ -1409,64 +1427,64 @@ footer {
   }
 
   .taapsee_Pannu_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Taapsee-Pannu.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Taapsee-Pannu.png), lightgray 50% / cover no-repeat;
   }
 
   .urvashi_Rautela_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Urvashi-Rautela.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Urvashi-Rautela.png), lightgray 50% / cover no-repeat;
   }
 
   .sukhwinder_Singh_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Sukhwinder-Singh.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png), lightgray 50% / cover no-repeat;
   }
 
   .malaika_Arora_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Malaika-Arora.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Malaika-Arora.png), lightgray 50% / cover no-repeat;
   }
 
   .karan_Johar_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Karan-Johar.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Karan-Johar.png), lightgray 50% / cover no-repeat;
   }
 
   .agnijita_Banerjee_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Agnijita-Banerjee.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Agnijita-Banerjee.png), lightgray 50% / cover no-repeat;
   }
 
   .hema_Adhikari_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Hema-Adhikari.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Hema-Adhikari.png), lightgray 50% / cover no-repeat;
   }
 
   .rugees_Vini_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rugees-Vini.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Rugees-Vini.png), lightgray 50% / cover no-repeat;
   }
 
   .shalini_Chopra_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Shalini-Chopra.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Shalini-Chopra.png), lightgray 50% / cover no-repeat;
   }
 
   .nilam_Parmar_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Nilam-Parmar.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Nilam-Parmar.png), lightgray 50% / cover no-repeat;
   }
 
 
   .virat_Kohli_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Virat-Kohli.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Virat-Kohli.png), lightgray 50% / cover no-repeat;
   }
 
   .dhoni_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Dhoni.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Dhoni.png), lightgray 50% / cover no-repeat;
   }
 
   .geeta_Phogat_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Geeta-Phogat.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Geeta-Phogat.png), lightgray 50% / cover no-repeat;
   }
 
   .rani_Rampal_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rani-Rampal.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Rani-Rampal.png), lightgray 50% / cover no-repeat;
   }
 
   .guru_Mann_profile {
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Guru-Mann.png), lightgray 50% / cover no-repeat;
+    background: url(./assets/Celebrity-profiles/Guru-Mann.png), lightgray 50% / cover no-repeat;
   }
 
 
@@ -1529,8 +1547,8 @@ footer {
 
   .profile_header {
     top: 0;
-  }
 
+  }
 
   .filmmaker-and-television2 {
     width: 100%;
@@ -1540,5 +1558,238 @@ footer {
     line-height: 13px;
     /* 92.857% */
   }
+
+  .profile_page {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(./assets/urvashi.png);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: var(--color-gray-200);
+    gap: 10px;
+
+  }
+
+  .popup_info {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    flex-shrink: 0;
+    background-image: url(./assets/urvashi2.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    background-color: #262F4D;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+
+    box-shadow: 0px 0px 54px 50px;
+
+  }
+
+  .close_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  .first_para {
+    width: 90%;
+    color: #FFF;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+  }
+
+  .second_para {
+    color: #FFF;
+    width: 90%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+  }
+
+  li {
+    list-style-type: decimal;
+    display: list-item;
+    color: #FFF;
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+  }
+
+
+  .popup_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: 50px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: "Source Sans Pro";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    /* 126.316% */
+    border-radius: 7px;
+    background: #2D477D;
+  }
+
+  .popup_arrow {
+    position: absolute;
+    right: 50px;
+  }
+
+
+
+
+  .profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05FF00;
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Urvashi-Rautela.png)
+  }
+
+
+  .profile_name {
+    color: #FFF;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .profile_discription {
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .primary_btn {
+    display: flex;
+    justify-content: space-around;
+
+    width: 90%;
+  }
+
+
+
+  .subscribe,
+  .talk_2_me {
+    /* padding-top: 8px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 151px;
+    height: 50px;
+    border-radius: 7px;
+    border: 2px solid #4967A6;
+    background: #0A0F1F;
+
+    gap: 10px;
+    color: #85A0D9;
+    text-align: center;
+
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+
+
+  }
+
+  .horizontal {
+    width: 315px;
+    height: 1px;
+    background: #354269;
+  }
+
+
+
+  .services {
+    color: #7585CB;
+
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    width: 321px;
+    height: 17px;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+
+  }
+
+  .get_advice,
+  .learn,
+  .gifts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 315px;
+    height: 50px;
+    margin-bottom: 10px;
+    color: #B5CDFF;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    border: 2px solid #4967A6;
+    border-radius: 7px;
+  }
+
+  .back_btn_profile {
+    background-image: url(./assets/left-arrow.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80.587px;
+    height: 80px;
+
+  }
+
 
 }

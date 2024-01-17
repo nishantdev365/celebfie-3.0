@@ -3,7 +3,7 @@ const Footer = () => {
   return (
   <>
      <div className="mobile_footer">
-     <Link to="/home">   <span className="material-symbols-outlined mobile_footer_icon">
+     <Link to="/home">   <span className="material-symbols-outlined mobile_footer_icon active">
           explore
         </span></Link>
     

@@ -1,4 +1,4 @@
-// import SidePanel from "../components/SidePanel";
+
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -26,9 +26,9 @@ const ChatPage = () => {
 
     document.getElementById("mcontext").appendChild(script);
 
-    return () => {
-      document.getElementById("mcontext").removeChild(script);
-    };
+    // return () => {
+    //   document.getElementById("mcontext").removeChild(script);
+    // };
   }, []);
 
   return (
@@ -38,6 +38,11 @@ const ChatPage = () => {
    <div className="back_btn">
    
    </div>
+{/* <div className="back_btn_mobile">
+
+</div> */}
+
+
    </Link>
 <div className="rectangle-group" id="profileName">
       {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
@@ -45,7 +50,7 @@ const ChatPage = () => {
       <div className="taapsee-pannu-parent">
         <div className="taapsee-pannu">Taapsee Pannu</div>
         <div className="filmmaker-and-television2">
-          filmmaker and television personality
+        Indian actress and producer
         </div>
       </div>
     </div>

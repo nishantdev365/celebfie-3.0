@@ -1,19 +1,62 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Logo from '../assets/logo.png';
 import Info from '../assets/info.png';
+// import Banner from "../assets/slide-img.png"
 import Facebook from '../assets/facebook_icon.png';
 import Instagram from '../assets/instagram_icon.png';
 import Play from '../assets/play.png';
 import Visa from '../assets/visa-mastercard-icon.png';
 import Footer from "../components/Footer"
+import ReactPlayer from "react-player";
+import video from "../assets/video.mp4"
 
-const home = () => {
+
+const Home = () => {
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); 
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleCardClick = () => {
+    if (isMobile) {
+ 
+      navigate("/profile");
+    } else {
+    
+      navigate("/chat/taapsee_pannu");
+    }
+  };
 
   return (
     <>
       <section className="homepage">
       
-        <div className="mobile_banner"></div>
+        <div className="mobile_banner">
+        {isMobile && (
+        <div className="video">
+              <ReactPlayer
+          url={video}
+          controls={true}
+          width="100%"
+          height="100%"
+          light={true}  />
+        </div>
+      )}
+        </div>
         <div className="banner_section">
           <div className="blobs">
             <svg
@@ -293,9 +336,9 @@ const home = () => {
           <div className="profile_cards">
 
 
-            <div className="profile taapsee_Pannu_profile">
+            <div className="profile taapsee_Pannu_profile" onClick={handleCardClick}>
             {/* <Link to="/chatPage"> */}
-            <Link to="/chat/taapsee_pannu">
+            {/* <Link to="/chat/taapsee_pannu"> */}
               <div className="horizontal_line">
                 <div className="red_circle"></div>
               </div>
@@ -304,10 +347,10 @@ const home = () => {
                 <b className="celeb_name">Taapsee Pannu</b>
                 <br />
                 <p className="bottom_text">
-                  filmmaker and television personality
+                Indian actress and producer 
                 </p>
               </div>
-              </Link>
+              {/* </Link> */}
             </div>
             
           
@@ -321,7 +364,7 @@ const home = () => {
                 <b className="celeb_name">Urvashi Rautela</b>
                 <br />
                 <p className="bottom_text">
-                  filmmaker and television personality
+                Bollywood actress, ace dancer
                 </p>
               </div>
             </div>
@@ -335,7 +378,7 @@ const home = () => {
                 <b className="celeb_name">Sukhwinder Singh</b>
                 <br />
                 <p className="bottom_text">
-                  filmmaker and television personality
+                Singer, Rockstar Performer 
                 </p>
               </div>
             </div>
@@ -349,7 +392,7 @@ const home = () => {
                 <b className="celeb_name">Malaika Arora</b>
                 <br />
                 <p className="bottom_text">
-                  filmmaker and television personality
+                Bollywood actress, global influencer
                 </p>
               </div>
             </div>
@@ -363,7 +406,7 @@ const home = () => {
                 <b className="celeb_name">Karan Johar</b>
                 <br />
                 <p className="bottom_text">
-                  filmmaker and television personality
+                Producer, Director and TV hoste
                 </p>
               </div>
             </div>
@@ -622,4 +665,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
