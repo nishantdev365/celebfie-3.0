@@ -90,7 +90,7 @@ const IntroPage = () => {
           </div>
         )}
 
-        <div id="intro_signup_mobile">
+        {/* <div id="intro_signup_mobile">
           <div className={`signup_section ${showSignupSection ? "show" : ""}`} >
             <b className="members-only">Members Only. </b>
             <b className="please-login">Please login </b>
@@ -107,7 +107,7 @@ const IntroPage = () => {
               <b className="login1">Register</b>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
