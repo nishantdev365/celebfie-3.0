@@ -57,14 +57,14 @@ const ChatPage = () => {
 
 </div>
  
-      <section className="chatroom_area">
+      <div className="chatroom_area">
       {/* <SidePanel /> */}
         <div
           className="main_chatroom_section"
           id="mcontext"
           style={{ width: "100%", height: "100%"}}
         ></div>
-      </section>
+      </div>
  
     </>
   );

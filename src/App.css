@@ -1491,9 +1491,10 @@ footer {
 
 
   .chatroom_area {
+    background-color: var(--color-gray-200);
     display: block;
     width: 100%;
-    height: 100%;
+    height: 92vh;
   }
 
   .sidebar_profile_section {
@@ -1515,7 +1516,7 @@ footer {
   .main_chatroom_section {
 
     width: 100%;
-    height: inherit;
+    height: 80%;
     background-color: var(--color-gray-300);
   }
 
