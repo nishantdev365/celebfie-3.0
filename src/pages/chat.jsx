@@ -28,11 +28,31 @@ const ChatPage = () => {
     script.setAttribute("chathost", "https://messengerx.io");
     script.setAttribute("botname", "mx-tp-ai");
 
-    document.getElementById("mcontext").appendChild(script);
+    const mcontextElement = document.getElementById('mcontext');
 
-    // return () => {
-    //   document.getElementById("mcontext").removeChild(script);
-    // };
+    // Clear existing content in mcontextElement
+    while (mcontextElement.firstChild) {
+      mcontextElement.removeChild(mcontextElement.firstChild);
+    }
+
+    if (mcontextElement) {
+      mcontextElement.appendChild(script);
+
+      return () => {
+        // Check if script exists in mcontextElement
+        if (!mcontextElement.contains(script)) {
+          // Reload the page if script is not found
+          window.location.reload();
+          //setLoading(true);
+
+          // Delay the increment of scriptKey after 2 seconds
+
+        }
+      };
+    } else {
+      // Reload the page if mcontextElement is not found
+      window.location.reload();
+    }
   }, []);
 
   useEffect(() => {
