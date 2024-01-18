@@ -92,7 +92,8 @@ body {
   min-height: 100%;
   width: 100%;
   overflow: hidden;
-  background-image: url(./assets/slide-img.jpg);
+ 
+  background: linear-gradient(0deg, #0A0F1F 600.39%, rgba(10, 15, 31, 0.00) 800.85%), url(./assets/slide-img.jpg);
   background-size: cover;
   z-index: 1000;
 
@@ -226,10 +227,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 337.1px;
+  /* width: 337.1px; */
   height: 46.9px;
   border-radius: var(--br-5xs);
-  width: 339px;
+  /* width: 339px; */
   height: 48px;
   text-align: center;
   font-size: var(--regular-20px-28-size);
@@ -1422,8 +1423,11 @@ footer {
   .login_container_intro,
   .register_container_intro {
     color: var(--color-white);
-    background-color: var(--color-dark-blue-grey);
+    background-color: var(--color-gray-200);
+    border: 2px solid var(--color-gray-200);
     border: 2px solid var(--color-light-blue-grey);
+    text-align: center;
+    width: 90vw;
   }
 
   .banner_section,
