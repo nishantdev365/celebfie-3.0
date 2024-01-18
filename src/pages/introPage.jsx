@@ -80,13 +80,13 @@ const IntroPage = () => {
           <div className="signup_btn_mobile">
             {/* <div className="login_container_intro redirectButton" onClick={handleSignupButtonClick}> */}
             <div className="login_container_intro redirectButton">
-            <Link to="/home">
+            <Link to="/login">
               <b className="login1_intro">Login</b>
               </Link>
             </div>
             <br />
             <div className="register_container_intro redirectButton">
-              <Link to="/home">
+              <Link to="/register">
                 <b className="login1_intro">Register</b>
               </Link>
             </div>
