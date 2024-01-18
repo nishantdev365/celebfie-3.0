@@ -75,7 +75,7 @@ const ChatPage = () => {
       <Helmet>
         <meta property="og:title" content="Taapsee Pannu" />
         <meta property="og:description" content="Indian actress and producer" />
-        <meta property="og:image" content="../assets/profile/taapsee-pannu-bg.png" />
+        <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
         <meta property="og:url" content={window.location.href} />
         {/* Add other Open Graph meta tags as needed */}
       </Helmet>
