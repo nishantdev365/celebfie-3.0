@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Navbar from "../components/navbar";
 
 import "../App.css";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 
 const IntroPage = () => {
   const [showNavbar, setShowNavbar] = useState(true);

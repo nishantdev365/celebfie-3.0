@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 import Info from "../assets/info.png";
 // import Banner from "../assets/slide-img.png"
 import Facebook from "../assets/facebook_icon.png";
@@ -54,7 +54,7 @@ const Home = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/chat/taapsee_pannu");
+      navigate("/profile");
     } else {
       navigate("/chat/taapsee_pannu");
     }

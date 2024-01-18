@@ -71,20 +71,11 @@ const ChatPage = () => {
   
   
 
-  // const handleCardClick = () => {
-  //   if (isMobile) {
-  //     navigate("/profile");
-  //   } else {
-  //     navigate("/home");
-  //   }
-  // };
-
-
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/");
+      navigate("/profile");
     } else {
-      navigate("/");
+      navigate("/home");
     }
   };
 

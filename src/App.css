@@ -2021,6 +2021,7 @@ footer {
     z-index: 1000;
     background-color: var(--color-gray-200);
     gap: 10px;
+    margin-top: 20px;
   }
 
   .navigate_back {
@@ -2042,7 +2043,7 @@ footer {
   .back_btn_register {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10px;
     padding: 30px;
     background-image: url(./assets/left-arrow.png);
     margin-top: 10px;
@@ -2089,13 +2090,14 @@ footer {
     border: 1px solid #5D7FC2;
     width: 100%;
     height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .radio_btn {
+    margin-top: 20px;
     display: flex;
     color: var(--color-white);
-    gap: 20px;
+    gap: 15px;
   }
 
 
@@ -2119,12 +2121,14 @@ footer {
     font-style: normal;
     font-weight: 600;
     border-radius: 8px;
-    background-color: #B5CDFF;
+    /* background-color: #B5CDFF; */
 
-    background-color: var(--color-dark-blue-grey);
-    border: 2px solid var(--color-light-blue-grey);
-    margin-top: 10px;
+    background-color: var(--color-gray-200);
+    border: 2px solid #B5CDFF;
+    margin-top: 30px;
   }
+
+
 
   .login_page {
     display: flex;
@@ -2137,13 +2141,29 @@ footer {
     min-height: 100%;
     width: 100%;
     overflow: hidden;
-    background: linear-gradient(0deg, #0A0F1F 56.4%, rgba(10, 15, 31, 0.28) 99.88%), url(./assets/slide-img.jpg);
+    background: linear-gradient(0deg, #0A0F1F 64.98%, rgba(10, 15, 31, 0.28) 108.46%), url(./assets/slide-img.jpg);
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: var(--color-gray-200);
     gap: 10px;
+  }
+
+  .login_page_btn > .register_page_btn{
+   margin-top: 0 !important;
+   margin-bottom: 40px !important;
+  }
+
+  .login_page_logo{
+    background-image: url(./assets/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    height: 25vh;
+    width: 100vw;
+    
+    
   }
 
   .Please_login {
@@ -2158,6 +2178,7 @@ footer {
 
   .login_page_btn {
     width: 90%;
+    
 
   }
 
@@ -2174,6 +2195,7 @@ footer {
     line-height: 25px;
     z-index: 10;
     background-color: var(--color-gray-200);
+    
   }
 
   .or_section {
@@ -2181,6 +2203,7 @@ footer {
     justify-content: center;
     align-items: center;
     margin: 20px 0 20px 0;
+    margin-bottom: 40px;
   }
 
   .hr_line {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import BurgerMenu from "../assets/burger-menu.svg"
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo.svg';
 // import { Link } from "react-router-dom";
 import Signup from "./signup";
 import { useState } from "react";
@@ -24,7 +24,7 @@ const Navbar = () => {
       <nav>
      {showSignup && <Signup />}
         <div className="menu_options">
-        <Link to="/"> 
+        <Link to="/home"> 
           <div className="logo">
             <img src={Logo} alt="Celebfie"  />
           </div>

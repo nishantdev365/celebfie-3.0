@@ -4,6 +4,10 @@ const Login = () => {
   return (
     <>
       <div className="login_page">
+       <div className="login_page_logo">
+        
+       </div>
+
         <b className="Please_login">Please login</b>
         <div className="input_sections">
           <p className="input_head">User name</p>
