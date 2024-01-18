@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
+
 const ChatPage = () => {
   const navigate = useNavigate();
 
@@ -74,7 +75,7 @@ const ChatPage = () => {
       <Helmet>
         <meta property="og:title" content="Taapsee Pannu" />
         <meta property="og:description" content="Indian actress and producer" />
-        <meta property="og:image" content="https://drive.google.com/file/d/17sCY7Q7z_UspfI9XgDyffgI-xuPlXMfT/view?usp=drive_link" />
+        <meta property="og:image" content="../assets/profile/taapsee-pannu-bg.png" />
         <meta property="og:url" content={window.location.href} />
         {/* Add other Open Graph meta tags as needed */}
       </Helmet>
