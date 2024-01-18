@@ -24,7 +24,7 @@ const Navbar = () => {
       <nav>
      {showSignup && <Signup />}
         <div className="menu_options">
-        <Link to="/home"> 
+        <Link to="/"> 
           <div className="logo">
             <img src={Logo} alt="Celebfie"  />
           </div>

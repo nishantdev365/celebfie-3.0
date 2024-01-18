@@ -15,9 +15,9 @@ const ChatPage = () => {
     script.async = true;
     script.setAttribute("mode", "embed");
     script.setAttribute("isolate", "true");
-    script.setAttribute("themecolor", "#ec4036");
+    script.setAttribute("theme_color", "#ec4036");
     script.setAttribute("header", "off");
-    script.setAttribute("accentcolor", "#ec5048");
+    script.setAttribute("accentcolor", "#080C19");
     script.setAttribute("textcolor", "white");
     script.setAttribute("id", "webchat");
     script.setAttribute(
@@ -39,18 +39,16 @@ const ChatPage = () => {
       mcontextElement.appendChild(script);
 
       return () => {
-        // Check if script exists in mcontextElement
+        
         if (!mcontextElement.contains(script)) {
-          // Reload the page if script is not found
+          
           window.location.reload();
-          //setLoading(true);
-
-          // Delay the increment of scriptKey after 2 seconds
+         
 
         }
       };
     } else {
-      // Reload the page if mcontextElement is not found
+   
       window.location.reload();
     }
   }, []);
@@ -73,11 +71,20 @@ const ChatPage = () => {
   
   
 
+  // const handleCardClick = () => {
+  //   if (isMobile) {
+  //     navigate("/profile");
+  //   } else {
+  //     navigate("/home");
+  //   }
+  // };
+
+
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/profile");
+      navigate("/");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

@@ -54,7 +54,7 @@ const Home = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/profile");
+      navigate("/chat/taapsee_pannu");
     } else {
       navigate("/chat/taapsee_pannu");
     }
