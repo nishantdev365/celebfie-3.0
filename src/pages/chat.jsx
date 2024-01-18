@@ -1,12 +1,11 @@
-
-
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ChatPage = () => {
   const navigate = useNavigate();
- 
+
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const script = document.createElement("script");
@@ -28,7 +27,7 @@ const ChatPage = () => {
     script.setAttribute("chathost", "https://messengerx.io");
     script.setAttribute("botname", "mx-tp-ai");
 
-    const mcontextElement = document.getElementById('mcontext');
+    const mcontextElement = document.getElementById("mcontext");
 
     // Clear existing content in mcontextElement
     while (mcontextElement.firstChild) {
@@ -39,16 +38,11 @@ const ChatPage = () => {
       mcontextElement.appendChild(script);
 
       return () => {
-        
         if (!mcontextElement.contains(script)) {
-          
           window.location.reload();
-         
-
         }
       };
     } else {
-   
       window.location.reload();
     }
   }, []);
@@ -67,10 +61,6 @@ const ChatPage = () => {
     };
   }, []);
 
-
-  
-  
-
   const handleCardClick = () => {
     if (isMobile) {
       navigate("/profile");
@@ -81,39 +71,44 @@ const ChatPage = () => {
 
   return (
     <>
-            <div className="profile_header">
-              {/* <Link to="/profile"> */}
-   <div className="back_btn" onClick={handleCardClick}>
-   
-   </div>
-{/* <div className="back_btn_mobile">
+      <Helmet>
+        <meta property="og:title" content="Taapsee Pannu" />
+        <meta property="og:description" content="Indian actress and producer" />
+        <meta property="og:image" content="https://drive.google.com/file/d/17sCY7Q7z_UspfI9XgDyffgI-xuPlXMfT/view?usp=drive_link" />
+        <meta property="og:url" content={window.location.href} />
+        {/* Add other Open Graph meta tags as needed */}
+      </Helmet>
+
+      <div className="profile_header">
+        {/* <Link to="/profile"> */}
+        <div className="back_btn" onClick={handleCardClick}></div>
+        {/* <div className="back_btn_mobile">
 
 </div> */}
 
-
-   {/* </Link> */}
-<div className="rectangle-group" id="profileName">
-      {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
-      <div className="rectangle-icon" alt="profile-pic"> </div>
-      <div className="taapsee-pannu-parent">
-        <div className="taapsee-pannu">Taapsee Pannu</div>
-        <div className="filmmaker-and-television2">
-        Indian actress and producer
+        {/* </Link> */}
+        <div className="rectangle-group" id="profileName">
+          {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
+          <div className="rectangle-icon" alt="profile-pic">
+            {" "}
+          </div>
+          <div className="taapsee-pannu-parent">
+            <div className="taapsee-pannu">Taapsee Pannu</div>
+            <div className="filmmaker-and-television2">
+              Indian actress and producer
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-</div>
- 
       <div className="chatroom_area">
-      {/* <SidePanel /> */}
+        {/* <SidePanel /> */}
         <div
           className="main_chatroom_section"
           id="mcontext"
-          style={{ width: "100%", height: "100%"}}
+          style={{ width: "100%", height: "100%" }}
         ></div>
       </div>
- 
     </>
   );
 };
