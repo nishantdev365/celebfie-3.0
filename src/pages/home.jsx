@@ -7,16 +7,27 @@ import Info from "../assets/info.png";
 import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
 import Play from "../assets/play.png";
-import Visa from "../assets/visa-mastercard-icon.png";
+// import Visa from "../assets/visa-mastercard-icon.png";
 import Footer from "../components/Footer";
 import ReactPlayer from "react-player";
 import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
 
+
 const Home = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const handleTriggerClick = () => {
+    setPopupOpen(!isPopupOpen);
+  };
+
+  const ClosePopup = () => {
+    setPopupOpen(false)
+  }
+
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -369,17 +380,28 @@ const Home = () => {
           </div>
         </div>
 
+
+
+        {isPopupOpen && (
+        <div className="coming_soon_popup open">
+          <strong>Coming <span className="soon_popup">Soon</span></strong>
+         <div className="close_popup" onClick={ClosePopup}></div>
+        </div>
+      )}
+
+         {/* <Link to="/chatPage"> */}
+              {/* <Link to="/chat/taapsee_pannu"> */}
+
         <div className="explore_bollywood_section">
           <div className="Explore_Bollywood">
-            Explore <span>Bollywood</span>
+            Explore <span>Bollywood Artist</span>
           </div>
           <div className="profile_cards">
             <div
               className="profile taapsee_Pannu_profile"
               onClick={handleCardClick}
             >
-              {/* <Link to="/chatPage"> */}
-              {/* <Link to="/chat/taapsee_pannu"> */}
+             
               <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -390,25 +412,28 @@ const Home = () => {
                 <b className="celeb_name">Taapsee Pannu</b>
                 <br />
                 <p className="bottom_text">Indian actress and producer</p>
+              
               </div>
+              <p className="start">Start Chat</p>
               {/* </Link> */}
             </div>
 
-            <div className="profile urvashi_Rautela_profile">
+            <div className="profile urvashi_Rautela_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
               <div className="red_circle"></div>
             </div>
 
-              <div className="filmmaker-and-television">
+              <div className="filmmaker-and-television" >
                 <b className="celeb_name">Urvashi Rautela</b>
                 <br />
                 <p className="bottom_text">Bollywood actress, ace dancer</p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile sukhwinder_Singh_profile">
+            <div className="profile sukhwinder_Singh_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -420,9 +445,10 @@ const Home = () => {
                 <br />
                 <p className="bottom_text">Singer, Rockstar Performer</p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile malaika_Arora_profile">
+            <div className="profile malaika_Arora_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -436,9 +462,10 @@ const Home = () => {
                   Bollywood actress, global influencer
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile karan_Johar_profile">
+            <div className="profile karan_Johar_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -450,6 +477,7 @@ const Home = () => {
                 <br />
                 <p className="bottom_text">Producer, Director and TV hoste</p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
           </div>
         </div>
@@ -459,7 +487,7 @@ const Home = () => {
             Explore <span>Influencers</span>
           </div>
           <div className="profile_cards">
-            <div className="profile agnijita_Banerjee_profile">
+            <div className="profile agnijita_Banerjee_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -473,9 +501,10 @@ const Home = () => {
                   fashion influencer, and social media influencer
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile hema_Adhikari_profile">
+            <div className="profile hema_Adhikari_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -489,9 +518,10 @@ const Home = () => {
                   fashion influencer, and social media influencer
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile rugees_Vini_profile">
+            <div className="profile rugees_Vini_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -505,9 +535,10 @@ const Home = () => {
                   fashion influencer, and social media influencer
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile shalini_Chopra_profile">
+            <div className="profile shalini_Chopra_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -521,9 +552,10 @@ const Home = () => {
                   fashion influencer, and social media influencer
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile nilam_Parmar_profile">
+            <div className="profile nilam_Parmar_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -537,13 +569,14 @@ const Home = () => {
                   fashion influencer, and social media influencer
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
           </div>
         </div>
 
-        <div className="explore_sport_influencers_section">
+        <div className="explore_sport_influencers_section" onClick={handleTriggerClick}>
           <div className="Explore_Sport_Influencers">
-            Explore <span>Sport Influencers</span>
+            Explore <span>Sport Personalities</span>
           </div>
           <div className="profile_cards">
             <div className="profile virat_Kohli_profile">
@@ -558,9 +591,10 @@ const Home = () => {
                 <br />
                 <p className="bottom_text">International physique Athlete</p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile dhoni_profile">
+            <div className="profile dhoni_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -572,9 +606,10 @@ const Home = () => {
                 <br />
                 <p className="bottom_text">International physique Athlete</p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile geeta_Phogat_profile">
+            <div className="profile geeta_Phogat_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -588,9 +623,10 @@ const Home = () => {
                   Geeta Phogat is a freestyle wrestler
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile rani_Rampal_profile">
+            <div className="profile rani_Rampal_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -602,9 +638,10 @@ const Home = () => {
                 <br />
                 <p className="bottom_text">Indian field hockey player</p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile guru_Mann_profile">
+            <div className="profile guru_Mann_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -618,6 +655,7 @@ const Home = () => {
                   Fitness Trainer & Fitness Celebrity
                 </p>
               </div>
+              <p className="start">Start Chat</p>
             </div>
           </div>
         </div>
@@ -694,7 +732,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="sitemap_parent">
+        {/* <div className="sitemap_parent">
           <b className="sitemap">Sitemap</b>
           <div className="footer_sitemap_container">
             <p className="how-to-use">Image Chat</p>
@@ -710,7 +748,7 @@ const Home = () => {
           className="visa_icon"
           alt="visa-and-mastercard-logos-icon"
           src={Visa}
-        />
+        /> */}
       </footer>
     </>
   );

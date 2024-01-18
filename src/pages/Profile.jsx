@@ -72,7 +72,7 @@ const Profile = () => {
 
          <Link to="/chat/taapsee_pannu">
          <div className="talk_2_me">
-            {" "}
+
             <img src={Chat} alt="chat" className="primary_img" />
             <p>Talk To Me</p>
           </div>

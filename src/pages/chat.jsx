@@ -1,9 +1,13 @@
 
 
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ChatPage = () => {
+  const navigate = useNavigate();
+ 
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -13,7 +17,7 @@ const ChatPage = () => {
     script.setAttribute("isolate", "true");
     script.setAttribute("themecolor", "#ec4036");
     script.setAttribute("header", "off");
-    script.setAttribute("accentcolor", "#0A0F1F");
+    script.setAttribute("accentcolor", "#ec5048");
     script.setAttribute("textcolor", "white");
     script.setAttribute("id", "webchat");
     script.setAttribute(
@@ -31,11 +35,37 @@ const ChatPage = () => {
     // };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
+  
+  
+
+  const handleCardClick = () => {
+    if (isMobile) {
+      navigate("/profile");
+    } else {
+      navigate("/home");
+    }
+  };
+
   return (
     <>
             <div className="profile_header">
-              <Link to="/profile">
-   <div className="back_btn">
+              {/* <Link to="/profile"> */}
+   <div className="back_btn" onClick={handleCardClick}>
    
    </div>
 {/* <div className="back_btn_mobile">
@@ -43,7 +73,7 @@ const ChatPage = () => {
 </div> */}
 
 
-   </Link>
+   {/* </Link> */}
 <div className="rectangle-group" id="profileName">
       {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
       <div className="rectangle-icon" alt="profile-pic"> </div>

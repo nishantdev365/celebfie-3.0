@@ -364,7 +364,7 @@ li:hover {
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   gap: 20px;
   padding-top: 25px;
@@ -502,6 +502,7 @@ li:hover {
 .how_to_use_section {
   width: 100%;
   padding: 50px 75px 50px 75px;
+  position: relative;
 }
 
 .explore_influencers_section {
@@ -512,6 +513,7 @@ li:hover {
 .profile_cards {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -609,6 +611,124 @@ li:hover {
 }
 
 
+.start{
+  width: 85%;
+ display: flex;
+ justify-content: center;
+ position: absolute;
+ bottom: 20px;
+ color: white;
+ opacity: 0;
+}
+
+
+/* ------------animation--------------- */
+
+
+/* .profile_center {
+  position: relative;
+} */
+
+.horizontal_line,
+.filmmaker-and-television {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.profile:hover .horizontal_line {
+  opacity: 0;
+  transform: translateY(50%);
+}
+
+.profile:hover .filmmaker-and-television {
+  opacity: 0;
+  transform: translateY(50%);
+}
+
+.profile:hover .red_circle {
+  transform: translate(-86px, 45px); 
+}
+
+.profile:hover .start{
+  opacity: 1;
+}
+
+/* Additional styling for demonstration purposes */
+/* .profile {
+  cursor: pointer;s
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+
+.horizontal_line {
+  border-bottom: 2px solid black;
+  height: 20px;
+}
+
+.red_circle {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.celeb_name,
+.bottom_text,
+.start {
+  margin: 0;
+} */
+
+
+
+
+
+/* ------------------animation----------------- */
+
+
+
+.coming_soon_popup{
+  position: fixed;
+  height: 50%;
+  width: 50%;
+  backdrop-filter: blur(11px) saturate(180%);
+  -webkit-backdrop-filter: blur(11px) saturate(180%);
+  background-color: rgba(8, 12, 25, 0.62);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+
+  /* Center the div */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: white;
+
+ 
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.soon_popup{
+color: var(--color-tomato);
+}
+
+.close_popup{
+  width: 55px;
+  height: 55px;
+  background-image: url(./assets/close.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  cursor: pointer;
+}
 
 .horizontal_line {
   position: relative;
@@ -635,7 +755,7 @@ li:hover {
   position: absolute;
   right: 20px;
   bottom: 90px;
-
+  transition: transform 0.5s ease;
   /* transform: translateY(-50%); */
 }
 
@@ -648,7 +768,8 @@ li:hover {
 .filmmaker-and-television {
   color: var(--color-white);
   padding: 20px;
-
+  width: 100%;
+  position: relative;
 }
 
 .bottom_text {
@@ -1269,6 +1390,7 @@ footer {
   .homepage {
     padding: 0;
     gap: 0;
+    /* height: 100vh; */
   }
 
 
@@ -1345,6 +1467,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     bottom: 0;
+    z-index: 100;
     /* width: 100vw; */
     height: 55px;
     border: 1px solid #1C1A51;
@@ -1436,7 +1559,7 @@ footer {
   .Explore_Sport_Influencers,
   .Explore_Bollywood,
   .Explore_Influencers {
-
+    padding: 2px;
     font-size: 17px;
   }
 
@@ -1459,8 +1582,7 @@ footer {
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: normal;
-    /*
-    /* 116.667% */
+   
   }
 
 
@@ -1474,13 +1596,24 @@ footer {
   }
 
 
+  .start{
+    display: none;
+  }
+
   .red_circle {
-    width: 24.933px;
-    height: 24.973px;
+    width: 30.933px;
+    height: 30.973px;
     background-size: 40%;
     right: 10px;
     bottom: 65px;
+    z-index: 1;
   }
+
+  .red_circle:hover {
+    width: 40.933px;
+    height: 40.973px;
+  }
+
 
   .taapsee_Pannu_profile {
     background: url(./assets/Celebrity-profiles/Taapsee-Pannu.png), lightgray 50% / cover no-repeat;
@@ -1763,9 +1896,13 @@ footer {
 
   .primary_btn {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    width: 90%;
+    width: 90vw;
+  }
+
+  .secondary_btn{
+    width: 90vw;
   }
 
 
@@ -1774,12 +1911,12 @@ footer {
   .talk_2_me {
     /* padding-top: 8px; */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    width: 151px;
+    width: 44vw;
     height: 50px;
     border-radius: 7px;
-    border: 2px solid #4967A6;
+    border: 2px solid #4967A6;  
     background: #0A0F1F;
 
     gap: 10px;
@@ -1794,7 +1931,7 @@ footer {
   }
 
   .horizontal {
-    width: 315px;
+    width: 90vw;
     height: 1px;
     background: #354269;
   }
@@ -1822,7 +1959,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 315px;
+    width: 100%;
     height: 50px;
     margin-bottom: 10px;
     color: #B5CDFF;
@@ -2041,4 +2178,32 @@ footer {
     text-decoration: underline;
   }
 
+  .horizontal_line,
+  .filmmaker-and-television,
+  .red_circle,
+  .start {
+    opacity: 1 !important; /* Ensure these elements are visible */
+    transform: translateY(0) !important; /* Ensure no transformation on mobile */
+  }
+
+  .coming_soon_popup{
+
+    height: 25vw;
+    width: 35vh;
+    font-size: larger;
+  }
+  
+  
+  .soon_popup{
+  color: var(--color-tomato);
+  margin-left: 5px;
+  
+  }
+
+  .close_popup{
+    background-size: 40%;
+    top: 10px;
+    right: -20px;
+  }
+  
 }

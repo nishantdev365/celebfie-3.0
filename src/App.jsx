@@ -15,9 +15,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Intro />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
-          <Route path="/home" element={<Home />} />
+         
           <Route path="/profile" element={<Profile />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/chat/:profileName" element={<Chat />} />
