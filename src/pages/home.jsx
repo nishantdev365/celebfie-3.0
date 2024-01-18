@@ -1,25 +1,35 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
-import Logo from '../assets/logo.png';
-import Info from '../assets/info.png';
+import Logo from "../assets/logo.png";
+import Info from "../assets/info.png";
 // import Banner from "../assets/slide-img.png"
-import Facebook from '../assets/facebook_icon.png';
-import Instagram from '../assets/instagram_icon.png';
-import Play from '../assets/play.png';
-import Visa from '../assets/visa-mastercard-icon.png';
-import Footer from "../components/Footer"
+import Facebook from "../assets/facebook_icon.png";
+import Instagram from "../assets/instagram_icon.png";
+import Play from "../assets/play.png";
+import Visa from "../assets/visa-mastercard-icon.png";
+import Footer from "../components/Footer";
 import ReactPlayer from "react-player";
-import video from "../assets/video.mp4"
-
+import ReactModal from "react-modal";
+import video from "../assets/video.mp4";
 
 const Home = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+  
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
 
     handleResize();
@@ -33,10 +43,8 @@ const Home = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
- 
       navigate("/profile");
     } else {
-    
       navigate("/chat/taapsee_pannu");
     }
   };
@@ -44,18 +52,50 @@ const Home = () => {
   return (
     <>
       <section className="homepage">
-      
         <div className="mobile_banner">
-        {isMobile && (
-        <div className="video">
-              <ReactPlayer
-          url={video}
-          controls={true}
-          width="100%"
-          height="100%"
-          light={true}  />
-        </div>
-      )}
+          <div className="banner_play" onClick={openModal}></div>
+          {isMobile && (
+            <div className="video" onClick={openModal}>
+             
+              <ReactModal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                shouldCloseOnOverlayClick={true}
+                style={{
+                  content: {
+                    top: "25%",
+                    left: "50%",
+                    right: "auto",
+                    bottom: "auto",
+                    marginRight: "-50%",
+                    transform: "translate(-50%, -50%)",
+                    borderRadius: "8px", // Adjust the radius as needed
+                    border: "none", // Remove the default border
+                    padding: "0",
+                    width: "95%", // Adjust the width as needed
+                    maxWidth: "900px", // Set a maximum width if desired
+                    maxHeight: "90%", // Set a maximum height if desired 
+                  },
+
+                  overlay: {
+                    backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust overlay color and transparency
+                  },
+                }}
+              >
+                {/* <button onClick={closeModal}>Close Video</button> */}
+                 
+                <ReactPlayer
+                  url={video}
+                  controls={true}
+                  width="100%"
+                  height="100%"
+                
+                  // light={true}
+                />
+              </ReactModal>
+              {/* <img className="banner_play" src={Play} alt="play" /> */}
+            </div>
+          )}
         </div>
         <div className="banner_section">
           <div className="blobs">
@@ -334,80 +374,81 @@ const Home = () => {
             Explore <span>Bollywood</span>
           </div>
           <div className="profile_cards">
-
-
-            <div className="profile taapsee_Pannu_profile" onClick={handleCardClick}>
-            {/* <Link to="/chatPage"> */}
-            {/* <Link to="/chat/taapsee_pannu"> */}
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div
+              className="profile taapsee_Pannu_profile"
+              onClick={handleCardClick}
+            >
+              {/* <Link to="/chatPage"> */}
+              {/* <Link to="/chat/taapsee_pannu"> */}
+              <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Taapsee Pannu</b>
                 <br />
-                <p className="bottom_text">
-                Indian actress and producer 
-                </p>
+                <p className="bottom_text">Indian actress and producer</p>
               </div>
               {/* </Link> */}
             </div>
-            
-          
 
             <div className="profile urvashi_Rautela_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Urvashi Rautela</b>
                 <br />
-                <p className="bottom_text">
-                Bollywood actress, ace dancer
-                </p>
+                <p className="bottom_text">Bollywood actress, ace dancer</p>
               </div>
             </div>
 
             <div className="profile sukhwinder_Singh_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Sukhwinder Singh</b>
                 <br />
-                <p className="bottom_text">
-                Singer, Rockstar Performer 
-                </p>
+                <p className="bottom_text">Singer, Rockstar Performer</p>
               </div>
             </div>
 
             <div className="profile malaika_Arora_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Malaika Arora</b>
                 <br />
                 <p className="bottom_text">
-                Bollywood actress, global influencer
+                  Bollywood actress, global influencer
                 </p>
               </div>
             </div>
 
             <div className="profile karan_Johar_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Karan Johar</b>
                 <br />
-                <p className="bottom_text">
-                Producer, Director and TV hoste
-                </p>
+                <p className="bottom_text">Producer, Director and TV hoste</p>
               </div>
             </div>
           </div>
@@ -419,9 +460,11 @@ const Home = () => {
           </div>
           <div className="profile_cards">
             <div className="profile agnijita_Banerjee_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Agnijita Banerjee</b>
@@ -433,9 +476,11 @@ const Home = () => {
             </div>
 
             <div className="profile hema_Adhikari_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Hema Adhikari</b>
@@ -447,9 +492,11 @@ const Home = () => {
             </div>
 
             <div className="profile rugees_Vini_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Rugees Vini</b>
@@ -461,9 +508,11 @@ const Home = () => {
             </div>
 
             <div className="profile shalini_Chopra_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Shalini Chopra</b>
@@ -475,9 +524,11 @@ const Home = () => {
             </div>
 
             <div className="profile nilam_Parmar_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">SNilam Parmar</b>
@@ -496,37 +547,39 @@ const Home = () => {
           </div>
           <div className="profile_cards">
             <div className="profile virat_Kohli_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Virat Kohli</b>
                 <br />
-                <p className="bottom_text">
-                  International physique Athlete
-                </p>
+                <p className="bottom_text">International physique Athlete</p>
               </div>
             </div>
 
             <div className="profile dhoni_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Dhoni</b>
                 <br />
-                <p className="bottom_text">
-                International physique Athlete
-                </p>
+                <p className="bottom_text">International physique Athlete</p>
               </div>
             </div>
 
             <div className="profile geeta_Phogat_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Geeta Phogat</b>
@@ -538,9 +591,11 @@ const Home = () => {
             </div>
 
             <div className="profile rani_Rampal_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Rani Rampal</b>
@@ -550,9 +605,11 @@ const Home = () => {
             </div>
 
             <div className="profile guru_Mann_profile">
-              <div className="horizontal_line">
-                <div className="red_circle"></div>
+            <div className="profile_center">
+            <div className="horizontal_line">
               </div>
+              <div className="red_circle"></div>
+            </div>
 
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Guru Mann</b>
@@ -627,11 +684,7 @@ const Home = () => {
             convallis diam. Cras vitae tortor
           </div>
           <div className="social_icons">
-            <img
-              className="Facebook_icon"
-              alt="facebook-icon"
-              src={Facebook}
-            />
+            <img className="Facebook_icon" alt="facebook-icon" src={Facebook} />
 
             <img
               className="instagram_icon"
@@ -659,8 +712,6 @@ const Home = () => {
           src={Visa}
         />
       </footer>
-
- 
     </>
   );
 };

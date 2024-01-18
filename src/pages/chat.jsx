@@ -34,7 +34,7 @@ const ChatPage = () => {
   return (
     <>
             <div className="profile_header">
-              <Link to="/home">
+              <Link to="/profile">
    <div className="back_btn">
    
    </div>
