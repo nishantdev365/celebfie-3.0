@@ -30,6 +30,9 @@ const Profile = () => {
           {/* <img src={Profile_back} alt="" /> */}
         </div>
      {showPopUp && (<div className="popup_info">
+     <div className="tapsee_pannu_profile_background">
+          {/* <img src={Profile_back} alt="" /> */}
+        </div>
           <div className="close_btn" onClick={handleCloseButton}>
             <img src={Close} alt="close"/>
           </div>

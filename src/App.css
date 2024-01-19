@@ -1850,10 +1850,10 @@ footer {
     width: 90%;
     height: 90%;
     flex-shrink: 0;
-    background-image: url(./assets/profile/Taapsee-Pannu-bg.png);
-    background-position: top;
+    /* background-image: url(./assets/profile/Taapsee-Pannu-bg.png); */
+    /* background-position: top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; */
     border-radius: 9px;
     border: 1px solid rgba(255, 255, 255, 0.19);
     background-color: #262F4D;
@@ -1863,7 +1863,7 @@ footer {
     justify-content: flex-end;
     align-items: center;
     padding: 20px;
-    gap: 10px;
+    gap: 25px;
 
     box-shadow: 0px 0px 54px 50px;
 
@@ -1893,7 +1893,7 @@ footer {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
+    /* line-height: 20px; */
 
   }
 
@@ -1905,7 +1905,8 @@ footer {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
+    /* line-height: 20px; */
+    margin-bottom: 25px;
     /* 142.857% */
   }
 
