@@ -392,10 +392,15 @@ const Home = () => {
          {/* <Link to="/chatPage"> */}
               {/* <Link to="/chat/taapsee_pannu"> */}
 
-        <div className="explore_bollywood_section">
-          <div className="Explore_Bollywood">
+<div className="profile_section_cards">
+
+<div className="Explore_Bollywood">
             Explore <span>Bollywood Artist</span>
           </div>
+<div className="explore_bollywood_section">
+          {/* <div className="Explore_Bollywood">
+            Explore <span>Bollywood Artist</span>
+          </div> */}
           <div className="profile_cards">
             <div
               className="profile taapsee_Pannu_profile"
@@ -482,10 +487,14 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="explore_influencers_section">
-          <div className="Explore_Influencers">
+        <div className="Explore_Influencers">
             Explore <span>Influencers</span>
           </div>
+
+        <div className="explore_influencers_section">
+          {/* <div className="Explore_Influencers">
+            Explore <span>Influencers</span>
+          </div> */}
           <div className="profile_cards">
             <div className="profile agnijita_Banerjee_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
@@ -574,10 +583,14 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="explore_sport_influencers_section" onClick={handleTriggerClick}>
-          <div className="Explore_Sport_Influencers">
+        <div className="Explore_Sport_Influencers">
             Explore <span>Sport Personalities</span>
           </div>
+
+        <div className="explore_sport_influencers_section" onClick={handleTriggerClick}>
+          {/* <div className="Explore_Sport_Influencers">
+            Explore <span>Sport Personalities</span>
+          </div> */}
           <div className="profile_cards">
             <div className="profile virat_Kohli_profile">
             <div className="profile_center">
@@ -659,6 +672,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+</div>
+
+
 
         <div className="how_to_use_section">
           <div className="theory_how_to_use">

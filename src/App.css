@@ -471,6 +471,21 @@ li:hover {
 }
 
 
+.profile_section_cards {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+
+
+
+
 
 .chat-and-connect,
 .experience-stardom {
@@ -500,27 +515,29 @@ li:hover {
 
 @keyframes drop-in {
   from {
-   opacity: 0;
-   transform: translateY(-80px);
+    opacity: 0;
+    transform: translateY(-80px);
   }
+
   to {
-   opacity: 1;
-   transform: translate(0px);
+    opacity: 1;
+    transform: translate(0px);
   }
- }
+}
 
 .explore_bollywood_section,
 .explore_influencers_section,
 .explore_sport_influencers_section,
 .how_to_use_section {
   width: 100%;
-  padding: 50px 75px 50px 75px;
+  padding: 10px 75px 50px 75px;
   position: relative;
 }
 
 .explore_influencers_section {
   background-color: var(--color-light-black);
-  border: 1px solid #3A3A3A;
+  /* border: 1px solid #3A3A3A; */
+
 }
 
 .profile_cards {
@@ -552,7 +569,16 @@ li:hover {
   font-size: 28px;
   color: var(--color-white);
   font-weight: 700;
-  margin-bottom: 20px;
+  padding-left: 80px;
+  width: inherit;
+  margin-top: 50px;
+}
+
+
+.Explore_Influencers {
+  background-color: var(--color-light-black);
+  /* border: 1px solid #3A3A3A; */
+
 }
 
 .Explore_Sport_Influencers>span,
@@ -624,14 +650,14 @@ li:hover {
 }
 
 
-.start{
+.start {
   width: 85%;
- display: flex;
- justify-content: center;
- position: absolute;
- bottom: 20px;
- color: white;
- opacity: 0;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  opacity: 0;
 }
 
 
@@ -660,10 +686,10 @@ li:hover {
 }
 
 .profile:hover .red_circle {
-  transform: translate(-86px, 45px); 
+  transform: translate(-86px, 45px);
 }
 
-.profile:hover .start{
+.profile:hover .start {
   opacity: 1;
 }
 
@@ -702,7 +728,7 @@ li:hover {
 
 
 
-.coming_soon_popup{
+.coming_soon_popup {
   position: fixed;
   height: 50%;
   width: 50%;
@@ -723,16 +749,16 @@ li:hover {
   font-size: 4rem;
   color: white;
 
- 
+
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 
-.soon_popup{
-color: var(--color-tomato);
+.soon_popup {
+  color: var(--color-tomato);
 }
 
-.close_popup{
+.close_popup {
   width: 55px;
   height: 55px;
   background-image: url(./assets/close.png);
@@ -847,7 +873,7 @@ color: var(--color-tomato);
   border-radius: 8px;
   background-image: url(./assets/slide-img.jpg);
   background-size: cover;
-  
+
   /* background: radial-gradient(50% 50% at 50% 50%, rgba(17, 17, 17, 0.00) 0%, rgba(17, 17, 17, 0.62) 100%); */
 }
 
@@ -1440,7 +1466,7 @@ footer {
   .mobile_banner {
     display: flex;
     /* width: 329.312px; */
-    width: 95vw;
+    width: 92vw;
     height: 175.851px;
     background-image: url(./assets/slide-img.jpg);
     background-size: cover;
@@ -1459,7 +1485,7 @@ footer {
 
   }
 
-  .banner_play{
+  .banner_play {
     background-image: url(./assets/play.svg);
     background-size: 78px;
     background-position: center;
@@ -1471,10 +1497,10 @@ footer {
     background-color: var(--color-light-black);
     opacity: 0.51;
     position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
   }
 
 
@@ -1573,15 +1599,18 @@ footer {
     box-shadow: none;
   }
 
-  /* .profile:hover{
-    backdrop-filter: ;
-  } */
 
   .Explore_Sport_Influencers,
   .Explore_Bollywood,
   .Explore_Influencers {
     padding: 2px;
     font-size: 17px;
+    padding-left: 15px;
+    margin-top: 20px;
+  }
+
+  .Explore_Influencers {
+    background-color: inherit;
   }
 
 
@@ -1603,7 +1632,7 @@ footer {
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: normal;
-   
+
   }
 
 
@@ -1617,14 +1646,14 @@ footer {
   }
 
 
-  .start{
+  .start {
     display: none;
   }
 
   .red_circle {
     width: 30.933px;
     height: 30.973px;
-    background-size: 40%;
+    background-size: 60%;
     right: 10px;
     bottom: 65px;
     z-index: 1;
@@ -1782,7 +1811,8 @@ footer {
     min-height: 100%;
     width: 100%;
     overflow: hidden;
-    background-image: url(./assets/urvashi.png);
+    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Taapsee-Pannu-bg.png), lightgray 50% / cover no-repeat;
+
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
@@ -1797,7 +1827,7 @@ footer {
     width: 90%;
     height: 90%;
     flex-shrink: 0;
-    background-image: url(./assets/urvashi2.png);
+    background-image: url(./assets/profile/Taapsee-Pannu-bg.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1892,7 +1922,7 @@ footer {
     border: 5px solid #05FF00;
     background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
     box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
-    background-image: url(./assets/Celebrity-profiles/Urvashi-Rautela.png)
+    background-image: url(./assets/Celebrity-profiles/Taapsee-Pannu.png)
   }
 
 
@@ -1922,7 +1952,7 @@ footer {
     width: 90vw;
   }
 
-  .secondary_btn{
+  .secondary_btn {
     width: 90vw;
   }
 
@@ -1937,7 +1967,7 @@ footer {
     width: 44vw;
     height: 50px;
     border-radius: 7px;
-    border: 2px solid #4967A6;  
+    border: 2px solid #4967A6;
     background: #0A0F1F;
 
     gap: 10px;
@@ -2116,6 +2146,7 @@ footer {
     height: 46.909px;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     color: #B5CDFF;
     text-align: center;
@@ -2153,20 +2184,20 @@ footer {
     gap: 10px;
   }
 
-  .login_page_btn > .register_page_btn{
-   margin-top: 0 !important;
-   margin-bottom: 40px !important;
+  .login_page_btn>.register_page_btn {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
   }
 
-  .login_page_logo{
+  .login_page_logo {
     background-image: url(./assets/logo.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
     height: 25vh;
     width: 100vw;
-    
-    
+
+
   }
 
   .Please_login {
@@ -2181,7 +2212,7 @@ footer {
 
   .login_page_btn {
     width: 90%;
-    
+
 
   }
 
@@ -2198,7 +2229,7 @@ footer {
     line-height: 25px;
     z-index: 10;
     background-color: var(--color-gray-200);
-    
+
   }
 
   .or_section {
@@ -2226,28 +2257,31 @@ footer {
   .filmmaker-and-television,
   .red_circle,
   .start {
-    opacity: 1 !important; /* Ensure these elements are visible */
-    transform: translateY(0) !important; /* Ensure no transformation on mobile */
+    opacity: 1 !important;
+    /* Ensure these elements are visible */
+    transform: translateY(0) !important;
+    /* Ensure no transformation on mobile */
+    
   }
 
-  .coming_soon_popup{
+  .coming_soon_popup {
 
     height: 25vw;
     width: 35vh;
     font-size: larger;
   }
-  
-  
-  .soon_popup{
-  color: var(--color-tomato);
-  margin-left: 5px;
-  
+
+
+  .soon_popup {
+    color: var(--color-tomato);
+    margin-left: 5px;
+
   }
 
-  .close_popup{
+  .close_popup {
     background-size: 40%;
     top: 10px;
     right: -20px;
   }
-  
+
 }

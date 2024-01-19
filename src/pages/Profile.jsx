@@ -30,7 +30,7 @@ const Profile = () => {
             <img src={Close} alt="close"/>
           </div>
           <p className="first_para">
-            Discover the Art of Glamour with <b>Urvashi Rautela</b>: Elevate your
+            Discover the Art of Glamour with <b>Taapsee Pannu</b>: Elevate your
             journey in the world of modeling
           </p>
 
@@ -38,7 +38,7 @@ const Profile = () => {
             <ul>
               <li><p>
               Discover the Art of Glamour with
-            Urvashi Rautela: Elevate your journey
+              Taapsee Pannu: Elevate your journey
             in the world of modeling</p></li>
             <li>
           <p>Career Insights: Exclusive tips and guidance for aspiring models and actors, including portfolio reviews.</p>
@@ -59,9 +59,9 @@ const Profile = () => {
        </Link>
         <div className="profile_pic"></div>
         <div className="name_details">
-          <b className="profile_name">Urvashi Rautela</b>
+          <b className="profile_name">Taapsee Pannu</b>
           <p className="profile_discription">
-            Bollywood actress, ace dancer
+            Bollywood actress, Producer
           </p>
         </div>
         <div className="primary_btn">
