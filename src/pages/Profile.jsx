@@ -5,6 +5,7 @@ import Idea from "../assets/idea.svg";
 import Learn from "../assets/learn.svg";
 import Chat from "../assets/chat.svg";
 import Close from "../assets/close.png";
+// import Profile_back from "../assets/profile/taapsee-pannu-bg.png"
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -25,6 +26,9 @@ const Profile = () => {
   return (
     <>
       <section className="profile_page">
+        <div className="tapsee_pannu_profile_background">
+          {/* <img src={Profile_back} alt="" /> */}
+        </div>
      {showPopUp && (<div className="popup_info">
           <div className="close_btn" onClick={handleCloseButton}>
             <img src={Close} alt="close"/>

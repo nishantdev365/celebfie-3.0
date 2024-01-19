@@ -1811,16 +1811,39 @@ footer {
     min-height: 100%;
     width: 100%;
     overflow: hidden;
-    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Taapsee-Pannu-bg.png), lightgray 50% / cover no-repeat;
-
-    background-size: contain;
+    /* background-image: url(./assets/profile/Taapsee-Pannu-bg.png); */
+    /* background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), lightgray 50% / cover no-repeat; */
+    
+    /* background-size: contain;
     background-position: top;
-    background-repeat: no-repeat;
-    z-index: 1000;
+    background-repeat: no-repeat; */
+    /* z-index: 1000; */
     background-color: var(--color-gray-200);
     gap: 10px;
 
   }
+
+  .tapsee_pannu_profile_background{
+    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Taapsee-Pannu-bg.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  /* .tapsee_pannu_profile_background > img{
+    width: 100%;
+    height: 40vh;
+  } */
+
+  /* .profile_page::before{
+    content: "";
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.5));
+
+  } */
 
   .popup_info {
     position: absolute;
