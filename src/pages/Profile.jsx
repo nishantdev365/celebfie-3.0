@@ -30,13 +30,14 @@ const Profile = () => {
           {/* <img src={Profile_back} alt="" /> */}
         </div>
      {showPopUp && (<div className="popup_info">
-     <div className="tapsee_pannu_profile_background">
+     <div className="tapsee_pannu_profile_background popup_background">
           {/* <img src={Profile_back} alt="" /> */}
         </div>
           <div className="close_btn" onClick={handleCloseButton}>
             <img src={Close} alt="close"/>
           </div>
-          <p className="first_para">
+    <div className="profile_paragraph">
+    <p className="first_para">
             Discover the Art of Glamour with <b>Taapsee Pannu</b>: Elevate your
             journey in the world of modeling
           </p>
@@ -55,6 +56,7 @@ const Profile = () => {
             </li>
             </ul>
           </div>
+    </div>
 
           <div className="popup_btn">
             <span>Pay Now</span><img className="popup_arrow" src={Right} alt="right" />
