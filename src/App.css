@@ -266,7 +266,7 @@ nav {
 
 
 
-li {
+/* li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,7 +274,7 @@ li {
   cursor: pointer;
   height: 100%;
   color: grey;
-}
+} */
 
 /* li > span{
        padding-top: 26px;
@@ -282,12 +282,12 @@ li {
   } */
 
 
-li:hover {
+/* li:hover {
   border-bottom: 4px solid;
   border-color: var(--color-white);
   background: rgba(22, 36, 79, 0.10);
   color: var(--color-white);
-}
+} */
 
 
 /* i {
@@ -1877,7 +1877,7 @@ footer {
   }
 
   .first_para {
-    width: 90%;
+   
     color: #FFF;
 
     font-size: 16px;
