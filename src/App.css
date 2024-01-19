@@ -394,6 +394,7 @@ nav {
   left: 10%;
   height: 25px;
   width: 25px;
+
 }
 
 .watch-video {
@@ -418,6 +419,7 @@ nav {
   background-color: var(--color-tomato);
   width: 179px;
   height: 53px;
+  cursor: pointer;
 }
 
 .learn-more {
@@ -443,6 +445,7 @@ nav {
   box-sizing: border-box;
   width: 176px;
   height: 53px;
+  cursor: pointer;
 }
 
 .blob1 {
@@ -543,7 +546,7 @@ nav {
 .profile_cards {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -1466,7 +1469,7 @@ footer {
   .mobile_banner {
     display: flex;
     /* width: 329.312px; */
-    width: 92vw;
+    width: 95vw;
     height: 175.851px;
     background-image: url(./assets/slide-img.jpg);
     background-size: cover;
@@ -1580,6 +1583,7 @@ footer {
     -ms-overflow-style: none;
     scrollbar-width: none;
     gap: 10px;
+
   }
 
   .horizontal_line {
@@ -1787,7 +1791,7 @@ footer {
 
   .profile_header {
     top: 0;
-    
+
   }
 
   .filmmaker-and-television2 {
@@ -1813,7 +1817,7 @@ footer {
     overflow: hidden;
     /* background-image: url(./assets/profile/Taapsee-Pannu-bg.png); */
     /* background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), lightgray 50% / cover no-repeat; */
-    
+
     /* background-size: contain;
     background-position: top;
     background-repeat: no-repeat; */
@@ -1823,7 +1827,7 @@ footer {
 
   }
 
-  .tapsee_pannu_profile_background{
+  .tapsee_pannu_profile_background {
     background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Taapsee-Pannu-bg.png), lightgray 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1856,7 +1860,7 @@ footer {
     background-size: contain; */
 
 
-    
+
     border-radius: 9px;
     border: 1px solid rgba(255, 255, 255, 0.19);
     background-color: #262F4D;
@@ -1874,21 +1878,21 @@ footer {
 
   }
 
-  .popup_background{
+  .popup_background {
     border-radius: 10px 10px 0px 0px;
 
-   
+
   }
 
-  .profile_paragraph{
- 
+  .profile_paragraph {
+
     display: flex;
     flex-direction: column;
     height: 45%;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    
+
   }
 
   .close_btn {
@@ -1899,7 +1903,7 @@ footer {
   }
 
   .first_para {
-   
+
     color: #FFF;
 
     font-size: 16px;
@@ -2024,7 +2028,8 @@ footer {
     font-size: 19px;
     font-style: normal;
     font-weight: 600;
-    line-height: 24px; /* 126.316% */
+    line-height: 24px;
+    /* 126.316% */
 
   }
 
@@ -2310,7 +2315,7 @@ footer {
     /* Ensure these elements are visible */
     transform: translateY(0) !important;
     /* Ensure no transformation on mobile */
-    
+
   }
 
   .coming_soon_popup {
