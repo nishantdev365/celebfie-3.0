@@ -1448,7 +1448,7 @@ footer {
   .login_container_intro,
   .register_container_intro {
     color: var(--color-white);
-    background-color: var(--color-gray-200);
+    background-color: #061635;
     border: 2px solid var(--color-gray-200);
     border: 2px solid var(--color-light-blue-grey);
     text-align: center;
@@ -2007,6 +2007,7 @@ footer {
   .horizontal {
     width: 90vw;
     height: 1px;
+    margin: 10px 0 10px 0;
     background: #354269;
   }
 
@@ -2039,6 +2040,7 @@ footer {
     color: #B5CDFF;
     text-align: center;
     padding: 0 10px 0 10px;
+    background-color: #061635;
     font-size: 19px;
     font-style: normal;
     font-weight: 600;
@@ -2180,7 +2182,7 @@ footer {
     border-radius: 8px;
     /* background-color: #B5CDFF; */
 
-    background-color: var(--color-gray-200);
+    background-color: #061635;
     border: 2px solid #B5CDFF;
     margin-top: 30px;
   }
