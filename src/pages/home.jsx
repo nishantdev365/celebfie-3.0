@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import ReactPlayer from "react-player";
 import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
+// import Signup from "../components/signup";
 
 
 const Home = () => {
@@ -19,6 +20,12 @@ const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
+  // const [showSignup, setShowSignup] = useState(false);
+
+  // const handleSignupButtonClick = () => {
+  //   setShowSignup(!showSignup); // Toggle the state (show/hide)
+  // };
+  
 
   const handleTriggerClick = () => {
     setPopupOpen(!isPopupOpen);
@@ -52,17 +59,49 @@ const Home = () => {
     };
   }, []);
 
-  const handleCardClick = () => {
+  const handlTaapseePage = () => {
     if (isMobile) {
-      navigate("/profile");
+      navigate("/taapsee-profile");
     } else {
-      navigate("/chat/taapsee_pannu");
+      navigate("/taapsee-pannu");
+    }
+  };
+  const handlUrvashiPage = () => {
+    if (isMobile) {
+      navigate("/urvashi-profile");
+    } else {
+      navigate("/urvashi-rautela");
+    }
+  };
+  
+  const handlSukhwinderPage = () => {
+    if (isMobile) {
+      navigate("/sukhwinder-profile");
+    } else {
+      navigate("/sukhwinder-singh");
+    }
+  };
+  
+  const handlMalaikaPage = () => {
+    if (isMobile) {
+      navigate("/malaika-profile");
+    } else {
+      navigate("/malaika-arora");
+    }
+  };
+
+  const handlKaranPage = () => {
+    if (isMobile) {
+      navigate("/karan-profile");
+    } else {
+      navigate("/karan-johar");
     }
   };
 
   return (
     <>
-      <section className="homepage">
+      <section className="homepage"> 
+      {/* {showSignup && <Signup />} */}
         <div className="mobile_banner">
           <div className="banner_play" onClick={openModal}></div>
           {isMobile && (
@@ -404,7 +443,7 @@ const Home = () => {
           <div className="profile_cards">
             <div
               className="profile taapsee_Pannu_profile"
-              onClick={handleCardClick}
+              onClick={handlTaapseePage}
             >
              
               <div className="profile_center">
@@ -423,7 +462,7 @@ const Home = () => {
               {/* </Link> */}
             </div>
 
-            <div className="profile urvashi_Rautela_profile" onClick={handleTriggerClick}>
+            <div className="profile urvashi_Rautela_profile" onClick={handlUrvashiPage} >
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -436,9 +475,10 @@ const Home = () => {
                 <p className="bottom_text">Bollywood actress, ace dancer</p>
               </div>
               <p className="start">Start Chat</p>
+              {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
             </div>
 
-            <div className="profile sukhwinder_Singh_profile" onClick={handleTriggerClick}>
+            <div className="profile sukhwinder_Singh_profile" onClick={handlSukhwinderPage}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -451,9 +491,10 @@ const Home = () => {
                 <p className="bottom_text">Singer, Rockstar Performer</p>
               </div>
               <p className="start">Start Chat</p>
+              <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p>
             </div>
 
-            <div className="profile malaika_Arora_profile" onClick={handleTriggerClick}>
+            <div className="profile malaika_Arora_profile" onClick={handlMalaikaPage}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -470,7 +511,7 @@ const Home = () => {
               <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile karan_Johar_profile" onClick={handleTriggerClick}>
+            <div className="profile karan_Johar_profile" onClick={handlKaranPage}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -480,7 +521,7 @@ const Home = () => {
               <div className="filmmaker-and-television">
                 <b className="celeb_name">Karan Johar</b>
                 <br />
-                <p className="bottom_text">Producer, Director and TV hoste</p>
+                <p className="bottom_text">Producer, Director and TV host</p>
               </div>
               <p className="start">Start Chat</p>
             </div>

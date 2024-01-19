@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 
-const ChatPage = () => {
+const UrvashiChatPage = () => {
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(false);
@@ -64,7 +64,7 @@ const ChatPage = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/profile");
+      navigate("/urvashi-profile");
     } else {
       navigate("/home");
     }
@@ -73,11 +73,17 @@ const ChatPage = () => {
   return (
     <>
       <Helmet>
-        <meta property="og:title" content="Taapsee Pannu" />
+        <meta charSet="utf-8" />
+        <title>Taapsee Pannu</title>
+        <meta name="description" content="Indian actress and producer" />
+        <link rel="canonical" href="http://mysite.com/example" />
+        <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
+      
+       
+        {/* <meta property="og:title" content="Taapsee Pannu" />
         <meta property="og:description" content="Indian actress and producer" />
         <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
-        <meta property="og:url" content={window.location.href} />
-        {/* Add other Open Graph meta tags as needed */}
+        <meta property="og:url" content={window.location.href} /> */}
       </Helmet>
 
       <div className="profile_header">
@@ -90,13 +96,13 @@ const ChatPage = () => {
         {/* </Link> */}
         <div className="rectangle-group" id="profileName">
           {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
-          <div className="rectangle-icon" alt="profile-pic">
+          <div className="urvashi_pic" alt="profile-pic">
         
           </div>
           <div className="taapsee-pannu-parent">
-            <div className="taapsee-pannu">Taapsee Pannu</div>
+            <div className="taapsee-pannu">Urvashi Rautela</div>
             <div className="filmmaker-and-television2">
-              Indian actress and producer
+            Bollywood actress, ace dancer
             </div>
           </div>
         </div>
@@ -114,4 +120,4 @@ const ChatPage = () => {
   );
 };
 
-export default ChatPage;
+export default UrvashiChatPage;

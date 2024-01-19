@@ -120,6 +120,8 @@ body {
 
 }
 
+
+
 #intro_signup {
   display: none;
   position: absolute;
@@ -566,6 +568,10 @@ nav {
   box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
 }
 
+
+
+
+
 .Explore_Sport_Influencers,
 .Explore_Bollywood,
 .Explore_Influencers {
@@ -730,7 +736,6 @@ nav {
 /* ------------------animation----------------- */
 
 
-
 .coming_soon_popup {
   position: fixed;
   height: 50%;
@@ -740,21 +745,31 @@ nav {
   background-color: rgba(8, 12, 25, 0.62);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-
   /* Center the div */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
+  /* Adjusted this line */
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
   color: white;
-
-
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+  transform-origin: center;
 }
+
+@keyframes myAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 
 
 .soon_popup {
@@ -799,6 +814,16 @@ nav {
   bottom: 90px;
   transition: transform 0.5s ease;
   /* transform: translateY(-50%); */
+}
+
+.members_only {
+  position: absolute;
+  bottom: 2px;
+  color: white;
+}
+
+.members_span {
+  color: var(--color-tomato);
 }
 
 .celeb_name {
@@ -1134,6 +1159,49 @@ footer {
   object-fit: cover;
 }
 
+
+.urvashi_pic {
+  background-image: url(./assets/Celebrity-profiles/Urvashi-Rautela.png);
+  background-size: cover;
+  border-radius: 37px;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.sukhwinder_pic{
+  background-image: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png);
+  background-size: cover;
+  border-radius: 37px;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.karan_pic{
+  background-image: url(./assets/Celebrity-profiles/Karan-Johar.png);
+  background-size: cover;
+  border-radius: 37px;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+
+
+.malaika_pic{
+  background-image: url(./assets/Celebrity-profiles/Malaika-Arora.png);
+  background-size: cover;
+  border-radius: 37px;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
 .rectangle-group {
   display: flex;
   justify-content: flex-start;
@@ -1371,24 +1439,33 @@ footer {
   }
 
   .signup_section {
-    background: linear-gradient(0deg, #0A0F1F 56.4%, rgba(10, 15, 31, 0.28) 99.88%);
-    max-width: 100%;
+    display: none;
+    max-width: 95%;
     max-height: 90%;
+    
 
-    opacity: 0;
+    /* opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s; */
   }
 
-  .signup_section.show {
-    /* Apply styles for the visible state */
+
+  
+
+  /* .signup_section.show {
+
     opacity: 1;
     transform: translate(-220px, -220px);
-  }
+  } */
 
-  .members-only {
+  /* .members-only {
     display: none;
-  }
+  } */
+  
+
+  /* .iconplus{
+    
+  } */
 
 
   .rectangle-div,
@@ -1408,9 +1485,6 @@ footer {
     width: 100%;
   }
 
-  .iconplus {
-    display: none;
-  }
 
   .login-container,
   .register-container {
@@ -1599,8 +1673,23 @@ footer {
   .profile {
     justify-content: flex-end;
     width: 140px;
-    height: 210px;
+    height: 220px;
     box-shadow: none;
+    opacity: 1;
+    opacity: 1;
+    transition: opacity 1s ease 0s;
+  }
+
+  .profile:hover {
+    opacity: 0.6;
+  }
+
+  .members_only {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 2px;
   }
 
 
@@ -1645,7 +1734,7 @@ footer {
     padding: 10px;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
-
+    height: 42%;
     background: #202946;
   }
 
@@ -1659,7 +1748,7 @@ footer {
     height: 30.973px;
     background-size: 60%;
     right: 10px;
-    bottom: 65px;
+    bottom: 76px;
     z-index: 1;
   }
 
@@ -1824,7 +1913,12 @@ footer {
     /* z-index: 1000; */
     background-color: var(--color-gray-200);
     gap: 10px;
+    transition: filter 0.5s ease;
+    /* Add transition for a smooth effect */
+  }
 
+  .blur-background {
+    filter: blur(5px);
   }
 
   .tapsee_pannu_profile_background {
@@ -1836,6 +1930,54 @@ footer {
     width: 100%;
     height: 40%;
     z-index: -1;
+  }
+
+  .malaika_arora_profile_background {
+    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/MalaikaArora-BG.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  .sukhwinder_singh_profile_background {
+    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Sukhwinder-Singh-BG.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+
+
+  .karan_johar_profile_background {
+    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Karan-Johar-BG.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  .urvashi_rautela_profile_background{
+
+    background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Urvashi-Rautela-bg.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+
   }
 
   /* .tapsee_pannu_profile_background > img{
@@ -1872,7 +2014,7 @@ footer {
     padding: 20px;
     gap: 20px;
 
-    box-shadow: 0px 0px 54px 50px;
+    /* box-shadow: 0px 0px 54px 50px; */
 
 
 
@@ -1900,6 +2042,7 @@ footer {
     top: 0;
     right: 0;
     margin: 20px;
+
   }
 
   .first_para {
@@ -1960,6 +2103,7 @@ footer {
   .popup_arrow {
     position: absolute;
     right: 50px;
+
   }
 
 
@@ -1974,6 +2118,53 @@ footer {
     background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
     box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
     background-image: url(./assets/Celebrity-profiles/Taapsee-Pannu.png)
+  }
+
+  .malaika_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05FF00;
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Malaika-Arora.png)
+  }
+
+  .sukhwinder_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05FF00;
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png)
+  }
+
+
+
+  
+  .karan_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05FF00;
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Karan-Johar.png)
+  }
+
+  .urvashi_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05FF00;
+    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Urvashi-Rautela.png)
   }
 
 
@@ -2322,7 +2513,19 @@ footer {
 
     height: 25vw;
     width: 35vh;
-    font-size: larger;
+    font-size: 1.5rem;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    transform-origin: center;
+  }
+
+  @keyframes myAnim {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 
 

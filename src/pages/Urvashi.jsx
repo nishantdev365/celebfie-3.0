@@ -1,3 +1,4 @@
+
 import Right from "../assets/right-arrow.png";
 import Bell from "../assets/bell-icon.svg";
 import Gift from "../assets/gift.svg";
@@ -6,12 +7,15 @@ import Learn from "../assets/learn.svg";
 import Chat from "../assets/chat.svg";
 import Close from "../assets/close.png";
 // import Profile_back from "../assets/profile/taapsee-pannu-bg.png"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const Profile = () => {
+const Urvashi = () => {
+  const navigate = useNavigate();
   const [showPopUp, setshowPopUp] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleCloseButton = () => {
     setshowPopUp(false);
@@ -21,16 +25,43 @@ const Profile = () => {
     setshowPopUp(true);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleBack = () => {
+    navigate("/home")
+  }
+
+
+  const handleCardClick = () => {
+    if (isMobile) {
+      navigate("/urvashi-rautela");
+    } else {
+      navigate("/urvashi-rautela");
+    }
+  };
+
 
 
   return (
     <>
       <section className="profile_page">
-        <div className="tapsee_pannu_profile_background">
+        <div className={`urvashi_rautela_profile_background ${showPopUp ? 'blur-background' : ''}`}>
           {/* <img src={Profile_back} alt="" /> */}
         </div>
      {showPopUp && (<div className="popup_info">
-     <div className="tapsee_pannu_profile_background popup_background">
+     <div className="urvashi_rautela_profile_background popup_background">
           {/* <img src={Profile_back} alt="" /> */}
         </div>
           <div className="close_btn" onClick={handleCloseButton}>
@@ -38,7 +69,7 @@ const Profile = () => {
           </div>
     <div className="profile_paragraph">
     <p className="first_para">
-            Discover the Art of Glamour with <b>Taapsee Pannu</b>: Elevate your
+            Discover the Art of Glamour with <b>Urvashi Rautela</b>: Elevate your
             journey in the world of modeling
           </p>
 
@@ -46,7 +77,7 @@ const Profile = () => {
             <ul>
               <li><p>
               Discover the Art of Glamour with
-              Taapsee Pannu: Elevate your journey
+              Uvashi Rautela: Elevate your journey
             in the world of modeling</p></li>
             <li>
           <p>Career Insights: Exclusive tips and guidance for aspiring models and actors, including portfolio reviews.</p>
@@ -63,14 +94,14 @@ const Profile = () => {
           </div>
         </div>)   }
 
-       <Link to="/home">
-       <div className="back_btn_profile"></div>
-       </Link>
-        <div className="profile_pic"></div>
+       {/* <Link to="/home"> */}
+       <div className="back_btn_profile" onClick={handleBack}></div>
+       {/* </Link> */}
+        <div className="urvashi_profile_pic"></div>
         <div className="name_details">
-          <b className="profile_name">Taapsee Pannu</b>
+          <b className="profile_name">Uvashi Rautela</b>
           <p className="profile_discription">
-            Bollywood actress, Producer
+          Bollywood actress, ace dancer
           </p>
         </div>
         <div className="primary_btn">
@@ -79,13 +110,13 @@ const Profile = () => {
             <p>Subscribe</p>
           </div>
 
-         <Link to="/chat/taapsee_pannu">
-         <div className="talk_2_me">
+         {/* <Link to="taapsee-pannu"> */}
+         <div className="talk_2_me" onClick={handleCardClick}>
 
             <img src={Chat} alt="chat" className="primary_img" />
             <p>Talk To Me</p>
           </div>
-         </Link>
+         {/* </Link> */}
         </div>
 
         <div className="horizontal"></div>
@@ -114,4 +145,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Urvashi;
