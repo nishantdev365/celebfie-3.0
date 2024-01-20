@@ -132,7 +132,7 @@ const Home = () => {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png"
+          content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celebfie.vercel.app" />

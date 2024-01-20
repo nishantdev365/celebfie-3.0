@@ -110,7 +110,7 @@ const SukhwinderChatPage = () => {
        
         <meta property="og:title" content="Sukhwinder Singh" />
         <meta property="og:description" content="Singer, Rockstar Performer" />
-        <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
+        <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celebfie.vercel.app/chat/sukhwinder-singh"/>
       </Helmet>
