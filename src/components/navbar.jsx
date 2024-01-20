@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Logo from '../assets/logo.svg';
 // import { Link } from "react-router-dom";
 // import Signup from "./signup";
-// import { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   // const location = useLocation();
   // const isChatPage = location.pathname.includes("/chatPage");
 
@@ -17,6 +19,24 @@ const Navbar = () => {
   // const handleSignupButtonClick = () => {
   //   setShowSignup(true);
   // };
+
+  useEffect(() => {
+    let MemberSpace = window.MemberSpace || { subdomain: "celebfie" };
+    (function (d) {
+      var s = d.createElement("script");
+      s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+      var e = d.getElementsByTagName("script")[0];
+      e.parentNode.insertBefore(s, e);
+    })(document);
+
+    return () => {};
+  }, []);
+
+  useEffect(() => {
+    if (window.Memberspace && !window.Memberspace.isMember()) {
+      navigate("/?msopen=/member/sign_in");
+    }
+  }, [navigate]);
 
 
   return (
@@ -52,8 +72,8 @@ const Navbar = () => {
             </ul>
           </div> */}
         </div>
-        <div className="signup_btn">
-          {/* <button className="register_btn" id="register_btn" onClick={handleSignupButtonClick}> */}
+        {/* <div className="signup_btn">
+      
           <button className="register_btn" id="register_btn">
             <b className="login" >Register</b>
           </button>
@@ -61,7 +81,7 @@ const Navbar = () => {
           <button className="login_btn">
             <b className="login">Login</b>
           </button>
-        </div>
+        </div> */}
 
         {/* <img src={BurgerMenu} className="burger_menu" alt=""/> */}
       </nav>

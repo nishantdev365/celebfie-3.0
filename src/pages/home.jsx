@@ -26,23 +26,23 @@ const Home = () => {
   //   setShowSignup(!showSignup); // Toggle the state (show/hide)
   // };
 
-  useEffect(() => {
-    let MemberSpace = window.MemberSpace || { subdomain: "celebfie" };
-    (function (d) {
-      var s = d.createElement("script");
-      s.src = "https://cdn.memberspace.com/scripts/widgets.js";
-      var e = d.getElementsByTagName("script")[0];
-      e.parentNode.insertBefore(s, e);
-    })(document);
+  // useEffect(() => {
+  //   let MemberSpace = window.MemberSpace || { subdomain: "celebfie" };
+  //   (function (d) {
+  //     var s = d.createElement("script");
+  //     s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+  //     var e = d.getElementsByTagName("script")[0];
+  //     e.parentNode.insertBefore(s, e);
+  //   })(document);
 
-    return () => {};
-  }, []);
+  //   return () => {};
+  // }, []);
 
-  useEffect(() => {
-    if (window.Memberspace && !window.Memberspace.isMember()) {
-      navigate("/?msopen=/member/sign_in");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (window.Memberspace && !window.Memberspace.isMember()) {
+  //     navigate("/?msopen=/member/sign_in");
+  //   }
+  // }, [navigate]);
 
   const handleTriggerClick = () => {
     setPopupOpen(!isPopupOpen);
