@@ -78,7 +78,7 @@ const Home = () => {
     if (isMobile) {
       navigate("/sukhwinder-profile");
     } else {
-      navigate("/sukhwinder-singh");
+      navigate("/chat/sukhwinder-singh");
     }
   };
   

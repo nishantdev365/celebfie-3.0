@@ -41,7 +41,7 @@ function App() {
           {/* <Route path="/chat" element={<> <Navbar /> <Chat /></>} /> */}
           <Route path="/taapsee-pannu" element={<> <TaapseeChatPage /></>} />
           <Route path="/urvashi-rautela" element={<> <UrvashiChatPage /></>} />
-          <Route path="/sukhwinder-singh" element={<> <SukhwinderChatPage /></>} />
+          <Route path="/chat/:profileName" element={<> <SukhwinderChatPage /></>} />
           <Route path="/malaika-arora" element={<> <MalaikaChatPage /></>} />
           <Route path="/karan-johar" element={<> <KaranChatPage /></>} />
        
