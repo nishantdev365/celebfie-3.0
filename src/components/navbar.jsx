@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import Logo from '../assets/logo.svg';
 // import { Link } from "react-router-dom";
 // import Signup from "./signup";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
+// s
 
 // import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const location = useLocation();
   // const isChatPage = location.pathname.includes("/chatPage");
 
@@ -20,23 +20,23 @@ const Navbar = () => {
   //   setShowSignup(true);
   // };
 
-  useEffect(() => {
-    let MemberSpace = window.MemberSpace || { subdomain: "celebfie" };
-    (function (d) {
-      var s = d.createElement("script");
-      s.src = "https://cdn.memberspace.com/scripts/widgets.js";
-      var e = d.getElementsByTagName("script")[0];
-      e.parentNode.insertBefore(s, e);
-    })(document);
+  // useEffect(() => {
+  //   let MemberSpace = window.MemberSpace || { subdomain: "celebfie" };
+  //   (function (d) {
+  //     var s = d.createElement("script");
+  //     s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+  //     var e = d.getElementsByTagName("script")[0];
+  //     e.parentNode.insertBefore(s, e);
+  //   })(document);
 
-    return () => {};
-  }, []);
+  //   return () => {};
+  // }, []);
 
-  useEffect(() => {
-    if (window.Memberspace && !window.Memberspace.isMember()) {
-      navigate("/?msopen=/member/sign_in");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (window.Memberspace && !window.Memberspace.isMember()) {
+  //     navigate("/?msopen=/member/sign_in");
+  //   }
+  // }, [navigate]);
 
 
   return (
@@ -44,7 +44,7 @@ const Navbar = () => {
       <nav>
      {/* {showSignup && <Signup />} */}
         <div className="menu_options">
-        <Link to="/home"> 
+        <Link to="/"> 
           <div className="logo">
             <img src={Logo} alt="Celebfie"  />
           </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
             </ul>
           </div> */}
         </div>
-        {/* <div className="signup_btn">
+        <div className="signup_btn">
       
           <button className="register_btn" id="register_btn">
             <b className="login" >Register</b>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <button className="login_btn">
             <b className="login">Login</b>
           </button>
-        </div> */}
+        </div>
 
         {/* <img src={BurgerMenu} className="burger_menu" alt=""/> */}
       </nav>
