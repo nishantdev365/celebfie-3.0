@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import BurgerMenu from "../assets/burger-menu.svg"
 import Logo from '../assets/logo.svg';
 // import { Link } from "react-router-dom";
-import Signup from "./signup";
-import { useState } from "react";
-import Facebook from "../assets/facebook_icon.png";
-import Instagram from "../assets/instagram_icon.png";
+// import Signup from "./signup";
+// import { useState } from "react";
+
 // import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -13,17 +12,17 @@ const Navbar = () => {
   // const isChatPage = location.pathname.includes("/chatPage");
 
     
-  const [showSignup, setShowSignup] = useState(false);
+  // const [showSignup, setShowSignup] = useState(false);
 
-  const handleSignupButtonClick = () => {
-    setShowSignup(true);
-  };
+  // const handleSignupButtonClick = () => {
+  //   setShowSignup(true);
+  // };
 
 
   return (
     <>
       <nav>
-     {showSignup && <Signup />}
+     {/* {showSignup && <Signup />} */}
         <div className="menu_options">
         <Link to="/home"> 
           <div className="logo">
@@ -53,25 +52,16 @@ const Navbar = () => {
             </ul>
           </div> */}
         </div>
-        {/* <div className="signup_btn">
-          <button className="register_btn" id="register_btn" onClick={handleSignupButtonClick}>
+        <div className="signup_btn">
+          {/* <button className="register_btn" id="register_btn" onClick={handleSignupButtonClick}> */}
+          <button className="register_btn" id="register_btn">
             <b className="login" >Register</b>
           </button>
 
           <button className="login_btn">
             <b className="login">Login</b>
           </button>
-        </div> */}
-
-<div className="social_icons">
-            <img className="Facebook_icon" alt="facebook-icon" src={Facebook} />
-
-            <img
-              className="instagram_icon"
-              alt="instagram-icon"
-              src={Instagram}
-            />
-          </div>
+        </div>
 
         <img src={BurgerMenu} className="burger_menu" alt=""/>
       </nav>

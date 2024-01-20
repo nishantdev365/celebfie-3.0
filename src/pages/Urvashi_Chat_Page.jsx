@@ -107,10 +107,10 @@ const UrvashiChatPage = () => {
         <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
       
        
-        {/* <meta property="og:title" content="Urvashi Rautela" />
+        <meta property="og:title" content="Urvashi Rautela" />
         <meta property="og:description" content="Bollywood actress, ace dancer" />
         <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
-        <meta property="og:url" content={window.location.href} /> */}
+        <meta property="og:url" content="https://celebfie.vercel.app/chat/urvashi-rautela" />
       </Helmet>
 
       <div className="profile_header">

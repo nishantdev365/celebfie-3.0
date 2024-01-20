@@ -102,14 +102,14 @@ const KaranChatPage = () => {
         <meta charSet="utf-8" />
         <title>Karan Johar</title>
         <meta name="description" content="Producer, Director and TV host" />
-        <link rel="canonical" href="https://celebfie.vercel.app/chat/sukhwinder-singh" />
+        <link rel="canonical" href="https://celebfie.vercel.app/chat/karan-johar" />
         <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
       
        
         <meta property="og:title" content="Karan Johar" />
         <meta property="og:description" content="Producer, Director and TV host"/>
         <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content="https://celebfie.vercel.app/chat/karan-johar" />
       </Helmet>
 
       <div className="profile_header">

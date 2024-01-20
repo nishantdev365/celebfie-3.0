@@ -102,14 +102,14 @@ const MalaikaChatPage = () => {
         <meta charSet="utf-8" />
         <title>Malaika Arora</title>
         <meta name="description" content="Bollywood actress, global influencer" />
-        <link rel="canonical" href="hhttps://celebfie.vercel.app/chat/malaika-arora" />
+        <link rel="canonical" href="https://celebfie.vercel.app/chat/malaika-arora" />
         <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
       
        
         <meta property="og:title" content="Malaika Arora" />
         <meta property="og:description" content="IBollywood actress, global influencer" />
         <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content="https://celebfie.vercel.app/chat/malaika-arora" />
       </Helmet>
 
       <div className="profile_header">

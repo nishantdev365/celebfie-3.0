@@ -102,14 +102,14 @@ const TaapseeChatPage = () => {
         <meta charSet="utf-8" />
         <title>Taapsee Pannu</title>
         <meta name="description" content="Indian actress and producer" />
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link rel="canonical" href="https://celebfie.vercel.app/chat/taapsee-pannu" />
         <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
       
        
-        {/* <meta property="og:title" content="Taapsee Pannu" />
+        <meta property="og:title" content="Taapsee Pannu" />
         <meta property="og:description" content="Indian actress and producer" />
         <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
-        <meta property="og:url" content={window.location.href} /> */}
+        <meta property="og:url" content="https://celebfie.vercel.app/chat/taapsee-pannu" />
       </Helmet>
 
       <div className="profile_header">
