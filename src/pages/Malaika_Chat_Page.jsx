@@ -109,6 +109,7 @@ const MalaikaChatPage = () => {
         <meta property="og:title" content="Malaika Arora" />
         <meta property="og:description" content="IBollywood actress, global influencer" />
         <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celebfie.vercel.app/chat/malaika-arora" />
       </Helmet>
 
