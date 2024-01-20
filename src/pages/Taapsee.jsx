@@ -45,9 +45,9 @@ const Taapsee = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/taapsee-pannu");
+      navigate("/chat/taapsee-pannu");
     } else {
-      navigate("/taapsee-pannu");
+      navigate("/chat/taapsee-pannu");
     }
   };
 

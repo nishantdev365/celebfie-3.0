@@ -45,9 +45,9 @@ const Karan = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/karan-johar");
+      navigate("/chat/karan-johar");
     } else {
-      navigate("/karan-johar");
+      navigate("/chat/karan-johar");
     }
   };
 

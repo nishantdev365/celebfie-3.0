@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
-import Info from "../assets/info.png";
+// import Info from "../assets/info.png";
 // import Banner from "../assets/slide-img.png"
 import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
@@ -25,6 +25,31 @@ const Home = () => {
   // const handleSignupButtonClick = () => {
   //   setShowSignup(!showSignup); // Toggle the state (show/hide)
   // };
+
+  
+  // useEffect(() => {
+   
+  //   let MemberSpace = window.MemberSpace || {"subdomain":"celebfie"};
+  //   (function(d){
+  //     var s = d.createElement("script");
+  //     s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+  //     var e = d.getElementsByTagName("script")[0];
+  //     e.parentNode.insertBefore(s, e);
+  //   })(document);
+
+    
+  //   return () => {
+     
+  //   };
+  // }, []); 
+
+  // useEffect(() => {
+
+  //   if (window.Memberspace && !window.Memberspace.isMember()) {
+    
+  //     navigate("/?msopen=/member/sign_in");
+  //   }
+  // }, [navigate]);
   
 
   const handleTriggerClick = () => {
@@ -61,22 +86,22 @@ const Home = () => {
 
   const handlTaapseePage = () => {
     if (isMobile) {
-      navigate("/taapsee-profile");
+      navigate("/chat/taapsee-pannu");
     } else {
-      navigate("/taapsee-pannu");
+      navigate("/chat/taapsee-pannu");
     }
   };
   const handlUrvashiPage = () => {
     if (isMobile) {
-      navigate("/urvashi-profile");
+      navigate("/chat/urvashi-rautela");
     } else {
-      navigate("/urvashi-rautela");
+      navigate("/chat/urvashi-rautela");
     }
   };
   
   const handlSukhwinderPage = () => {
     if (isMobile) {
-      navigate("/sukhwinder-profile");
+      navigate("/chat/sukhwinder-singh");
     } else {
       navigate("/chat/sukhwinder-singh");
     }
@@ -84,17 +109,17 @@ const Home = () => {
   
   const handlMalaikaPage = () => {
     if (isMobile) {
-      navigate("/malaika-profile");
+      navigate("/chat/malaika-arora");
     } else {
-      navigate("/malaika-arora");
+      navigate("/chat/malaika-arora");
     }
   };
 
   const handlKaranPage = () => {
     if (isMobile) {
-      navigate("/karan-profile");
+      navigate("/chat/karan-johar");
     } else {
-      navigate("/karan-johar");
+      navigate("/chat/karan-johar");
     }
   };
 
@@ -147,7 +172,7 @@ const Home = () => {
             </div>
           )}
         </div>
-        <div className="banner_section">
+        {/* <div className="banner_section">
           <div className="blobs">
             <svg
               className="blob2"
@@ -417,7 +442,7 @@ const Home = () => {
           <div className="chat-and-connect">
             Chat and Connect with Your Favorite Celebs
           </div>
-        </div>
+        </div> */}
 
 
 
@@ -459,6 +484,7 @@ const Home = () => {
               
               </div>
               <p className="start">Start Chat</p>
+              <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p>
               {/* </Link> */}
             </div>
 
@@ -475,7 +501,7 @@ const Home = () => {
                 <p className="bottom_text">Bollywood actress, ace dancer</p>
               </div>
               <p className="start">Start Chat</p>
-              {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
+              <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p>
             </div>
 
             <div className="profile sukhwinder_Singh_profile" onClick={handlSukhwinderPage}>
@@ -509,6 +535,7 @@ const Home = () => {
                 </p>
               </div>
               <p className="start">Start Chat</p>
+              <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p>
             </div>
 
             <div className="profile karan_Johar_profile" onClick={handlKaranPage}>
@@ -524,6 +551,7 @@ const Home = () => {
                 <p className="bottom_text">Producer, Director and TV host</p>
               </div>
               <p className="start">Start Chat</p>
+              <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p>
             </div>
           </div>
         </div>

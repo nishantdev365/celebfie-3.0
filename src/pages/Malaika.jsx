@@ -45,9 +45,9 @@ const Malaika = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/malaika-arora");
+      navigate("/chat/malaika-arora");
     } else {
-      navigate("/malaika-arora");
+      navigate("/chat/malaika-arora");
     }
   };
 

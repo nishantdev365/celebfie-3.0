@@ -39,11 +39,18 @@ function App() {
 
 
           {/* <Route path="/chat" element={<> <Navbar /> <Chat /></>} /> */}
-          <Route path="/taapsee-pannu" element={<> <TaapseeChatPage /></>} />
-          <Route path="/urvashi-rautela" element={<> <UrvashiChatPage /></>} />
-          <Route path="/chat/:profileName" element={<> <SukhwinderChatPage /></>} />
-          <Route path="/malaika-arora" element={<> <MalaikaChatPage /></>} />
-          <Route path="/karan-johar" element={<> <KaranChatPage /></>} />
+          {/* <Route path="/chat/taapsee/:profileName" element={<TaapseeChatPage />} />
+       <Route path="/chat/urvashi/:profileName" element={<UrvashiChatPage />} />
+<Route path="/chat/sukhwinder/:profileName" element={<SukhwinderChatPage />} />
+<Route path="/chat/malaika/:profileName" element={<MalaikaChatPage />} />
+<Route path="/chat/karan/:profileName" element={<KaranChatPage />} /> */}
+
+<Route path="/chat/taapsee-pannu" element={<TaapseeChatPage />} />
+      <Route path="/chat/urvashi-rautela" element={<UrvashiChatPage />} />
+      <Route path="/chat/sukhwinder-singh" element={<SukhwinderChatPage />} />
+      <Route path="/chat/malaika-arora" element={<MalaikaChatPage />} />
+      <Route path="/chat/karan-johar" element={<KaranChatPage />} />
+
        
         </Routes>
       </BrowserRouter>

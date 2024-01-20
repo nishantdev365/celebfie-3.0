@@ -46,9 +46,9 @@ const Urvashi = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/urvashi-rautela");
+      navigate("/chat/urvashi-rautela");
     } else {
-      navigate("/urvashi-rautela");
+      navigate("/chat/urvashi-rautela");
     }
   };
 

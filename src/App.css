@@ -365,11 +365,11 @@ nav {
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   /* justify-content: space-evenly; */
   align-items: center;
   gap: 20px;
-  padding-top: 25px;
+  /* padding-top: 25px; */
 }
 
 .mobile_banner {
@@ -599,63 +599,79 @@ nav {
 
 .taapsee_Pannu_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Taapsee-Pannu@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .urvashi_Rautela_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Urvashi-Rautela@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .sukhwinder_Singh_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Sukhwinder-Singh@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .malaika_Arora_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Malaika-Arora@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .karan_Johar_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Karan-Johar@2x.png), lightgray 50% / cover no-repeat;
+
+  background-size: cover;
 }
 
 .agnijita_Banerjee_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Agnijita-Banerjee@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .hema_Adhikari_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Hema-Adhikari@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .rugees_Vini_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rugees-Vini@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .shalini_Chopra_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Shalini-Chopra@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .nilam_Parmar_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Nilam-Parmar@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 
 .virat_Kohli_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Virat-Kohli@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .dhoni_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Dhoni@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .geeta_Phogat_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Geeta-Phogat@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .rani_Rampal_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Rani-Rampal@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 .guru_Mann_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Guru-Mann@2x.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 
@@ -830,6 +846,7 @@ nav {
   flex-shrink: 0;
   border: 1px solid #3A3A3A;
   background-color: var(--color-light-black);
+  padding: 50px 75px 50px 75px;
 }
 
 .theory_how_to_use {
@@ -842,6 +859,7 @@ nav {
   width: 508px;
   height: 173px;
   color: white;
+  
 }
 
 
@@ -921,6 +939,7 @@ footer {
 
 .social_icons {
   display: flex;
+  cursor: pointer;
 }
 
 .Facebook_icon,
@@ -928,6 +947,12 @@ footer {
   width: 46px;
   height: 46px;
 }
+
+.Facebook_icon:hover ,.instagram_icon:hover{
+  border-radius: 50px;
+  background-color: var(--color-tomato);
+}
+
 
 .footer_left {
   height: inherit;
@@ -1481,6 +1506,7 @@ footer {
     padding: 0;
     gap: 0;
     /* height: 100vh; */
+    flex-direction: column;
   }
 
 
@@ -1647,9 +1673,11 @@ footer {
     justify-content: flex-end;
     width: 140px;
     height: 220px;
+    
     box-shadow: none;
-    opacity: 1;
-    opacity: 1;
+    opacity: 1; 
+  
+ 
     transition: opacity 1s ease 0s;
   }
 
@@ -1688,6 +1716,7 @@ footer {
   }
 
   .bottom_text {
+   
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -1703,11 +1732,13 @@ footer {
 
 
   .filmmaker-and-television {
+ 
     color: var(--color-white);
     padding: 10px;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
-    height: 42%;
+   
+    height: 40%;
     background: #202946;
   }
 
@@ -1731,67 +1762,84 @@ footer {
   }
 
 
-  .taapsee_Pannu_profile {
+  /* .taapsee_Pannu_profile {
     background: url(./assets/Celebrity-profiles/Taapsee-Pannu.png), lightgray 50% / cover no-repeat;
+      background-repeat: no-repeat;
   }
 
   .urvashi_Rautela_profile {
     background: url(./assets/Celebrity-profiles/Urvashi-Rautela.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .sukhwinder_Singh_profile {
     background: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .malaika_Arora_profile {
     background: url(./assets/Celebrity-profiles/Malaika-Arora.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .karan_Johar_profile {
     background: url(./assets/Celebrity-profiles/Karan-Johar.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .agnijita_Banerjee_profile {
     background: url(./assets/Celebrity-profiles/Agnijita-Banerjee.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .hema_Adhikari_profile {
     background: url(./assets/Celebrity-profiles/Hema-Adhikari.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .rugees_Vini_profile {
     background: url(./assets/Celebrity-profiles/Rugees-Vini.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .shalini_Chopra_profile {
     background: url(./assets/Celebrity-profiles/Shalini-Chopra.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .nilam_Parmar_profile {
     background: url(./assets/Celebrity-profiles/Nilam-Parmar.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
 
   .virat_Kohli_profile {
     background: url(./assets/Celebrity-profiles/Virat-Kohli.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .dhoni_profile {
     background: url(./assets/Celebrity-profiles/Dhoni.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    border-color: #202946;
+    
   }
 
   .geeta_Phogat_profile {
     background: url(./assets/Celebrity-profiles/Geeta-Phogat.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .rani_Rampal_profile {
     background: url(./assets/Celebrity-profiles/Rani-Rampal.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
 
   .guru_Mann_profile {
     background: url(./assets/Celebrity-profiles/Guru-Mann.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
   }
-
+ */
 
 
 
@@ -2513,5 +2561,10 @@ footer {
     top: 10px;
     right: -20px;
   }
+
+  .Facebook_icon,
+.instagram_icon {
+  display: none;
+}
 
 }

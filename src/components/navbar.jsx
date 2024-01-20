@@ -4,7 +4,8 @@ import Logo from '../assets/logo.svg';
 // import { Link } from "react-router-dom";
 import Signup from "./signup";
 import { useState } from "react";
-
+import Facebook from "../assets/facebook_icon.png";
+import Instagram from "../assets/instagram_icon.png";
 // import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
             </ul>
           </div> */}
         </div>
-        <div className="signup_btn">
+        {/* <div className="signup_btn">
           <button className="register_btn" id="register_btn" onClick={handleSignupButtonClick}>
             <b className="login" >Register</b>
           </button>
@@ -60,7 +61,17 @@ const Navbar = () => {
           <button className="login_btn">
             <b className="login">Login</b>
           </button>
-        </div>
+        </div> */}
+
+<div className="social_icons">
+            <img className="Facebook_icon" alt="facebook-icon" src={Facebook} />
+
+            <img
+              className="instagram_icon"
+              alt="instagram-icon"
+              src={Instagram}
+            />
+          </div>
 
         <img src={BurgerMenu} className="burger_menu" alt=""/>
       </nav>
