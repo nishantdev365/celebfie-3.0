@@ -453,7 +453,7 @@ const Home = () => {
             </div>
 
               <div className="filmmaker-and-television">
-                <b className="celeb_name">Taapsee Pannu</b>
+                <b className="celeb_name">Taapsee Pannuu</b>
                 <br />
                 <p className="bottom_text">Indian actress and producer</p>
               
