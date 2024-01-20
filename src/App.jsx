@@ -12,7 +12,7 @@ import Urvashi from "./pages/Urvashi";
 import Sukhwinder from "./pages/Sukhwinder";
 import Malaika from "./pages/Malaika";
 import Karan from "./pages/Karan";
-import Register from "./pages/Register";
+// import Register from "./pages/Register";
 import Login from "./pages/Login"
 import "./App.css";
 
@@ -25,7 +25,7 @@ function App() {
           {/* <Route path="/" element={<Intro />} /> */}
           <Route path="/" element={ <>  <Navbar /> <Home /></>} />
           <Route path="/login" element={<Login />}/>
-          <Route path="/register" element={<Register />}/>
+          {/* <Route path="/register" element={<Register />}/> */}
          
           <Route path="/taapsee-profile" element={<Taapsee />} />
           <Route path="/urvashi-profile" element={<Urvashi />} />
