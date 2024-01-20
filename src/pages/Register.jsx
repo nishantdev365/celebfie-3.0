@@ -45,7 +45,7 @@ const Register = () => {
          </div>
 
          <div className="register_page_btn" >
-            <Link to="/home">
+            <Link to="/">
               <b className="Register_btn_text">Register</b>
             </Link>
           </div>

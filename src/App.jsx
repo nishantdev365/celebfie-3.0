@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
-import Intro from "./pages/introPage";
+// import Intro from "./pages/introPage";
 import Home from "./pages/home";
 import TaapseeChatPage from "./pages/Taapsee_Chat_Page";
 import UrvashiChatPage from "./pages/Urvashi_Chat_Page";
@@ -22,8 +22,8 @@ function App() {
       <BrowserRouter>
        
         <Routes>
-          <Route path="/" element={<Intro />} />
-          <Route path="/home" element={ <>  <Navbar /> <Home /></>} />
+          {/* <Route path="/" element={<Intro />} /> */}
+          <Route path="/" element={ <>  <Navbar /> <Home /></>} />
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
          

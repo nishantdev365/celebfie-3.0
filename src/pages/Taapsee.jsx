@@ -39,7 +39,7 @@ const Taapsee = () => {
   }, []);
 
   const handleBack = () => {
-    navigate("/home")
+    navigate("/")
   }
 
 

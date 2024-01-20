@@ -8,6 +8,24 @@ const SukhwinderChatPage = () => {
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Place the provided script code here
+    let MemberSpace = window.MemberSpace || {"subdomain":"celebfie"};
+    (function(d){
+      var s = d.createElement("script");
+      s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+      var e = d.getElementsByTagName("script")[0];
+      e.parentNode.insertBefore(s, e);
+    })(document);
+
+    // The cleanup function (optional) to remove the script if the component is unmounted
+    return () => {
+      // Perform any cleanup here if needed
+    };
+  }, []); 
+
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -48,6 +66,16 @@ const SukhwinderChatPage = () => {
     }
   }, []);
 
+
+  useEffect(() => {
+    // Check MemberSpace membership status
+    if (window.Memberspace && !window.Memberspace.isMember()) {
+      // Redirect non-members to the login or membership page
+      navigate("/login"); // Replace with your actual login or membership page
+    }
+  }, [navigate]);
+
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -66,7 +94,7 @@ const SukhwinderChatPage = () => {
     if (isMobile) {
       navigate("/sukhwinder-profile");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

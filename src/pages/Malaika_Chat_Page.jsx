@@ -66,7 +66,7 @@ const MalaikaChatPage = () => {
     if (isMobile) {
       navigate("/malaika-profile");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

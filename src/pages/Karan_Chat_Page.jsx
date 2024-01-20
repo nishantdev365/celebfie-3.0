@@ -66,7 +66,7 @@ const KaranChatPage = () => {
     if (isMobile) {
       navigate("/karan-profile");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

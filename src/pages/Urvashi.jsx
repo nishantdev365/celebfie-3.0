@@ -40,7 +40,7 @@ const Urvashi = () => {
   }, []);
 
   const handleBack = () => {
-    navigate("/home")
+    navigate("/")
   }
 
 

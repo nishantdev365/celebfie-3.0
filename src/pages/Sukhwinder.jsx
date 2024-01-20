@@ -39,7 +39,7 @@ const Sukhwinder = () => {
   }, []);
 
   const handleBack = () => {
-    navigate("/home")
+    navigate("/")
   }
 
 
