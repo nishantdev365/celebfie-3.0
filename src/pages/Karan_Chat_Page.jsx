@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-
 const KaranChatPage = () => {
   const navigate = useNavigate();
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Place the provided script code here
     let MemberSpace = window.MemberSpace || {"subdomain":"celebfie"};
     (function(d){
       var s = d.createElement("script");
@@ -19,12 +15,11 @@ const KaranChatPage = () => {
       e.parentNode.insertBefore(s, e);
     })(document);
 
-    // The cleanup function (optional) to remove the script if the component is unmounted
+    // Cleanup function (optional)
     return () => {
       // Perform any cleanup here if needed
     };
   }, []); 
-
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -48,7 +43,6 @@ const KaranChatPage = () => {
 
     const mcontextElement = document.getElementById("mcontext");
 
-    // Clear existing content in mcontextElement
     while (mcontextElement.firstChild) {
       mcontextElement.removeChild(mcontextElement.firstChild);
     }
@@ -56,6 +50,7 @@ const KaranChatPage = () => {
     if (mcontextElement) {
       mcontextElement.appendChild(script);
 
+      // The cleanup function (optional) to remove the script if the component is unmounted
       return () => {
         if (!mcontextElement.contains(script)) {
           window.location.reload();
@@ -88,16 +83,9 @@ const KaranChatPage = () => {
     };
   }, []);
 
-  const handleCardClick = () => {
-    if (isMobile) {
-      navigate("/");
-    } else {
-      navigate("/");
-    }
-  };
-
-  return (
-    <>
+  useEffect(() => {
+    // Dynamically update OG tags using Helmet after the script has been injected
+    const helmet = (
       <Helmet>
         <meta charSet="utf-8" />
         <title>Karan Johar</title>
@@ -112,31 +100,36 @@ const KaranChatPage = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celebfie.vercel.app/chat/karan-johar" />
       </Helmet>
+    );
 
+    // Update the head of the document with the new Helmet content
+    document.head.innerHTML += helmet.toString();
+  }, []);
+
+  const handleCardClick = () => {
+    if (isMobile) {
+      navigate("/");
+    } else {
+      navigate("/");
+    }
+  };
+
+  return (
+    <>
       <div className="profile_header">
-        {/* <Link to="/profile"> */}
         <div className="back_btn" onClick={handleCardClick}></div>
-        {/* <div className="back_btn_mobile">
-
-</div> */}
-
-        {/* </Link> */}
         <div className="rectangle-group" id="profileName">
-          {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
-          <div className="karan_pic" alt="profile-pic">
-        
-          </div>
+          <div className="karan_pic" alt="profile-pic"></div>
           <div className="taapsee-pannu-parent">
             <div className="taapsee-pannu">Karan Johar</div>
             <div className="filmmaker-and-television2">
-            Producer, Director and TV host
+              Producer, Director and TV host
             </div>
           </div>
         </div>
       </div>
 
       <div className="chatroom_area">
-        {/* <SidePanel /> */}
         <div
           className="main_chatroom_section"
           id="mcontext"
