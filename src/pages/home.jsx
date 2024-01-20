@@ -13,6 +13,7 @@ import ReactPlayer from "react-player";
 import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
 // import Signup from "../components/signup";
+import { Helmet } from "react-helmet";
 
 
 const Home = () => {
@@ -125,6 +126,20 @@ const Home = () => {
 
   return (
     <>
+
+<Helmet>
+        <meta charSet="utf-8" />
+        <title>Celebfie</title>
+        <meta name="description" content="Talk with Virtual Celebrities" />
+        <link rel="canonical" href="https://celebfie.vercel.app" />
+        <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
+      
+       
+        <meta property="og:title" content="Celebfie" />
+        <meta property="og:description" content="Talk with Virtual Celebrities"/>
+        <meta property="og:image" content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705619416/Taapsee-Pannu-bg_ik7nfo.png" />
+        <meta property="og:url" content={window.location.href} />
+      </Helmet>
       <section className="homepage"> 
       {/* {showSignup && <Signup />} */}
         <div className="mobile_banner">
