@@ -71,7 +71,7 @@ const SukhwinderChatPage = () => {
     // Check MemberSpace membership status
     if (window.Memberspace && !window.Memberspace.isMember()) {
       // Redirect non-members to the login or membership page
-      navigate("/login"); // Replace with your actual login or membership page
+      navigate("/?msopen=/member/sign_in");
     }
   }, [navigate]);
 
