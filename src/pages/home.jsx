@@ -8,7 +8,7 @@ import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
 import Play from "../assets/play.png";
 // import Visa from "../assets/visa-mastercard-icon.png";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import ReactPlayer from "react-player";
 import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
@@ -849,7 +849,7 @@ const Home = () => {
         </span>
       </div> */}
 
-      <Footer />
+      {/* <Footer /> */}
 
       <footer>
         <div className="footer_left">

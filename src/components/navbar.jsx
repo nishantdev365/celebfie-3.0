@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BurgerMenu from "../assets/burger-menu.svg"
+// import BurgerMenu from "../assets/burger-menu.svg"
 import Logo from '../assets/logo.svg';
 // import { Link } from "react-router-dom";
 // import Signup from "./signup";
@@ -63,7 +63,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <img src={BurgerMenu} className="burger_menu" alt=""/>
+        {/* <img src={BurgerMenu} className="burger_menu" alt=""/> */}
       </nav>
     </>
   )
