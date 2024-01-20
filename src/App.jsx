@@ -61,10 +61,9 @@
 // export default App;
 
 
-import { useEffect } from "react";
-import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
-import Navbar from "./components/navbar";
-// import Intro from "./pages/introPage";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
 import Home from "./pages/home";
 import TaapseeChatPage from "./pages/Taapsee_Chat_Page";
 import UrvashiChatPage from "./pages/Urvashi_Chat_Page";
@@ -76,44 +75,36 @@ import Urvashi from "./pages/Urvashi";
 import Sukhwinder from "./pages/Sukhwinder";
 import Malaika from "./pages/Malaika";
 import Karan from "./pages/Karan";
-// import Register from "./pages/Register";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 import "./App.css";
-
-const ProtectedLogin = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Check MemberSpace membership status
-    if (window.Memberspace && window.Memberspace.isMember()) {
-      // Redirect members to the home page
-      navigate("/");
-    }
-  }, [navigate]);
-
-  return <Login />;
-};
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<><Navbar /><Home /></>} />
-          <Route path="/login" element={<ProtectedLogin />} />
-          <Route path="/taapsee-profile" element={<Taapsee />} />
-          <Route path="/urvashi-profile" element={<Urvashi />} />
-          <Route path="/sukhwinder-profile" element={<Sukhwinder />} />
-          <Route path="/malaika-profile" element={<Malaika />} />
-          <Route path="/karan-profile" element={<Karan />} />
-          <Route path="/chat/taapsee-pannu" element={<TaapseeChatPage />} />
-          <Route path="/chat/urvashi-rautela" element={<UrvashiChatPage />} />
-          <Route path="/chat/sukhwinder-singh" element={<SukhwinderChatPage />} />
-          <Route path="/chat/malaika-arora" element={<MalaikaChatPage />} />
-          <Route path="/chat/karan-johar" element={<KaranChatPage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+       
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route path="/login" element={<Layout><Login /></Layout>} />
+        <Route path="/taapsee-profile" element={<Layout><Taapsee /></Layout>} />
+        <Route path="/urvashi-profile" element={<Layout><Urvashi /></Layout>} />
+        <Route path="/sukhwinder-profile" element={<Layout><Sukhwinder /></Layout>} />
+        <Route path="/malaika-profile" element={<Layout><Malaika /></Layout>} />
+        <Route path="/karan-profile" element={<Layout><Karan /></Layout>} />
+
+        <Route path="/chat/taapsee-pannu" element={<Layout><TaapseeChatPage /></Layout>} />
+        <Route path="/chat/urvashi-rautela" element={<Layout><UrvashiChatPage /></Layout>} />
+        <Route path="/chat/sukhwinder-singh" element={<Layout><SukhwinderChatPage /></Layout>} />
+        <Route path="/chat/malaika-arora" element={<Layout><MalaikaChatPage /></Layout>} />
+        <Route path="/chat/karan-johar" element={<Layout><KaranChatPage /></Layout>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
