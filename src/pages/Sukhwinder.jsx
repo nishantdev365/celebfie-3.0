@@ -45,9 +45,9 @@ const Sukhwinder = () => {
 
   const handleCardClick = () => {
     if (isMobile) {
-      navigate("/sukhwinder-singh");
+      navigate("/chat/sukhwinder-singh");
     } else {
-      navigate("/sukhwinder-singhs");
+      navigate("/chat/sukhwinder-singh");
     }
   };
 
