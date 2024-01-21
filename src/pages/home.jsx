@@ -802,20 +802,17 @@ const Home = () => {
         <div className="how_to_use_section">
           <div className="theory_how_to_use">
             <b className="how-to-use-container">
-              <span className="explore-bollywood-txt-container">
-                <p className="how-to-use">How to use</p>
-                <p className="ai-chat">AI Chat</p>
-              </span>
+              {/* <span className="explore-bollywood-txt-container"> */}
+   
+                <p className="ai-chat">Welcome to Celebfie 3.0 <span className="how-to-use">– Your Gateway to Unparalleled Celeb connect!</span></p>
+           
+              {/* </span> */}
             </b>
 
             <div className="lorem_ipsum_dolor">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse at porttitor mi. In eu ornare enim, vitae tincidunt
-              magna. Nullam at convallis diam. Cras vitae tortor justo. Donec
-              varius justo rhoncus, luctus est et, luctus erat. Etiam rutrum vel
-              ipsum vel ultricies. Quisque efficitur ut purus vitae tristique.
-              Proin nisl velit, gravida non elementum ut, suscipit at turpis.
-              Aenean viverra ex massa, et interdum lectus efficitur in.
+            Engage in meaningful and fascinating conversations with your favorite film stars, musicians, athletes, and influencers on our Conversational AI platform. Our celebrities have crafted their AI counterparts, allowing fans and brands to connect on a whole new level. Whether you seek knowledge, guidance, or just pure entertainment, Celebfie 3.0 brings you closer to the personalities you adore. Brands can seize the opportunity to collaborate with celebrities for impactful engagements. Elevate your interactions, learn, and have fun – Celebfie 3.0 is where authentic connections come to life!
+
+Our platform operates seamlessly, offering a user-friendly experience for fans and brands alike. Upon entering Celebfie 3.0, users can explore a diverse array of AI versions of their favorite celebrities. Engaging in conversations is as simple as selecting a celebrity AI and initiating a chat. Through advanced natural language processing, these AI counterparts emulate the personalities of the real celebrities, ensuring a genuine and immersive interaction. Fans can inquire, share, and enjoy personalized responses, while brands can navigate an efficient collaboration request process. Celebfie 3.0 opens the door to a novel form of connection, where the magic of technology converges with the charisma of your beloved stars.
             </div>
           </div>
           <div className="video_show">
@@ -861,14 +858,15 @@ const Home = () => {
             convallis diam. Cras vitae tortor
           </div>
           <div className="social_icons">
-            <img className="Facebook_icon" alt="facebook-icon" src={Facebook} />
+  <a href="https://www.facebook.com/celebfieapp?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
+    <img className="Facebook_icon" alt="facebook-icon" src={Facebook} />
+  </a>
 
-            <img
-              className="instagram_icon"
-              alt="instagram-icon"
-              src={Instagram}
-            />
-          </div>
+  <a href="https://www.instagram.com/celebfieapp/?igsh=bXo5MWtqYzZ6dHc1" target="_blank" rel="noopener noreferrer">
+    <img className="instagram_icon" alt="instagram-icon" src={Instagram} />
+  </a>
+</div>
+
         </div>
 
         {/* <div className="sitemap_parent">

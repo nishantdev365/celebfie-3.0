@@ -847,7 +847,7 @@ nav {
   flex-shrink: 0;
   border: 1px solid #3A3A3A;
   background-color: var(--color-light-black);
-  padding: 50px 75px 50px 75px;
+  padding: 40px 75px 40px 75px;
 }
 
 .theory_how_to_use {
@@ -857,8 +857,8 @@ nav {
   font-size: var(--font-size-base);
   line-height: 27px;
   display: inline-block;
-  width: 508px;
-  height: 173px;
+  width: 618px;
+  height: 133px;
   color: white;
   
 }
@@ -868,22 +868,30 @@ nav {
   /* position: absolute;
   
     left: 86px; */
-  font-size: 45px;
+  font-size: 25px;
   line-height: 44px;
   display: flex;
   align-items: center;
   /* width: 900px; */
-  height: 113px;
+  /* height: 113px; */
   margin-bottom: 20px;
 }
 
 .how-to-use {
   margin: 0;
+  color: var(--color-white);
 }
 
 .ai-chat {
   margin: 0;
   color: var(--color-tomato);
+  line-height: 30px;
+}
+
+.lorem_ipsum_dolor{
+  
+  font-size: 15px !important;
+  line-height: 24px !important;
 }
 
 .video_show {
