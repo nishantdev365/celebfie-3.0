@@ -866,7 +866,7 @@ nav {
 
 .how-to-use-container {
   /* position: absolute;
-  
+   
     left: 86px; */
   font-size: 25px;
   line-height: 44px;
@@ -875,6 +875,8 @@ nav {
   /* width: 900px; */
   /* height: 113px; */
   margin-bottom: 20px;
+
+  
 }
 
 .how-to-use {
@@ -890,6 +892,7 @@ nav {
 
 .lorem_ipsum_dolor{
   
+  text-align: justify;
   font-size: 15px !important;
   line-height: 24px !important;
 }

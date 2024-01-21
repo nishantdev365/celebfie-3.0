@@ -13,51 +13,45 @@ import Sukhwinder from "./pages/Sukhwinder";
 import Malaika from "./pages/Malaika";
 import Karan from "./pages/Karan";
 // import Register from "./pages/Register";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 import "./App.css";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-       
         <Routes>
           {/* <Route path="/" element={<Intro />} /> */}
-          <Route path="/" element={ <>  <Navbar /> <Home /></>} />
-          <Route path="/login" element={<Login />}/>
+          <Route
+            path="/"
+            element={
+              <>
+                {" "}
+                <Navbar /> <Home />
+              </>
+            }
+          />
+          <Route path="/login" element={<Login />} />
           {/* <Route path="/register" element={<Register />}/> */}
-         
+
           <Route path="/taapsee-profile" element={<Taapsee />} />
           <Route path="/urvashi-profile" element={<Urvashi />} />
           <Route path="/sukhwinder-profile" element={<Sukhwinder />} />
           <Route path="/malaika-profile" element={<Malaika />} />
           <Route path="/karan-profile" element={<Karan />} />
 
-
-
-
-
-
-          {/* <Route path="/chat" element={<> <Navbar /> <Chat /></>} /> */}
-          {/* <Route path="/chat/taapsee/:profileName" element={<TaapseeChatPage />} />
-       <Route path="/chat/urvashi/:profileName" element={<UrvashiChatPage />} />
-<Route path="/chat/sukhwinder/:profileName" element={<SukhwinderChatPage />} />
-<Route path="/chat/malaika/:profileName" element={<MalaikaChatPage />} />
-<Route path="/chat/karan/:profileName" element={<KaranChatPage />} /> */}
-
-  <Route path="/chat/taapsee-pannu" element={<TaapseeChatPage />} />
-      <Route path="/chat/urvashi-rautela" element={<UrvashiChatPage />} />
-      <Route path="/chat/sukhwinder-singh" element={<SukhwinderChatPage />} />
-      <Route path="/chat/malaika-arora" element={<MalaikaChatPage />} />
-      <Route path="/chat/karan-johar" element={<KaranChatPage />} />
-
-       
+          <Route path="/chat/taapsee-pannu" element={<TaapseeChatPage />} />
+          <Route path="/chat/urvashi-rautela" element={<UrvashiChatPage />} />
+          <Route
+            path="/chat/sukhwinder-singh"
+            element={<SukhwinderChatPage />}
+          />
+          <Route path="/chat/malaika-arora" element={<MalaikaChatPage />} />
+          <Route path="/chat/karan-johar" element={<KaranChatPage />} />
         </Routes>
       </BrowserRouter>
     </>
   );
 }
 
-export default App;  
-
-
+export default App;
