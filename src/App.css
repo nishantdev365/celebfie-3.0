@@ -871,7 +871,7 @@ nav {
   line-height: 44px;
   display: flex;
   align-items: center;
-  width: 900px;
+  /* width: 900px; */
   height: 113px;
   margin-bottom: 20px;
 }
@@ -1384,10 +1384,16 @@ footer {
 
 
 /* Tablet styles */
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+  /* .homepage {
+    width: 100;
+  } */
+
+
+}
 
 /* Mobile styles */
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 1300px) {
   .intro_screen {
     background: linear-gradient(1deg, #0A0F1F 0.34%, rgba(10, 15, 31, 0.21) 99.44%), url(./assets/slide-img.jpg);
     animation: scrollBackground 60s linear infinite;
