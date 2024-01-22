@@ -890,7 +890,7 @@ nav {
 }
 
 .ai-chat {
-  margin: 0;
+  margin-left: 2px;
   color: var(--color-tomato);
 }
 
