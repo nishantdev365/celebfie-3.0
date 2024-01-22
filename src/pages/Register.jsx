@@ -1,4 +1,3 @@
-// import Slide from "../assets/slide-img.jpg"
 import { Link } from "react-router-dom"
 
 const Register = () => {
@@ -9,8 +8,7 @@ const Register = () => {
     <Link to="/login">  <div className="back_btn_register"></div></Link>
       <b className="register_heading">Register</b>
       </div>
-{/* 
-      <img className="register_slide_img" src={Slide} alt="slide" /> */}
+
         
 
         <div className="input_sections">

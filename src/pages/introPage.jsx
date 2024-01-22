@@ -7,7 +7,7 @@ import Logo from "../assets/logo.svg";
 
 const IntroPage = () => {
   const [showNavbar, setShowNavbar] = useState(true);
-  // const [showSignupSection, setShowSignupSection] = useState(false); 
+
   const location = useLocation();
 
   useEffect(() => {
@@ -35,12 +35,6 @@ const IntroPage = () => {
     };
   }, []);
 
-  // const handleSignupButtonClick = () => {
-  //   // alert("clicked")
-  //   setShowSignupSection(!showSignupSection); // Toggle the state on button click
-  // };
-
-  // Conditionally render the Navbar based on the path
   const renderNavbar = () => {
     if (showNavbar && location.pathname !== "/") {
       return <Navbar />;
@@ -63,7 +57,7 @@ const IntroPage = () => {
 
           <input type="text" className="frame_child3_intros" />
 
-          <div className="login_container_intro" >
+          <div className="login_container_intro">
             <Link to="/home">
               <b className="login1_intro">Login</b>
             </Link>
@@ -76,41 +70,19 @@ const IntroPage = () => {
           </div>
         </div>
 
-     {/* {!showSignupSection && ( */}
-          <div className="signup_btn_mobile">
-            {/* <div className="login_container_intro redirectButton" onClick={handleSignupButtonClick}> */}
-            <div className="login_container_intro redirectButton">
+        <div className="signup_btn_mobile">
+          <div className="login_container_intro redirectButton">
             <Link to="/login">
               <b className="login1_intro">Login</b>
-              </Link>
-            </div>
-            <br />
-            <div className="register_container_intro redirectButton">
-              <Link to="/register">
-                <b className="login1_intro">Register</b>
-              </Link>
-            </div>
+            </Link>
           </div>
-        {/* )} */}
-
-        {/* <div id="intro_signup_mobile">
-          <div className={`signup_section ${showSignupSection ? "show" : ""}`} >
-            <b className="members-only">Members Only. </b>
-            <b className="please-login">Please login </b>
-            <b className="or">OR</b>
-            <div className="username">Username</div>
-            <div className="password">Password</div>
-            <input type="text" className="rectangle-div" value="" />
-            <input type="text" className="frame-child3" />
-
-            <div className="login-container">
-              <b className="login1">Login</b>
-            </div>
-            <div className="register-container">
-              <b className="login1">Register</b>
-            </div>
+          <br />
+          <div className="register_container_intro redirectButton">
+            <Link to="/register">
+              <b className="login1_intro">Register</b>
+            </Link>
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   );

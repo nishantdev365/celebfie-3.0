@@ -2,8 +2,6 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  /* font-family: Source Sans Pro; */
-  /* list-style: none; */
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: #397524 #DFE9EB;
@@ -42,7 +40,7 @@
 
 body {
   font-family: var(--regular-24px-32);
-  background-color: var(--color-gray-200);  
+  background-color: var(--color-gray-200);
 }
 
 :root {
@@ -71,17 +69,11 @@ body {
   --color-light-blue-grey: #B5CDFF;
   --color-dark-blue-grey: #3F5D9A;
 
-
-
-
-
-  /* Border radiuses */
   --br-5xs: 8px;
   --br-xs: 12px;
   --br-2xs: 11px;
 }
 
-/* ----------intro-screen------------ */
 
 .intro_screen {
   display: flex;
@@ -102,7 +94,6 @@ body {
 #intro_logo {
   width: 15%;
   left: 43%;
-  /* Start from the center */
   position: absolute;
   animation: slideLeft 2s ease-in-out forwards;
   animation-delay: 1s;
@@ -111,12 +102,10 @@ body {
 @keyframes slideLeft {
   0% {
     left: 43%;
-    /* Start from the center */
   }
 
   100% {
     left: 25%;
-    /* Move to the left */
   }
 
 }
@@ -229,10 +218,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 337.1px; */
   height: 46.9px;
   border-radius: var(--br-5xs);
-  /* width: 339px; */
   height: 48px;
   text-align: center;
   font-size: var(--regular-20px-28-size);
@@ -266,63 +253,6 @@ nav {
   justify-content: center;
   height: 80px;
 }
-
-
-
-/* li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 15px;
-  cursor: pointer;
-  height: 100%;
-  color: grey;
-} */
-
-/* li > span{
-       padding-top: 26px;
-   height: 100%;
-  } */
-
-
-/* li:hover {
-  border-bottom: 4px solid;
-  border-color: var(--color-white);
-  background: rgba(22, 36, 79, 0.10);
-  color: var(--color-white);
-} */
-
-
-/* i {
-    padding: 10px;
-    color: #0b0b0b;
-  
-  }
-   */
-/* .ico {
-    margin-right: 8px;
-    color: grey;
-  }
-  
-  .ico:hover {
-    color: var(--color-white);
-  }
-   */
-
-
-/* .nav_options {
-    color: grey;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    height: 100%;
-    padding-top: 26px;
-  }
-  
-  .nav_options:hover {
-    color: var(--color-white);
-  }
-   */
 
 .register_btn,
 .login_btn {
@@ -367,10 +297,8 @@ nav {
   height: auto;
   display: flex;
   flex-direction: column-reverse;
-  /* justify-content: space-evenly; */
   align-items: center;
   gap: 20px;
-  /* padding-top: 25px; */
 }
 
 .mobile_banner {
@@ -476,7 +404,6 @@ nav {
   border-radius: var(--br-5xs);
 }
 
-
 .profile_section_cards {
   width: 100%;
   height: auto;
@@ -486,12 +413,6 @@ nav {
   align-items: center;
   position: relative;
 }
-
-
-
-
-
-
 
 .chat-and-connect,
 .experience-stardom {
@@ -542,14 +463,11 @@ nav {
 
 .explore_influencers_section {
   background-color: var(--color-light-black);
-  /* border: 1px solid #3A3A3A; */
-
 }
 
 .profile_cards {
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -557,15 +475,12 @@ nav {
 .profile {
   flex-basis: calc(20% - 16px);
   position: relative;
-  /* width: 240px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 370px;
   border-radius: 11px;
-  /* border: 1px solid rgba(0, 0, 0, 0.09); */
-  /* background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Taapsee\ Pannu@2x.png), lightgray 50% / cover no-repeat; */
   box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
 }
 
@@ -587,7 +502,6 @@ nav {
 
 .Explore_Influencers {
   background-color: var(--color-light-black);
-  /* border: 1px solid #3A3A3A; */
 
 }
 
@@ -690,10 +604,6 @@ nav {
 /* ------------animation--------------- */
 
 
-/* .profile_center {
-  position: relative;
-} */
-
 .horizontal_line,
 .filmmaker-and-television {
   opacity: 1;
@@ -725,26 +635,62 @@ nav {
 
 /* ------------------animation----------------- */
 
+.coming_soon_popup_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+.coming_soon_popup_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  text-align: center;
+
+}
+
+.coming_soon_heading {
+  font-size: 25px;
+  width: 90%;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.coming_soon_para {
+
+  font-size: 14px;
+  width: 90%;
+}
+
+.comming_soon_close_btn {
+  width: 90%;
+  height: 42px;
+  border-radius: 7px;
+  background: #2D477D;
+  font-weight: 900;
+}
+
 
 .coming_soon_popup {
   position: fixed;
   height: 50%;
-  width: 50%;
-  backdrop-filter: blur(11px) saturate(180%);
-  -webkit-backdrop-filter: blur(11px) saturate(180%);
-  background-color: rgba(8, 12, 25, 0.62);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  /* Center the div */
+  width: 25%;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  background: #262F4D;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.5);
-  /* Adjusted this line */
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
   color: white;
   animation: myAnim 1s ease 0s 1 normal forwards;
   transform-origin: center;
@@ -767,12 +713,13 @@ nav {
 }
 
 .close_popup {
-  width: 55px;
-  height: 55px;
+  width: 25px;
+  height: 25px;
   background-image: url(./assets/close.png);
   background-repeat: no-repeat;
+  background-size: 80%;
   position: absolute;
-  top: 20px;
+  top: 15px;
   right: 10px;
   cursor: pointer;
 }
@@ -782,20 +729,17 @@ nav {
   margin-top: 95%;
   width: 100%;
   height: 1px;
-
   opacity: 0.4;
   background: #FFF;
 }
 
 .profile_center {
   width: 100%;
-
 }
 
 .red_circle {
   width: 44px;
   height: 44px;
-
   background: var(--color-tomato) url(./assets/message.svg) center/50% no-repeat;
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.37));
   border-radius: 37px;
@@ -803,7 +747,6 @@ nav {
   right: 20px;
   bottom: 90px;
   transition: transform 0.5s ease;
-  /* transform: translateY(-50%); */
 }
 
 .members_only {
@@ -833,7 +776,6 @@ nav {
   font-size: 1.0rem;
   display: -webkit-box;
   -webkit-line-clamp: 1;
-  /* Limit the text to 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   white-space: normal;
@@ -851,32 +793,24 @@ nav {
 }
 
 .theory_how_to_use {
-  /* position: absolute;
-    top: 3487px;
-    left: 83px; */
   font-size: var(--font-size-base);
   line-height: 27px;
   display: inline-block;
   width: 618px;
   height: 133px;
   color: white;
-  
+
 }
 
 
 .how-to-use-container {
-  /* position: absolute;
-   
-    left: 86px; */
   font-size: 25px;
   line-height: 44px;
   display: flex;
   align-items: center;
-  /* width: 900px; */
-  /* height: 113px; */
   margin-bottom: 20px;
 
-  
+
 }
 
 .how-to-use {
@@ -890,8 +824,8 @@ nav {
   line-height: 30px;
 }
 
-.lorem_ipsum_dolor{
-  
+.lorem_ipsum_dolor {
+
   text-align: justify;
   font-size: 15px !important;
   line-height: 24px !important;
@@ -904,9 +838,8 @@ nav {
   border-radius: 8px;
   background-image: url(./assets/slide-img.jpg);
   background-size: cover;
-
-  /* background: radial-gradient(50% 50% at 50% 50%, rgba(17, 17, 17, 0.00) 0%, rgba(17, 17, 17, 0.62) 100%); */
 }
+
 
 .play_btn {
   height: inherit;
@@ -960,7 +893,8 @@ footer {
   height: 46px;
 }
 
-.Facebook_icon:hover ,.instagram_icon:hover{
+.Facebook_icon:hover,
+.instagram_icon:hover {
   border-radius: 50px;
   background-color: var(--color-tomato);
 }
@@ -1088,8 +1022,6 @@ footer {
 
 .svg_icon {
   position: absolute;
-  /* top: 72px;
-  left: 225px; */
   right: 40px;
   fill: #929292;
   width: 18px;
@@ -1108,14 +1040,6 @@ footer {
   width: 100%;
 }
 
-/* 
-.back_btn {
-  width: 20.587px;
-  height: 20px;
-  flex-shrink: 0;
-  background-color: var(--color-tomato);
-} */
-
 .chats_text {
   display: flex;
   justify-content: flex-start;
@@ -1125,25 +1049,11 @@ footer {
   font-weight: 400;
   line-height: 28px;
   padding-left: 10px;
-  /* 140% */
   color: #FFF;
   width: 173px;
   height: 68px;
 }
 
-/* .chat_profile_options {
-  padding-left: 20px;
-  display: inline-flex;
-  flex-direction: column;
-  height: auto;
-  width: 100%;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 21px;
-  flex-shrink: 0;
-  color: white;
-
-} */
 
 .chat_profile_options {
   height: 100%;
@@ -1180,7 +1090,7 @@ footer {
   object-fit: cover;
 }
 
-.sukhwinder_pic{
+.sukhwinder_pic {
   background-image: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png);
   background-size: cover;
   border-radius: 37px;
@@ -1190,7 +1100,7 @@ footer {
   object-fit: cover;
 }
 
-.karan_pic{
+.karan_pic {
   background-image: url(./assets/Celebrity-profiles/Karan-Johar.png);
   background-size: cover;
   border-radius: 37px;
@@ -1202,7 +1112,7 @@ footer {
 
 
 
-.malaika_pic{
+.malaika_pic {
   background-image: url(./assets/Celebrity-profiles/Malaika-Arora.png);
   background-size: cover;
   border-radius: 37px;
@@ -1227,14 +1137,8 @@ footer {
 
 }
 
-/* .rectangle-group:hover {
-  background-color: #929292;
-} */
-
 /* ------------------------------------------------------------ */
 .activeProfile {
-  /* Add your highlighting styles, e.g., a border or background color */
-  /* border: 2px solid #ec4036; */
   background-color: #929292;
 }
 
@@ -1458,7 +1362,7 @@ footer {
     display: none;
     max-width: 95%;
     max-height: 90%;
-    
+
 
     /* opacity: 0;
     transform: translateY(50px);
@@ -1466,7 +1370,7 @@ footer {
   }
 
 
-  
+
 
   /* .signup_section.show {
 
@@ -1477,7 +1381,7 @@ footer {
   /* .members-only {
     display: none;
   } */
-  
+
 
   /* .iconplus{
     
@@ -1601,13 +1505,11 @@ footer {
 
   .mobile_footer {
     display: flex;
-    /* position: fixed; */
     position: sticky;
     justify-content: space-around;
     align-items: center;
     bottom: 0;
     z-index: 100;
-    /* width: 100vw; */
     height: 55px;
     border: 1px solid #1C1A51;
     background: #0D152F;
@@ -1627,22 +1529,16 @@ footer {
   }
 
 
-  /* .explore_bollywood_section{
-      width: 100vw;
-    } */
 
   .explore_bollywood_section,
   .explore_influencers_section,
   .explore_sport_influencers_section {
     padding: 20px 10px 20px 10px;
-    /* width: 100vw; */
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
-
-
   }
 
 
@@ -1663,12 +1559,7 @@ footer {
 
 
   .profile_cards {
-
-
     min-width: fit-content;
-    /* flex-direction: row;
-    justify-content: center; */
-
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
@@ -1682,8 +1573,6 @@ footer {
     display: none;
   }
 
-
-
   .profile_cards::-webkit-scrollbar {
     display: none;
   }
@@ -1692,11 +1581,8 @@ footer {
     justify-content: flex-end;
     width: 140px;
     height: 220px;
-    
     box-shadow: none;
-    opacity: 1; 
-  
- 
+    opacity: 1;
     transition: opacity 1s ease 0s;
   }
 
@@ -1711,7 +1597,7 @@ footer {
     line-height: 14px;
     margin-bottom: 2px;
   }
- 
+
 
   .Explore_Sport_Influencers,
   .Explore_Bollywood,
@@ -1729,34 +1615,25 @@ footer {
 
   .celeb_name {
     font-size: 13px;
-    /* width: 118px;
-      height: 25px;
-      font-weight: 700; */
   }
 
   .bottom_text {
-   
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    /* line-height: 14px; */
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* Limit the text to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: normal;
-
   }
 
 
   .filmmaker-and-television {
- 
     color: var(--color-white);
     padding: 10px;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
-   
     height: 40%;
     background: #202946;
   }
@@ -1780,88 +1657,6 @@ footer {
     height: 40.973px;
   }
 
-
-  /* .taapsee_Pannu_profile {
-    background: url(./assets/Celebrity-profiles/Taapsee-Pannu.png), lightgray 50% / cover no-repeat;
-      background-repeat: no-repeat;
-  }
-
-  .urvashi_Rautela_profile {
-    background: url(./assets/Celebrity-profiles/Urvashi-Rautela.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .sukhwinder_Singh_profile {
-    background: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .malaika_Arora_profile {
-    background: url(./assets/Celebrity-profiles/Malaika-Arora.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .karan_Johar_profile {
-    background: url(./assets/Celebrity-profiles/Karan-Johar.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .agnijita_Banerjee_profile {
-    background: url(./assets/Celebrity-profiles/Agnijita-Banerjee.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .hema_Adhikari_profile {
-    background: url(./assets/Celebrity-profiles/Hema-Adhikari.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .rugees_Vini_profile {
-    background: url(./assets/Celebrity-profiles/Rugees-Vini.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .shalini_Chopra_profile {
-    background: url(./assets/Celebrity-profiles/Shalini-Chopra.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .nilam_Parmar_profile {
-    background: url(./assets/Celebrity-profiles/Nilam-Parmar.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-
-  .virat_Kohli_profile {
-    background: url(./assets/Celebrity-profiles/Virat-Kohli.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .dhoni_profile {
-    background: url(./assets/Celebrity-profiles/Dhoni.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-    border-color: #202946;
-    
-  }
-
-  .geeta_Phogat_profile {
-    background: url(./assets/Celebrity-profiles/Geeta-Phogat.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .rani_Rampal_profile {
-    background: url(./assets/Celebrity-profiles/Rani-Rampal.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
-
-  .guru_Mann_profile {
-    background: url(./assets/Celebrity-profiles/Guru-Mann.png), lightgray 50% / cover no-repeat;
-    background-repeat: no-repeat;
-  }
- */
-
-
-
   .chatroom_area {
     background-color: var(--color-gray-200);
     display: block;
@@ -1878,12 +1673,6 @@ footer {
   .search_bar {
     width: 100%;
   }
-
-  /* .back_btn,
-  .chat_text {
-    display: none;
-  } */
-
 
   .main_chatroom_section {
 
@@ -1944,17 +1733,10 @@ footer {
     min-height: 100%;
     width: 100%;
     overflow: hidden;
-    /* background-image: url(./assets/profile/Taapsee-Pannu-bg.png); */
-    /* background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), lightgray 50% / cover no-repeat; */
-
-    /* background-size: contain;
-    background-position: top;
-    background-repeat: no-repeat; */
-    /* z-index: 1000; */
     background-color: var(--color-gray-200);
     gap: 10px;
     transition: filter 0.5s ease;
-    /* Add transition for a smooth effect */
+
   }
 
   .blur-background {
@@ -2007,7 +1789,7 @@ footer {
     z-index: -1;
   }
 
-  .urvashi_rautela_profile_background{
+  .urvashi_rautela_profile_background {
 
     background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Urvashi-Rautela-bg.png), lightgray 50%;
     background-size: cover;
@@ -2020,29 +1802,11 @@ footer {
 
   }
 
-  /* .tapsee_pannu_profile_background > img{
-    width: 100%;
-    height: 40vh;
-  } */
-
-  /* .profile_page::before{
-    content: "";
-    background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.5));
-
-  } */
-
   .popup_info {
     position: absolute;
     width: 90%;
     height: 90%;
     flex-shrink: 0;
-    /* background-image: url(./assets/profile/Taapsee-Pannu-bg.png); */
-    /* background-position: top;
-    background-repeat: no-repeat;
-    background-size: contain; */
-
-
-
     border-radius: 9px;
     border: 1px solid rgba(255, 255, 255, 0.19);
     background-color: #262F4D;
@@ -2053,17 +1817,10 @@ footer {
     align-items: center;
     padding: 20px;
     gap: 20px;
-
-    /* box-shadow: 0px 0px 54px 50px; */
-
-
-
   }
 
   .popup_background {
     border-radius: 10px 10px 0px 0px;
-
-
   }
 
   .profile_paragraph {
@@ -2102,8 +1859,6 @@ footer {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    /* line-height: 20px; */
-
   }
 
   li {
@@ -2116,7 +1871,6 @@ footer {
     font-weight: 400;
     line-height: 20px;
     margin-bottom: 10px;
-    /* 142.857% */
   }
 
 
@@ -2135,7 +1889,6 @@ footer {
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
-    /* 126.316% */
     border-radius: 7px;
     background: #2D477D;
   }
@@ -2143,70 +1896,7 @@ footer {
   .popup_arrow {
     position: absolute;
     right: 50px;
-
   }
-
-
-
-
-  .profile_pic {
-    width: 152px;
-    height: 152px;
-    flex-shrink: 0;
-    border-radius: 152px;
-    border: 5px solid #05FF00;
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
-    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
-    background-image: url(./assets/Celebrity-profiles/Taapsee-Pannu.png)
-  }
-
-  .malaika_profile_pic {
-    width: 152px;
-    height: 152px;
-    flex-shrink: 0;
-    border-radius: 152px;
-    border: 5px solid #05FF00;
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
-    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
-    background-image: url(./assets/Celebrity-profiles/Malaika-Arora.png)
-  }
-
-  .sukhwinder_profile_pic {
-    width: 152px;
-    height: 152px;
-    flex-shrink: 0;
-    border-radius: 152px;
-    border: 5px solid #05FF00;
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
-    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
-    background-image: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png)
-  }
-
-
-
-  
-  .karan_profile_pic {
-    width: 152px;
-    height: 152px;
-    flex-shrink: 0;
-    border-radius: 152px;
-    border: 5px solid #05FF00;
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
-    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
-    background-image: url(./assets/Celebrity-profiles/Karan-Johar.png)
-  }
-
-  .urvashi_profile_pic {
-    width: 152px;
-    height: 152px;
-    flex-shrink: 0;
-    border-radius: 152px;
-    border: 5px solid #05FF00;
-    background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(<path-to-image>), lightgray 50% / cover no-repeat;
-    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
-    background-image: url(./assets/Celebrity-profiles/Urvashi-Rautela.png)
-  }
-
 
   .profile_name {
     color: #FFF;
@@ -2238,11 +1928,8 @@ footer {
     width: 90vw;
   }
 
-
-
   .subscribe,
   .talk_2_me {
-    /* padding-top: 8px; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -2260,8 +1947,6 @@ footer {
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
-    /* 126.316% */
-
   }
 
   .horizontal {
@@ -2275,7 +1960,6 @@ footer {
 
   .services {
     color: #7585CB;
-
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
@@ -2376,7 +2060,6 @@ footer {
     font-style: normal;
     font-weight: 700;
     line-height: 25px;
-    /* 113.636% */
   }
 
   .register_slide_img {
@@ -2392,13 +2075,11 @@ footer {
 
   .input_head {
     color: #FFF;
-
     font-family: "Source Sans Pro";
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
-    /* 138.889% */
   }
 
   .input_sections>input {
@@ -2440,8 +2121,6 @@ footer {
     font-style: normal;
     font-weight: 600;
     border-radius: 8px;
-    /* background-color: #B5CDFF; */
-
     background-color: #061635;
     border: 2px solid #B5CDFF;
     margin-top: 30px;
@@ -2481,8 +2160,6 @@ footer {
     background-size: 50%;
     height: 25vh;
     width: 100vw;
-
-
   }
 
   .Please_login {
@@ -2492,13 +2169,10 @@ footer {
     font-weight: 700;
     text-align: left;
     width: 90%;
-
   }
 
   .login_page_btn {
     width: 90%;
-
-
   }
 
   .login_or {
@@ -2514,7 +2188,6 @@ footer {
     line-height: 25px;
     z-index: 10;
     background-color: var(--color-gray-200);
-
   }
 
   .or_section {
@@ -2543,17 +2216,57 @@ footer {
   .red_circle,
   .start {
     opacity: 1 !important;
-    /* Ensure these elements are visible */
     transform: translateY(0) !important;
-    /* Ensure no transformation on mobile */
 
   }
 
-  .coming_soon_popup {
+  .coming_soon_popup_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
 
-    height: 25vw;
-    width: 35vh;
-    font-size: 1.5rem;
+
+  .coming_soon_popup_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+  }
+
+  .coming_soon_heading {
+    font-size: 25px;
+    width: 90%;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  .coming_soon_para {
+
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .comming_soon_close_btn {
+    width: 90%;
+    height: 45px;
+    border-radius: 7px;
+    background: #2D477D;
+  }
+
+  .coming_soon_popup {
+    width: 90%;
+    height: 60%;
+    font-size: 17px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+
+    background: #262F4D;
     animation: myAnim 1s ease 0s 1 normal forwards;
     transform-origin: center;
   }
@@ -2576,14 +2289,14 @@ footer {
   }
 
   .close_popup {
-    background-size: 40%;
-    top: 10px;
-    right: -20px;
+    background-size: 80%;
+    top: 15px;
+    right: 10px;
   }
 
   .Facebook_icon,
-.instagram_icon {
-  display: none;
-}
+  .instagram_icon {
+    display: none;
+  }
 
 }

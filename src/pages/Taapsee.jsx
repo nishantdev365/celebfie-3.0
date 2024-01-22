@@ -5,11 +5,9 @@ import Idea from "../assets/idea.svg";
 import Learn from "../assets/learn.svg";
 import Chat from "../assets/chat.svg";
 import Close from "../assets/close.png";
-// import Profile_back from "../assets/profile/taapsee-pannu-bg.png"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// import { Link } from "react-router-dom";
 
 const Taapsee = () => {
   const navigate = useNavigate();
@@ -57,11 +55,11 @@ const Taapsee = () => {
     <>
       <section className="profile_page">
         <div className={`tapsee_pannu_profile_background ${showPopUp ? 'blur-background' : ''}`}>
-          {/* <img src={Profile_back} alt="" /> */}
+     
         </div>
      {showPopUp && (<div className="popup_info">
      <div className="tapsee_pannu_profile_background popup_background">
-          {/* <img src={Profile_back} alt="" /> */}
+   
         </div>
           <div className="close_btn" onClick={handleCloseButton}>
             <img src={Close} alt="close"/>
@@ -93,9 +91,9 @@ const Taapsee = () => {
           </div>
         </div>)   }
 
-       {/* <Link to="/home"> */}
+      
        <div className="back_btn_profile" onClick={handleBack}></div>
-       {/* </Link> */}
+
         <div className="profile_pic"></div>
         <div className="name_details">
           <b className="profile_name">Taapsee Pannu</b>
@@ -109,13 +107,12 @@ const Taapsee = () => {
             <p>Subscribe</p>
           </div>
 
-         {/* <Link to="taapsee-pannu"> */}
          <div className="talk_2_me" onClick={handleCardClick}>
 
             <img src={Chat} alt="chat" className="primary_img" />
             <p>Talk To Me</p>
           </div>
-         {/* </Link> */}
+    
         </div>
 
         <div className="horizontal"></div>

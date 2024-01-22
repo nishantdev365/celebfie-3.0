@@ -5,11 +5,9 @@ import Idea from "../assets/idea.svg";
 import Learn from "../assets/learn.svg";
 import Chat from "../assets/chat.svg";
 import Close from "../assets/close.png";
-// import Profile_back from "../assets/profile/taapsee-pannu-bg.png"
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-// import { Link } from "react-router-dom";
 
 const Karan = () => {
   const navigate = useNavigate();
@@ -39,9 +37,8 @@ const Karan = () => {
   }, []);
 
   const handleBack = () => {
-    navigate("/")
-  }
-
+    navigate("/");
+  };
 
   const handleCardClick = () => {
     if (isMobile) {
@@ -51,57 +48,63 @@ const Karan = () => {
     }
   };
 
-
-
   return (
     <>
       <section className="profile_page">
-        <div className={`karan_johar_profile_background ${showPopUp ? 'blur-background' : ''}`}>
-          {/* <img src={Profile_back} alt="" /> */}
-        </div>
-     {showPopUp && (<div className="popup_info">
-     <div className="karan_johar_profile_background popup_background">
-          {/* <img src={Profile_back} alt="" /> */}
-        </div>
-          <div className="close_btn" onClick={handleCloseButton}>
-            <img src={Close} alt="close"/>
-          </div>
-    <div className="profile_paragraph">
-    <p className="first_para">
-            Discover the Art of Glamour with <b>Karan Johar</b>: Elevate your
-            journey in the world of modeling
-          </p>
+        <div
+          className={`karan_johar_profile_background ${
+            showPopUp ? "blur-background" : ""
+          }`}
+        ></div>
+        {showPopUp && (
+          <div className="popup_info">
+            <div className="karan_johar_profile_background popup_background"></div>
+            <div className="close_btn" onClick={handleCloseButton}>
+              <img src={Close} alt="close" />
+            </div>
+            <div className="profile_paragraph">
+              <p className="first_para">
+                Discover the Art of Glamour with <b>Karan Johar</b>: Elevate
+                your journey in the world of modeling
+              </p>
 
-          <div className="second_para">
-            <ul>
-              <li><p>
-              Discover the Art of Glamour with
-              Karan Johar: Elevate your journey
-            in the world of modeling</p></li>
-            <li>
-          <p>Career Insights: Exclusive tips and guidance for aspiring models and actors, including portfolio reviews.</p>
-            </li>
-            <li>
-           <p>Health & Wellness Coaching: Personalized fitness and nutrition plans, along with stress management strategies.</p>
-            </li>
-            </ul>
-          </div>
-    </div>
+              <div className="second_para">
+                <ul>
+                  <li>
+                    <p>
+                      Discover the Art of Glamour with Karan Johar: Elevate your
+                      journey in the world of modeling
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Career Insights: Exclusive tips and guidance for aspiring
+                      models and actors, including portfolio reviews.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Health & Wellness Coaching: Personalized fitness and
+                      nutrition plans, along with stress management strategies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-          <div className="popup_btn">
-            <span>Pay Now</span><img className="popup_arrow" src={Right} alt="right" />
+            <div className="popup_btn">
+              <span>Pay Now</span>
+              <img className="popup_arrow" src={Right} alt="right" />
+            </div>
           </div>
-        </div>)   }
+        )}
 
-       {/* <Link to="/home"> */}
-       <div className="back_btn_profile" onClick={handleBack}></div>
-       {/* </Link> */}
+        <div className="back_btn_profile" onClick={handleBack}></div>
+
         <div className="karan_profile_pic"></div>
         <div className="name_details">
           <b className="profile_name">Karan Johar</b>
-          <p className="profile_discription">
-          Producer, Director and TV host
-          </p>
+          <p className="profile_discription">Producer, Director and TV host</p>
         </div>
         <div className="primary_btn">
           <div className="subscribe">
@@ -109,13 +112,10 @@ const Karan = () => {
             <p>Subscribe</p>
           </div>
 
-         {/* <Link to="taapsee-pannu"> */}
-         <div className="talk_2_me" onClick={handleCardClick}>
-
+          <div className="talk_2_me" onClick={handleCardClick}>
             <img src={Chat} alt="chat" className="primary_img" />
             <p>Talk To Me</p>
           </div>
-         {/* </Link> */}
         </div>
 
         <div className="horizontal"></div>

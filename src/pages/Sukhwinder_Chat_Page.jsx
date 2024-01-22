@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -11,7 +10,7 @@ const SukhwinderChatPage = () => {
 
 
   useEffect(() => {
-    // Place the provided script code here
+  
     let MemberSpace = window.MemberSpace || {"subdomain":"celebfie"};
     (function(d){
       var s = d.createElement("script");
@@ -20,9 +19,9 @@ const SukhwinderChatPage = () => {
       e.parentNode.insertBefore(s, e);
     })(document);
 
-    // The cleanup function (optional) to remove the script if the component is unmounted
+   
     return () => {
-      // Perform any cleanup here if needed
+     
     };
   }, []); 
 
@@ -48,7 +47,6 @@ const SukhwinderChatPage = () => {
 
     const mcontextElement = document.getElementById("mcontext");
 
-    // Clear existing content in mcontextElement
     while (mcontextElement.firstChild) {
       mcontextElement.removeChild(mcontextElement.firstChild);
     }
@@ -68,9 +66,9 @@ const SukhwinderChatPage = () => {
 
 
   useEffect(() => {
-    // Check MemberSpace membership status
+
     if (window.Memberspace && !window.Memberspace.isMember()) {
-      // Redirect non-members to the login or membership page
+    
       navigate("/?msopen=/member/sign_in");
     }
   }, [navigate]);
@@ -91,11 +89,9 @@ const SukhwinderChatPage = () => {
   }, []);
 
   const handleCardClick = () => {
-    if (isMobile) {
+  
       navigate("/");
-    } else {
-      navigate("/");
-    }
+   
   };
 
   return (
@@ -116,15 +112,13 @@ const SukhwinderChatPage = () => {
       </Helmet>
 
       <div className="profile_header">
-        {/* <Link to="/profile"> */}
+       
         <div className="back_btn" onClick={handleCardClick}></div>
-        {/* <div className="back_btn_mobile">
+        
 
-</div> */}
-
-        {/* </Link> */}
+       
         <div className="rectangle-group" id="profileName">
-          {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
+        
           <div className="sukhwinder_pic" alt="profile-pic">
         
           </div>
@@ -138,7 +132,7 @@ const SukhwinderChatPage = () => {
       </div>
 
       <div className="chatroom_area">
-        {/* <SidePanel /> */}
+      
         <div
           className="main_chatroom_section"
           id="mcontext"

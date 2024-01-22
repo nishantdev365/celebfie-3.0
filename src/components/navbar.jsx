@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
-// import BurgerMenu from "../assets/burger-menu.svg"
+
 import Logo from '../assets/logo.svg';
-// import { Link } from "react-router-dom";
-// import Signup from "./signup";
-// import { useEffect } from "react";
-// s
 
 // import { Link, useLocation } from "react-router-dom";
 
@@ -72,7 +68,7 @@ const Navbar = () => {
             </ul>
           </div> */}
         </div>
-        <div className="signup_btn">
+        {/* <div className="signup_btn">
       
           <button className="register_btn" id="register_btn">
             <b className="login" >Register</b>
@@ -81,7 +77,7 @@ const Navbar = () => {
           <button className="login_btn">
             <b className="login">Login</b>
           </button>
-        </div>
+        </div> */}
 
         {/* <img src={BurgerMenu} className="burger_menu" alt=""/> */}
       </nav>

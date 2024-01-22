@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -10,7 +9,7 @@ const TaapseeChatPage = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Place the provided script code here
+
     let MemberSpace = window.MemberSpace || {"subdomain":"celebfie"};
     (function(d){
       var s = d.createElement("script");
@@ -19,9 +18,8 @@ const TaapseeChatPage = () => {
       e.parentNode.insertBefore(s, e);
     })(document);
 
-    // The cleanup function (optional) to remove the script if the component is unmounted
     return () => {
-      // Perform any cleanup here if needed
+     
     };
   }, []); 
   
@@ -47,7 +45,7 @@ const TaapseeChatPage = () => {
 
     const mcontextElement = document.getElementById("mcontext");
 
-    // Clear existing content in mcontextElement
+    
     while (mcontextElement.firstChild) {
       mcontextElement.removeChild(mcontextElement.firstChild);
     }
@@ -67,9 +65,9 @@ const TaapseeChatPage = () => {
 
 
   useEffect(() => {
-    // Check MemberSpace membership status
+    
     if (window.Memberspace && !window.Memberspace.isMember()) {
-      // Redirect non-members to the login or membership page
+      
       navigate("/?msopen=/member/sign_in");
     }
   }, [navigate]);
@@ -89,11 +87,9 @@ const TaapseeChatPage = () => {
   }, []);
 
   const handleCardClick = () => {
-    if (isMobile) {
+ 
       navigate("/");
-    } else {
-      navigate("/");
-    }
+   
   };
 
   return (
@@ -114,15 +110,13 @@ const TaapseeChatPage = () => {
       </Helmet>
 
       <div className="profile_header">
-        {/* <Link to="/profile"> */}
+       
         <div className="back_btn" onClick={handleCardClick}></div>
-        {/* <div className="back_btn_mobile">
+       
 
-</div> */}
-
-        {/* </Link> */}
+        
         <div className="rectangle-group" id="profileName">
-          {/* <img className="rectangle-icon" alt="profile-pic" src={Tapsee} /> */}
+         
           <div className="rectangle-icon" alt="profile-pic">
         
           </div>
@@ -136,7 +130,7 @@ const TaapseeChatPage = () => {
       </div>
 
       <div className="chatroom_area">
-        {/* <SidePanel /> */}
+        
         <div
           className="main_chatroom_section"
           id="mcontext"
