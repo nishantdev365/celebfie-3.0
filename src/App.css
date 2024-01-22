@@ -819,7 +819,7 @@ nav {
 }
 
 .ai-chat {
-  margin: 0;
+  margin-left: 10px;
   color: var(--color-tomato);
   line-height: 30px;
 }
