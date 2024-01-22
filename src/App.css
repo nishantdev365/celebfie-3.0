@@ -814,12 +814,12 @@ nav {
 }
 
 .how-to-use {
-  margin: 0;
+  margin-left: 6px;
   color: var(--color-white);
 }
 
 .ai-chat {
-  margin-left: 10px;
+  margin: 0;
   color: var(--color-tomato);
   line-height: 30px;
 }
