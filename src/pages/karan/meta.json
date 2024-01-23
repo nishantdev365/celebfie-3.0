@@ -1,0 +1,19 @@
+{
+    "basic": {
+      "title": "Celebfie - Chat with Karan Johar",
+      "description": "Chat with Karan Johar, the famous Bollywood director and producer.",
+      "image": "https://example.com/karan-johar.jpg"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@celebfie",
+      "creator": "@karanjohar",
+      "title": "Celebfie - Chat with Karan Johar",
+      "description": "Chat with Karan Johar, the famous Bollywood director and producer.",
+      "image": "https://example.com/karan-johar.jpg"
+    },
+    "facebook": {
+      "appId": 123456789
+    }
+  }
+  

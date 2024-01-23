@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
-import TaapseeChatPage from "./pages/Taapsee_Chat_Page";
-import UrvashiChatPage from "./pages/Urvashi_Chat_Page";
-import SukhwinderChatPage from "./pages/Sukhwinder_Chat_Page";
-import MalaikaChatPage from "./pages/Malaika_Chat_Page";
-import KaranChatPage from "./pages/Karan_Chat_Page";
+import TaapseeChatPage from "./pages/taapsee/Taapsee_Chat_Page";
+import UrvashiChatPage from "./pages/urvashi/Urvashi_Chat_Page";
+import SukhwinderChatPage from "./pages/sukhwinder/Sukhwinder_Chat_Page";
+import MalaikaChatPage from "./pages/malaika/Malaika_Chat_Page";
+import KaranChatPage from "./pages/karan/Karan_Chat_Page";
 import "./App.css";
 
 function App() {

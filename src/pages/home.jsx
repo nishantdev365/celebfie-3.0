@@ -71,17 +71,17 @@ const Home = () => {
     navigate("/chat/urvashi-rautela");
   };
 
-  const handlSukhwinderPage = () => {
-    navigate("/chat/sukhwinder-singh");
-  };
+  // const handlSukhwinderPage = () => {
+  //   navigate("/chat/sukhwinder-singh");
+  // };
 
-  const handlMalaikaPage = () => {
-    navigate("/chat/malaika-arora");
-  };
+  // const handlMalaikaPage = () => {
+  //   navigate("/chat/malaika-arora");
+  // };
 
-  const handlKaranPage = () => {
-    navigate("/chat/karan-johar");
-  };
+  // const handlKaranPage = () => {
+  //   navigate("/chat/karan-johar");
+  // };
 
   return (
     <>
@@ -224,7 +224,7 @@ const Home = () => {
 
               <div
                 className="profile sukhwinder_Singh_profile"
-                onClick={handlSukhwinderPage}
+                onClick={handleTriggerClick}
               >
                 <div className="profile_center">
                   <div className="horizontal_line"></div>
@@ -246,7 +246,7 @@ const Home = () => {
 
               <div
                 className="profile malaika_Arora_profile"
-                onClick={handlMalaikaPage}
+                onClick={handleTriggerClick}
               >
                 <div className="profile_center">
                   <div className="horizontal_line"></div>
@@ -270,7 +270,7 @@ const Home = () => {
 
               <div
                 className="profile karan_Johar_profile"
-                onClick={handlKaranPage}
+                onClick={handleTriggerClick}
               >
                 <div className="profile_center">
                   <div className="horizontal_line"></div>
@@ -497,7 +497,7 @@ const Home = () => {
           <div className="theory_how_to_use">
             <b className="how-to-use-container">
               <p className="ai-chat">
-                Welcome to Celebfie 3.0{" "}
+                Welcome to Celebfie 3.0 <br />
                 <span className="how-to-use">
                   Your Gateway to Unparalleled Celeb connect!
                 </span>
@@ -561,9 +561,7 @@ const Home = () => {
         <div className="footer_left">
           <img className="footer_logo" alt="" src={Logo} />
           <div className="lorem-ipsum-dolor1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            at porttitor mi. In eu ornare enim, vitae tincidunt magna. Nullam at
-            convallis diam. Cras vitae tortor
+          Celebfie is a platform where you can chat with your favorite celebrities and get to know them better.
           </div>
           <div className="social_icons">
             <a
