@@ -193,11 +193,11 @@ const Home = () => {
                   <p className="bottom_text">Indian actress and producer</p>
                 </div>
                 <p className="start">Start Chat</p>
-                <p className="members_only">
+                {/* <p className="members_only">
                   {" "}
                   <span className="members_span">(</span> Members Only{" "}
                   <span className="members_span">)</span>{" "}
-                </p>
+                </p> */}
               </div>
 
               <div
@@ -215,11 +215,11 @@ const Home = () => {
                   <p className="bottom_text">Bollywood actress, ace dancer</p>
                 </div>
                 <p className="start">Start Chat</p>
-                <p className="members_only">
+                {/* <p className="members_only">
                   {" "}
                   <span className="members_span">(</span> Members Only{" "}
                   <span className="members_span">)</span>{" "}
-                </p>
+                </p> */}
               </div>
 
               <div
@@ -237,11 +237,11 @@ const Home = () => {
                   <p className="bottom_text">Singer, Rockstar Performer</p>
                 </div>
                 <p className="start">Start Chat</p>
-                <p className="members_only">
+                {/* <p className="members_only">
                   {" "}
                   <span className="members_span">(</span> Members Only{" "}
                   <span className="members_span">)</span>{" "}
-                </p>
+                </p> */}
               </div>
 
               <div
@@ -261,11 +261,11 @@ const Home = () => {
                   </p>
                 </div>
                 <p className="start">Start Chat</p>
-                <p className="members_only">
+                {/* <p className="members_only">
                   {" "}
                   <span className="members_span">(</span> Members Only{" "}
                   <span className="members_span">)</span>{" "}
-                </p>
+                </p> */}
               </div>
 
               <div
@@ -283,11 +283,11 @@ const Home = () => {
                   <p className="bottom_text">Producer, Director and TV host</p>
                 </div>
                 <p className="start">Start Chat</p>
-                <p className="members_only">
+                {/* <p className="members_only">
                   {" "}
                   <span className="members_span">(</span> Members Only{" "}
                   <span className="members_span">)</span>{" "}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
