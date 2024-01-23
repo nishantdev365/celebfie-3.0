@@ -1,0 +1,19 @@
+{
+    "basic": {
+      "title": "Taapsee Pannu",
+      "description": "Chat with Taapsee Pannu, the famous indian actress and producer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@celebfie",
+      "creator": "@taapseePannu",
+      "title": "Taapsee Pannu",
+      "description": "Chat with Taapsee Pannu, the famous indian actress and producer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "facebook": {
+      "appId": 123456789
+    }
+  }
+  
