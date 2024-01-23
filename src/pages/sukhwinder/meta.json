@@ -1,0 +1,19 @@
+{
+    "basic": {
+      "title": "Sukhwinder Singh",
+      "description": "Chat with TSukhwinder Singh, the famous indian singer, rockstar performer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@celebfie",
+      "creator": "@SukhwinderSingh",
+      "title": "Sukhwinder Singh",
+      "description": "Chat with Sukhwinder Singh, the famous indian singer, rockstar performer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "facebook": {
+      "appId": 123456789
+    }
+  }
+  

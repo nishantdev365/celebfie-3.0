@@ -1,0 +1,19 @@
+{
+    "basic": {
+      "title": "Urvashi Rautela",
+      "description": "Chat with Urvashi Rautela, the famous indian bollywood actress, ace dancer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@celebfie",
+      "creator": "@urvashiRautela",
+      "title": "Urvashi Rautela",
+      "description": "Chat with Urvashi Rautela, the famous indian bollywood actress, ace dancer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "facebook": {
+      "appId": 123456789
+    }
+  }
+  

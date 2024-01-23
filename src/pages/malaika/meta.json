@@ -1,0 +1,19 @@
+{
+    "basic": {
+      "title": "Malaika Arora",
+      "description": "Chat with TMalaika Arora, the famous indian bollwood actress, global influencer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@celebfie",
+      "creator": "@mMalaikaArora",
+      "title": "Malaika Arora",
+      "description": "Chat with Malaika Arora, the famous indian bollwood actress, global influencer.",
+      "image": "https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png"
+    },
+    "facebook": {
+      "appId": 123456789
+    }
+  }
+  
