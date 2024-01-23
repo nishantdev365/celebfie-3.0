@@ -22,7 +22,7 @@ const UrvashiChatPage = () => {
     script.setAttribute("id", "webchat");
     script.setAttribute(
       "mkey",
-      "YmM0ODlhYTAtYWVjMS0xMWVlLThjMWQtMjM2MzE0Nzc1MTZh"
+      "OGRkN2RhYjAtYjdhMy0xMWVlLWJlMTctODU3NzEyNWFhMGYy"
     );
     script.setAttribute("style", "min-height: 480px");
     script.setAttribute("chathost", "https://messengerx.io");
@@ -74,8 +74,8 @@ const UrvashiChatPage = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Taapsee Pannu</title>
-        <meta name="description" content="Indian actress and producer" />
+        <title>Urvashi Rautela</title>
+        <meta name="description" content="Bollywood actress, ace dancer" />
         <link rel="canonical" href="http://mysite.com/example" />
         <link rel="icon" href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705656033/rpw8cgny9xvuecv9tcho.png" />
       

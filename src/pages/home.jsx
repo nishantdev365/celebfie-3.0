@@ -7,11 +7,14 @@ import Info from "../assets/info.png";
 import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
 import Play from "../assets/play.png";
-// import Visa from "../assets/visa-mastercard-icon.png";
+import Group from "../assets/group.png";
+import Visa from "../assets/visa-mastercard-icon.png";
 import Footer from "../components/Footer";
 import ReactPlayer from "react-player";
 import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
+import { Helmet } from "react-helmet";
+
 // import Signup from "../components/signup";
 
 
@@ -74,32 +77,54 @@ const Home = () => {
     }
   };
   
-  const handlSukhwinderPage = () => {
-    if (isMobile) {
-      navigate("/sukhwinder-profile");
-    } else {
-      navigate("/sukhwinder-singh");
-    }
-  };
+  // const handlSukhwinderPage = () => {
+  //   if (isMobile) {
+  //     navigate("/sukhwinder-profile");
+  //   } else {
+  //     navigate("/sukhwinder-singh");
+  //   }
+  // };
   
-  const handlMalaikaPage = () => {
-    if (isMobile) {
-      navigate("/malaika-profile");
-    } else {
-      navigate("/malaika-arora");
-    }
-  };
+  // const handlMalaikaPage = () => {
+  //   if (isMobile) {
+  //     navigate("/malaika-profile");
+  //   } else {
+  //     navigate("/malaika-arora");
+  //   }
+  // };
 
-  const handlKaranPage = () => {
-    if (isMobile) {
-      navigate("/karan-profile");
-    } else {
-      navigate("/karan-johar");
-    }
-  };
+  // const handlKaranPage = () => {
+  //   if (isMobile) {
+  //     navigate("/karan-profile");
+  //   } else {
+  //     navigate("/karan-johar");
+  //   }
+  // };
 
   return (
     <>
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>Celebfie</title>
+        <meta name="description" content="Celebfie is a platform where you can chat with your favorite celebrities and get to know them better." />
+        <link rel="canonical" href="https://celebfie.vercel.app" />
+        <link
+          rel="icon"
+          href="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705949513/prfdawpa7qmthwtk3tcb.png"
+        />
+
+        <meta property="og:title" content="Celebfie" />
+        <meta
+          property="og:description"
+          content="Talk with Virtual Celebrities"
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dzhl8bgd9/image/upload/v1705949513/prfdawpa7qmthwtk3tcb.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://celebfie.vercel.app" />
+      </Helmet>
       <section className="homepage"> 
       {/* {showSignup && <Signup />} */}
         <div className="mobile_banner">
@@ -423,9 +448,22 @@ const Home = () => {
 
         {isPopupOpen && (
         <div className="coming_soon_popup open">
-          <strong>Coming <span className="soon_popup">Soon</span></strong>
-         <div className="close_popup" onClick={ClosePopup}></div>
+        <div className="coming_soon_popup_inner">
+          <img src={Group} alt="group" />
+          <div className="coming_soon_popup_text">
+            <h1 className="coming_soon_heading">Coming Soon!</h1>
+            <p className="coming_soon_para">
+              For you to interact not just with this celebrity but with
+              their AI-driven characters. This immersive experience will
+              transform conversations into memorable engagement.
+            </p>
+          </div>
+          <button className="comming_soon_close_btn" onClick={ClosePopup}>
+            Close
+          </button>
         </div>
+        <div className="close_popup" onClick={ClosePopup}></div>
+      </div>
       )}
 
          {/* <Link to="/chatPage"> */}
@@ -478,7 +516,7 @@ const Home = () => {
               {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
             </div>
 
-            <div className="profile sukhwinder_Singh_profile" onClick={handlSukhwinderPage}>
+            <div className="profile sukhwinder_Singh_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -491,10 +529,10 @@ const Home = () => {
                 <p className="bottom_text">Singer, Rockstar Performer</p>
               </div>
               <p className="start">Start Chat</p>
-              <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p>
+              {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
             </div>
 
-            <div className="profile malaika_Arora_profile" onClick={handlMalaikaPage}>
+            <div className="profile malaika_Arora_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -511,7 +549,7 @@ const Home = () => {
               <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile karan_Johar_profile" onClick={handlKaranPage}>
+            <div className="profile karan_Johar_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -721,25 +759,51 @@ const Home = () => {
         <div className="how_to_use_section">
           <div className="theory_how_to_use">
             <b className="how-to-use-container">
-              <span className="explore-bollywood-txt-container">
-                <p className="how-to-use">How to use</p>
-                <p className="ai-chat">AI Chat</p>
-              </span>
+            <p className="ai-chat">
+                Welcome to Celebfie 3.0 <br />
+                <span className="how-to-use">
+                  Your Gateway to Unparalleled Celeb connect!
+                </span>
+              </p>
             </b>
 
             <div className="lorem_ipsum_dolor">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse at porttitor mi. In eu ornare enim, vitae tincidunt
-              magna. Nullam at convallis diam. Cras vitae tortor justo. Donec
-              varius justo rhoncus, luctus est et, luctus erat. Etiam rutrum vel
-              ipsum vel ultricies. Quisque efficitur ut purus vitae tristique.
-              Proin nisl velit, gravida non elementum ut, suscipit at turpis.
-              Aenean viverra ex massa, et interdum lectus efficitur in.
+              Engage in meaningful and fascinating conversations with your
+              favorite film stars, musicians, athletes, and influencers on our
+              Conversational AI platform. Our celebrities have crafted their AI
+              counterparts, allowing fans and brands to connect on a whole new
+              level. Whether you seek knowledge, guidance, or just pure
+              entertainment, Celebfie 3.0 brings you closer to the personalities
+              you adore. Brands can seize the opportunity to collaborate with
+              celebrities for impactful engagements. Elevate your interactions,
+              learn, and have fun – Celebfie 3.0 is where authentic connections
+              come to life!
+              <br />
+              Our platform operates seamlessly, offering a user-friendly
+              experience for fans and brands alike. Upon entering Celebfie 3.0,
+              users can explore a diverse array of AI versions of their favorite
+              celebrities. Engaging in conversations is as simple as selecting a
+              celebrity AI and initiating a chat. Through advanced natural
+              language processing, these AI counterparts emulate the
+              personalities of the real celebrities, ensuring a genuine and
+              immersive interaction. Fans can inquire, share, and enjoy
+              personalized responses, while brands can navigate an efficient
+              collaboration request process. Celebfie 3.0 opens the door to a
+              novel form of connection, where the magic of technology converges
+              with the charisma of your beloved stars.
             </div>
           </div>
           <div className="video_show">
             <div className="play_btn">
-              <img src={Play} className="play_btn_icon" alt="" />
+            <ReactPlayer
+                  url={video}
+                  controls={true}
+                  width="100%"
+                  height="100%"
+              
+                  light={true}
+                />
+              {/* <img src={Play} className="play_btn_icon" alt="" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="110"
@@ -748,7 +812,7 @@ const Home = () => {
                 fill="none"
               >
                 <circle opacity="0.51" cx="55" cy="55" r="55" fill="black" />
-              </svg>
+              </svg> */}
             </div>
           </div>
         </div>
@@ -775,22 +839,36 @@ const Home = () => {
         <div className="footer_left">
           <img className="footer_logo" alt="" src={Logo} />
           <div className="lorem-ipsum-dolor1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            at porttitor mi. In eu ornare enim, vitae tincidunt magna. Nullam at
-            convallis diam. Cras vitae tortor
+          Celebfie is a platform where you can chat with your favorite celebrities and get to know them better.
           </div>
           <div className="social_icons">
-            <img className="Facebook_icon" alt="facebook-icon" src={Facebook} />
+            <a
+              href="https://www.facebook.com/celebfieapp?mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="Facebook_icon"
+                alt="facebook-icon"
+                src={Facebook}
+              />
+            </a>
 
-            <img
-              className="instagram_icon"
-              alt="instagram-icon"
-              src={Instagram}
-            />
+            <a
+              href="https://www.instagram.com/celebfieapp/?igsh=bXo5MWtqYzZ6dHc1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="instagram_icon"
+                alt="instagram-icon"
+                src={Instagram}
+              />
+            </a>
           </div>
         </div>
 
-        {/* <div className="sitemap_parent">
+        <div className="sitemap_parent">
           <b className="sitemap">Sitemap</b>
           <div className="footer_sitemap_container">
             <p className="how-to-use">Image Chat</p>
@@ -806,7 +884,7 @@ const Home = () => {
           className="visa_icon"
           alt="visa-and-mastercard-logos-icon"
           src={Visa}
-        /> */}
+        />
       </footer>
     </>
   );
