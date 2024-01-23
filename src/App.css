@@ -819,7 +819,6 @@ nav {
 }
 
 .ai-chat {
-  margin: 0;
   color: var(--color-tomato);
   line-height: 30px;
 }
