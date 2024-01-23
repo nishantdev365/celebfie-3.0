@@ -267,62 +267,6 @@ nav {
 }
 
 
-
-/* li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 15px;
-  cursor: pointer;
-  height: 100%;
-  color: grey;
-} */
-
-/* li > span{
-       padding-top: 26px;
-   height: 100%;
-  } */
-
-
-/* li:hover {
-  border-bottom: 4px solid;
-  border-color: var(--color-white);
-  background: rgba(22, 36, 79, 0.10);
-  color: var(--color-white);
-} */
-
-
-/* i {
-    padding: 10px;
-    color: #0b0b0b;
-  
-  }
-   */
-/* .ico {
-    margin-right: 8px;
-    color: grey;
-  }
-  
-  .ico:hover {
-    color: var(--color-white);
-  }
-   */
-
-
-/* .nav_options {
-    color: grey;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    height: 100%;
-    padding-top: 26px;
-  }
-  
-  .nav_options:hover {
-    color: var(--color-white);
-  }
-   */
-
 .register_btn,
 .login_btn {
   border-radius: var(--br-5xs);
