@@ -2313,9 +2313,9 @@ footer {
     min-height: 100%;
     width: 100%;
     overflow: hidden;
-    background: linear-gradient(180deg, #0A0F1F 0%, rgba(10, 15, 31, 0.55) 126.45%), url(./assets/slide-img.jpg);
+    background: linear-gradient(180deg, #0A0F1F 25%, rgba(10, 15, 31, 0.55) 286.45%), url(./assets/slide-img.jpg);
     background-size: contain;
-    background-position: bottom;
+    background-position: calc(100% + 0.5px) 125%;
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: var(--color-gray-200);
