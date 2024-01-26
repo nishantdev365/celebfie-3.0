@@ -95,8 +95,12 @@ body {
   background-image: url(./assets/slide-img.jpg);
   background-size: cover;
   z-index: 1000;
-
 }
+
+.intro_description {
+  display: none;
+}
+
 
 #intro_logo {
   width: 15%;
@@ -612,7 +616,7 @@ nav {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Dhoni@2x.png), lightgray 50% / cover no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
- }
+}
 
 .geeta_Phogat_profile {
   background: linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0.00) 55.83%), url(./assets/Celebrity-profiles/Geeta-Phogat@2x.png), lightgray 50% / cover no-repeat;
@@ -861,6 +865,7 @@ nav {
   white-space: normal;
 
 }
+
 .how_to_use_section {
   display: flex;
   justify-content: space-between;
@@ -1192,7 +1197,7 @@ footer {
   object-fit: cover;
 }
 
-.sukhwinder_pic{
+.sukhwinder_pic {
   background-image: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png);
   background-size: cover;
   border-radius: 37px;
@@ -1202,7 +1207,7 @@ footer {
   object-fit: cover;
 }
 
-.karan_pic{
+.karan_pic {
   background-image: url(./assets/Celebrity-profiles/Karan-Johar.png);
   background-size: cover;
   border-radius: 37px;
@@ -1214,7 +1219,7 @@ footer {
 
 
 
-.malaika_pic{
+.malaika_pic {
   background-image: url(./assets/Celebrity-profiles/Malaika-Arora.png);
   background-size: cover;
   border-radius: 37px;
@@ -1428,6 +1433,7 @@ footer {
     }
   }
 
+
   #intro_logo {
     width: 213px;
     height: 51px;
@@ -1435,6 +1441,17 @@ footer {
     transform: translate(-35%, 50%);
     animation: none;
   }
+
+  .intro_description {
+    display: block;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 0.9rem;
+  }
+
 
   #intro_signup {
     display: none;
@@ -1464,7 +1481,7 @@ footer {
     display: none;
     max-width: 95%;
     max-height: 90%;
-    
+
 
     /* opacity: 0;
     transform: translateY(50px);
@@ -1472,7 +1489,7 @@ footer {
   }
 
 
-  
+
 
   /* .signup_section.show {
 
@@ -1483,7 +1500,7 @@ footer {
   /* .members-only {
     display: none;
   } */
-  
+
 
   /* .iconplus{
     
@@ -1581,6 +1598,19 @@ footer {
     border-radius: 15px;
     margin-left: 0;
     margin-right: 0;
+    /* position: relative; */
+  }
+
+  .close_modal_btn {
+
+    cursor: pointer;
+    background: transparent;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: white;
+    z-index: 1000;
+
 
   }
 
@@ -1988,7 +2018,7 @@ footer {
     z-index: -1;
   }
 
-  .urvashi_rautela_profile_background{
+  .urvashi_rautela_profile_background {
 
     background: linear-gradient(0deg, #0A0F1F 0%, rgba(10, 15, 31, 0.00) 72.93%), url(./assets/profile/Urvashi-Rautela-bg.png), lightgray 50%;
     background-size: cover;
@@ -2165,7 +2195,7 @@ footer {
 
 
 
-  
+
   .karan_profile_pic {
     width: 152px;
     height: 152px;

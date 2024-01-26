@@ -52,7 +52,10 @@ const IntroPage = () => {
     <>
       {renderNavbar()}
       <div className="intro_screen">
+        
         <img src={Logo} id="intro_logo" alt="Logo" />
+        <p className="intro_description">Celeb Vibes, Fan Tribes with AI Magic</p>
+   
 
         <div id="intro_signup">
           <b className="please_login_intro">Please login </b>

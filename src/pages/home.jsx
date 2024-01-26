@@ -44,6 +44,7 @@ const Home = () => {
   };
 
   const closeModal = () => {
+    console.log('Closing modal');
     setModalIsOpen(false);
   };
   
@@ -130,7 +131,7 @@ const Home = () => {
         <div className="mobile_banner">
           <div className="banner_play" onClick={openModal}></div>
           {isMobile && (
-            <div className="video" onClick={openModal}>
+            <div className="video" onClick={closeModal}>
              
               <ReactModal
                 isOpen={modalIsOpen}
@@ -157,7 +158,9 @@ const Home = () => {
                   },
                 }}
               >
-                {/* <button onClick={closeModal}>Close Video</button> */}
+              
+                <button onClick={openModal} className="close_modal_btn">Close</button>
+    
                  
                 <ReactPlayer
                   url={video}
@@ -165,7 +168,7 @@ const Home = () => {
                   width="100%"
                   height="100%"
                 
-                  // light={true}
+                
                 />
               </ReactModal>
               {/* <img className="banner_play" src={Play} alt="play" /> */}
