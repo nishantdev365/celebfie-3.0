@@ -22,7 +22,7 @@ const KaranChatPage = () => {
     script.setAttribute("id", "webchat");
     script.setAttribute(
       "mkey",
-      "YmM0ODlhYTAtYWVjMS0xMWVlLThjMWQtMjM2MzE0Nzc1MTZh"
+      "ZDE0ZWVkNzAtYmJjYi0xMWVlLWJkOWItN2Y3YTg5ZmIyMjg4"
     );
     script.setAttribute("style", "min-height: 480px");
     script.setAttribute("chathost", "https://messengerx.io");
@@ -66,7 +66,7 @@ const KaranChatPage = () => {
     if (isMobile) {
       navigate("/karan-profile");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

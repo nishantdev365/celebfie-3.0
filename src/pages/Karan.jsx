@@ -39,7 +39,7 @@ const Karan = () => {
   }, []);
 
   const handleBack = () => {
-    navigate("/home")
+    navigate("/")
   }
 
 

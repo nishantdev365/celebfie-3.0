@@ -66,7 +66,7 @@ const TaapseeChatPage = () => {
     if (isMobile) {
       navigate("/taapsee-profile");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

@@ -39,7 +39,7 @@ const Malaika = () => {
   }, []);
 
   const handleBack = () => {
-    navigate("/home")
+    navigate("/")
   }
 
 

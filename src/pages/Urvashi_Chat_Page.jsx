@@ -66,7 +66,7 @@ const UrvashiChatPage = () => {
     if (isMobile) {
       navigate("/urvashi-profile");
     } else {
-      navigate("/home");
+      navigate("/");
     }
   };
 

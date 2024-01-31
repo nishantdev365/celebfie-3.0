@@ -86,21 +86,21 @@ const Home = () => {
   //   }
   // };
   
-  // const handlMalaikaPage = () => {
-  //   if (isMobile) {
-  //     navigate("/malaika-profile");
-  //   } else {
-  //     navigate("/malaika-arora");
-  //   }
-  // };
+  const handlMalaikaPage = () => {
+    if (isMobile) {
+      navigate("/malaika-profile");
+    } else {
+      navigate("/malaika-arora");
+    }
+  };
 
-  // const handlKaranPage = () => {
-  //   if (isMobile) {
-  //     navigate("/karan-profile");
-  //   } else {
-  //     navigate("/karan-johar");
-  //   }
-  // };
+  const handlKaranPage = () => {
+    if (isMobile) {
+      navigate("/karan-profile");
+    } else {
+      navigate("/karan-johar");
+    }
+  };
 
   return (
     <>
@@ -535,7 +535,7 @@ const Home = () => {
               {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
             </div>
 
-            <div className="profile malaika_Arora_profile" onClick={handleTriggerClick}>
+            <div className="profile malaika_Arora_profile" onClick={handlMalaikaPage}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -552,7 +552,7 @@ const Home = () => {
               <p className="start">Start Chat</p>
             </div>
 
-            <div className="profile karan_Johar_profile" onClick={handleTriggerClick}>
+            <div className="profile karan_Johar_profile" onClick={handlKaranPage}>
             <div className="profile_center">
             <div className="horizontal_line">
               </div>
@@ -803,7 +803,7 @@ const Home = () => {
                   controls={true}
                   width="100%"
                   height="100%"
-              
+                  
                   light={true}
                 />
               {/* <img src={Play} className="play_btn_icon" alt="" />
