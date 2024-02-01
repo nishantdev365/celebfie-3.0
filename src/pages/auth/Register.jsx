@@ -8,12 +8,15 @@ import {
 } from "firebase/auth";
 import { toast } from 'react-toastify';
 import ReactGA from "react-ga4";
+// import { getAnalytics, logEvent } from "firebase/analytics";
+
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 const navigate = useNavigate();
+// const analytics = getAnalytics();
 
 const [showPassword, setShowPassword] = useState(true);
 
@@ -30,6 +33,10 @@ const handleTogglePassword = () => {
         ReactGA.set({
           userId: user.uid,
         });
+
+        // logEvent(analytics, 'sign_up', {
+        //   method: 'email',
+        // });
   
       ReactGA.event({
         category: "User",

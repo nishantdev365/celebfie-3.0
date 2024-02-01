@@ -6,15 +6,15 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
 import { toast } from 'react-toastify';
 import ReactGA from "react-ga4";
-
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [password, setPassword] = useState(""); 
+  const analytics = getAnalytics();
   
 
   const [showPassword, setShowPassword] = useState(true);
@@ -26,10 +26,18 @@ const Login = () => {
   function handleAnonymousLogin() {
     signInAnonymously(auth)
       .then(() => {
-        const user = auth.currentUser;
+
+        
 
         ReactGA.set({
-          userId: user.uid,
+          user_id: auth.currentUser.uid
+        });
+        
+
+        
+        logEvent(analytics, 'login', {
+          method: 'anonymous',
+          user_id: auth.currentUser.uid
         });
 
         ReactGA.event({
@@ -54,11 +62,15 @@ const Login = () => {
     
     .then(() => {
 
-      const user = auth.currentUser;
-
-      ReactGA.set({
-        userId: user.uid,
+      logEvent(analytics, 'login', {
+        method: 'email',
+        user_id: auth.currentUser.uid
       });
+
+     
+        ReactGA.set({
+          user_id: auth.currentUser.uid
+        });
 
       ReactGA.event({
         category: "User",
