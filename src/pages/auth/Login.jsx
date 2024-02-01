@@ -4,18 +4,15 @@ import { auth } from "../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import ReactGA from "react-ga4";
 import { getAnalytics, logEvent } from "firebase/analytics";
-
-
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); 
+  const [password, setPassword] = useState("");
   const analytics = getAnalytics();
-  
 
   const [showPassword, setShowPassword] = useState(true);
 
@@ -26,124 +23,142 @@ const Login = () => {
   function handleAnonymousLogin() {
     signInAnonymously(auth)
       .then(() => {
+        const user = auth.currentUser;
 
-        
+        if (user) {
+          logEvent(analytics, "login", {
+            method: "email",
+            user_id: user.uid,
+          });
 
-        ReactGA.set({
-          user_id: auth.currentUser.uid
-        });
-        
+          ReactGA.set({
+            user_id: user.uid,
+          });
 
-        
-        logEvent(analytics, 'login', {
-          method: 'anonymous',
-          user_id: auth.currentUser.uid
-        });
+          ReactGA.event({
+            category: "User",
+            action: "Login",
+          });
 
-        ReactGA.event({
-          category: "User",
-          action: "Anonymous Login",
-        });
-        navigate("/");
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.error("Login failed:", error.message);
       });
-
-   
   }
-
-
-
 
   const handleLogin = () => {
     // setError(null);
     signInWithEmailAndPassword(auth, email, password)
-    
-    .then(() => {
+      .then(() => {
+        const user = auth.currentUser;
 
-      logEvent(analytics, 'login', {
-        method: 'email',
-        user_id: auth.currentUser.uid
+        if (user) {
+          logEvent(analytics, "login", {
+            method: "email",
+            user_id: user.uid,
+          });
+
+          ReactGA.set({
+            user_id: user.uid,
+          });
+
+          ReactGA.event({
+            category: "User",
+            action: "Login",
+          });
+
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        if (error.code === "auth/invalid-credential") {
+          toast.error(
+            "Invalid credentials. Please double-check your email and password."
+          );
+        }
+        if (error.code === "auth/too-many-requests") {
+          toast.error("Too many requests. Try again later.");
+        }
+        if (error.code === "auth/network-request-failed") {
+          toast.error("Network error. Try again later.");
+        }
+        if (error.code === "auth/user-disabled") {
+          toast.error("User disabled. Please contact support.");
+        }
+        if (error.code === "auth/weak-password") {
+          toast.error("Password should be at least 6 characters");
+        }
+        if (email === "" || password === "") {
+          toast.error("Please fill in all fields");
+        }
+
+        console.error("Login failed:", error.message);
       });
-
-     
-        ReactGA.set({
-          user_id: auth.currentUser.uid
-        });
-
-      ReactGA.event({
-        category: "User",
-        action: "Login",
-      });
-
-      navigate("/");
-    })
-    .catch((error) => {
-       if (error.code === "auth/invalid-credential") {
-        toast.error("Invalid credentials. Please double-check your email and password.");
-      } if(error.code === "auth/too-many-requests") {
-        toast.error("Too many requests. Try again later.");
-      } if(error.code === "auth/network-request-failed") {
-        toast.error("Network error. Try again later.");
-      } if(error.code === "auth/user-disabled") {
-        toast.error("User disabled. Please contact support.");
-      } if(error.code === "auth/weak-password") {
-        toast.error("Password should be at least 6 characters");
-      } if(email === "" || password === "") {
-        toast.error("Please fill in all fields");
-      } 
-
-      
-      console.error("Login failed:", error.message);
-    });
   };
 
-function handlePasswordReset() {
-  const email = prompt("Enter your email address");
-  sendPasswordResetEmail(auth, email)
-  alert("Check your email for password reset link");
-}
-
-
-
-
+  function handlePasswordReset() {
+    const email = prompt("Enter your email address");
+    sendPasswordResetEmail(auth, email);
+    alert("Check your email for password reset link");
+  }
 
   return (
     <>
-    
+      <div className="intro_screen">
+        <div id="login_page">
+          <b className="please_login_intro">Please login </b>
 
-     <div className="intro_screen">
-      <div id="login_page">
-        <b className="please_login_intro">Please login </b>
+          <div className="username_intro">Email or Username</div>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            name="email"
+            className="rectangle_div_intro"
+          />
+          <div className="password_intro">Password</div>
 
-        <div className="username_intro">Email or Username</div>
-        <input  onChange={(e) => setEmail(e.target.value)} type="text" name="email" className="rectangle_div_intro"  />
-        <div className="password_intro">Password</div>
+          <div className="password_input">
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type={showPassword ? "password" : "text"}
+              name="password"
+              className="frame_child3_intros"
+            />
+            <span className="password_toogle" onClick={handleTogglePassword}>
+              {showPassword ? "Show" : "Hide"}
+            </span>
+          </div>
 
-        <div className="password_input">
-        <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'password' : 'text'} name="password" className="frame_child3_intros" />
-        <span className="password_toogle" onClick={handleTogglePassword}>{showPassword ? "Show" : "Hide"}</span>                           
-        </div>
-
-        <div onClick={(e) => handleLogin(e)} className="login_container_intro">
-        
+          <div
+            onClick={(e) => handleLogin(e)}
+            className="login_container_intro"
+          >
             <b className="login1_intro">Login</b>
-         
+          </div>
+
+          <Link to="/register">
+            <p style={{ textAlign: "center" }}>
+              New to Celebfie?{" "}
+              <span className="register_now">Register now</span>
+            </p>
+          </Link>
+
+          <p
+            onClick={handlePasswordReset}
+            className="forgotten_password"
+            style={{ textAlign: "center", cursor: "pointer" }}
+          >
+            Forgotten Password?
+          </p>
+
+          <b className="skip" onClick={handleAnonymousLogin}>
+            Continue As Guest
+          </b>
+
+          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
         </div>
-       
-
-        <Link to="/register">
-        <p style={{textAlign: "center"}}>New to Celebfie? <span className="register_now">Register now</span></p>
-        </Link>
-
-        <p onClick={handlePasswordReset} className="forgotten_password" style={{textAlign: "center", cursor:"pointer"}}>Forgotten Password?</p>
-
-        <b className="skip" onClick={handleAnonymousLogin}>Continue As Guest</b>
-
-        {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
-      </div>
-
       </div>
 
       {/* -------------------------FOR-MOBILE------------------------------ */}
@@ -153,20 +168,32 @@ function handlePasswordReset() {
         <b className="Please_login">Please login</b>
         <div className="input_sections">
           <p className="input_head">Email or Username</p>
-          <input   onChange={(e) => setEmail(e.target.value)} type="text" name="email" />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            name="email"
+          />
 
           <p className="input_head">Password</p>
-        <div className="password_input_mobile">
-        <input onChange={(e) => setPassword(e.target.value)}  type={showPassword ? 'password' : 'text'} name="password" />
-          <span className="password_toogle_mobile" onClick={handleTogglePassword}>{showPassword ? "Show" : "Hide"}</span>  
-        </div>
-          
+          <div className="password_input_mobile">
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type={showPassword ? "password" : "text"}
+              name="password"
+            />
+            <span
+              className="password_toogle_mobile"
+              onClick={handleTogglePassword}
+            >
+              {showPassword ? "Show" : "Hide"}
+            </span>
+          </div>
         </div>
 
         <div className="login_page_btn">
           <div onClick={(e) => handleLogin(e)} className="register_page_btn">
             {/* <Link to="/home"> */}
-              <b className="Register_btn_text">Login</b>
+            <b className="Register_btn_text">Login</b>
             {/* </Link> */}
           </div>
 
@@ -182,13 +209,21 @@ function handlePasswordReset() {
           </div>
         </div>
 
-        <p onClick={handlePasswordReset} style={{color: "white"}} className="forgotten_password">Forgotten Password?</p>
+        <p
+          onClick={handlePasswordReset}
+          style={{ color: "white" }}
+          className="forgotten_password"
+        >
+          Forgotten Password?
+        </p>
 
         {/* <Link to="/"> */}
-          <b className="skip" onClick={handleAnonymousLogin}>Continue As Guest</b>
+        <b className="skip" onClick={handleAnonymousLogin}>
+          Continue As Guest
+        </b>
         {/* </Link> */}
 
-         {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
+        {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
       </div>
     </>
   );

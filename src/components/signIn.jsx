@@ -22,23 +22,27 @@ const SignIn = () => {
   function handleAnonymousLogin() {
     signInAnonymously(auth)
       .then(() => {
-        
-        logEvent(analytics, 'login', {
-          method: 'anonymous',
-          user_id: auth.currentUser.uid
-        });
+        const user = auth.currentUser;
 
-       
+      if(user){
+      logEvent(analytics, 'login', {
+        method: 'email',
+        user_id: user.uid
+      });
 
+     
         ReactGA.set({
-          userId: auth.currentUser.uid,
+          user_id: user.uid
         });
 
-        ReactGA.event({
-          category: "User",
-          action: "Anonymous Login",
-        });
-        navigate("/");
+      ReactGA.event({
+        category: "User",
+        action: "Login",
+      });
+
+      navigate("/");
+      }
+
       })
       .catch((error) => {
         console.error("Login failed:", error.message);
@@ -52,25 +56,29 @@ const SignIn = () => {
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-       logEvent(analytics, 'login', {
+      const user = auth.currentUser;
+
+      if(user){
+      logEvent(analytics, 'login', {
         method: 'email',
-        user_id: auth.currentUser.uid
+        user_id: user.uid
       });
 
      
-
         ReactGA.set({
-          userId: auth.currentUser.uid,
+          user_id: user.uid
         });
-      
+
       ReactGA.event({
         category: "User",
         action: "Login",
       });
 
-      
       navigate("/");
+      }
+
     })
+
     .catch((error) => {
       if (error.code === "auth/invalid-credential") {
         toast.error("Invalid credentials. Please double-check your email and password.");
