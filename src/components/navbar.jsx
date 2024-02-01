@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { logoutUser } from "../store/usersSlice";
 import { auth } from "../firebase/config";
+import ReactGA from "react-ga4";
 
 
 
@@ -24,16 +25,26 @@ const Navbar = () => {
   // const isChatPage = location.pathname.includes("/chatPage");
   const user = useSelector((state) => state.data.user.user);
   const dispatch = useDispatch();
+
   const handelLogout = () => {
     dispatch(logoutUser());
     signOut(auth);
+
+  
+    ReactGA.event({
+      category: "User",
+      action: "Logout",
+    });
   };
+
+  
     
   // const [showSignup, setShowSignup] = useState(false);
 
   // const handleSignupButtonClick = () => {
   //   setShowSignup(true);
   // };
+
 
 
   return (

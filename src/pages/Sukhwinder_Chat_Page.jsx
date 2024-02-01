@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import ReactGA from "react-ga4";
 
 
 const SukhwinderChatPage = () => {
@@ -63,11 +64,25 @@ const SukhwinderChatPage = () => {
   }, []);
 
   const handleCardClick = () => {
+    ReactGA.event({
+      category: "ChatPage",
+      action: "Click",
+      label: "Back Button Clicked",
+    });
+
     if (isMobile) {
       navigate("/sukhwinder-profile");
     } else {
       navigate("/home");
     }
+  };
+
+  const handleChatroomInteraction = () => {
+    ReactGA.event({
+      category: 'ChatPage',
+      action: 'Interaction',
+      label: 'ChatpageInteraction',
+    });
   };
 
   return (
@@ -114,6 +129,7 @@ const SukhwinderChatPage = () => {
           className="main_chatroom_section"
           id="mcontext"
           style={{ width: "100%", height: "100%" }}
+          onClick={handleChatroomInteraction}
         ></div>
       </div>
     </>

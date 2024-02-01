@@ -9,6 +9,7 @@ import Close from "../assets/close.png";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 // import { Link } from "react-router-dom";
 
 const Karan = () => {
@@ -44,12 +45,15 @@ const Karan = () => {
 
 
   const handleCardClick = () => {
+   
     if (isMobile) {
       navigate("/karan-johar");
     } else {
       navigate("/karan-johar");
     }
   };
+
+
 
 
 

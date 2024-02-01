@@ -7,6 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { toast } from 'react-toastify';
+import ReactGA from "react-ga4";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -20,14 +21,20 @@ const handleTogglePassword = () => {
   setShowPassword(!showPassword);
 };
 
-
-
-
-
   const handleSignUp = (event) => {
     event.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
+        const user = auth.currentUser;
+
+        ReactGA.set({
+          userId: user.uid,
+        });
+  
+      ReactGA.event({
+        category: "User",
+        action: "Register",
+      });
         navigate("/");
         signInWithEmailAndPassword(auth, email, password).then(
           updateProfile(auth.currentUser, {
@@ -48,6 +55,8 @@ const handleTogglePassword = () => {
         
         console.log(err.message);
       });
+
+      
   };
 
   useEffect(() => {

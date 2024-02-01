@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "../components/signIn";
 
+
 import "../App.css";
 import Logo from "../assets/logo.svg";
 
@@ -16,6 +17,8 @@ const IntroPage = () => {
         document.body.clientWidth;
       setIsLaptopScreen(screenWidth > 768);
     };
+
+
 
     
     handleIntroSignupDisplay();

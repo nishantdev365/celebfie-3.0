@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import Info from "../assets/info.png";
@@ -14,11 +14,13 @@ import ReactPlayer from "react-player";
 import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
 import { Helmet } from "react-helmet";
+import ReactGA from "react-ga4";
 
 // import Signup from "../components/signup";
 
 
 const Home = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -28,6 +30,10 @@ const Home = () => {
   // const handleSignupButtonClick = () => {
   //   setShowSignup(!showSignup); // Toggle the state (show/hide)
   // };
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname })
+  }, [location.pathname]);
   
 
   const handleTriggerClick = () => {
@@ -64,6 +70,12 @@ const Home = () => {
   }, []);
 
   const handlTaapseePage = () => {
+    ReactGA.event({
+      category: 'CelebrityProfile',
+      action: 'Click',
+      label: 'Taapsee Pannu',
+    });
+
     if (isMobile) {
       navigate("/taapsee-profile");
     } else {
@@ -71,6 +83,12 @@ const Home = () => {
     }
   };
   const handlUrvashiPage = () => {
+    ReactGA.event({
+      category: 'CelebrityProfile',
+      action: 'Click',
+      label: 'Urvashi Rautela',
+    });
+  
     if (isMobile) {
       navigate("/urvashi-profile");
     } else {
@@ -87,6 +105,12 @@ const Home = () => {
   // };
   
   const handlMalaikaPage = () => {
+    ReactGA.event({
+      category: 'CelebrityProfile',
+      action: 'Click',
+      label: 'Malaika Arora',
+    });
+
     if (isMobile) {
       navigate("/malaika-profile");
     } else {
@@ -95,6 +119,12 @@ const Home = () => {
   };
 
   const handlKaranPage = () => {
+    ReactGA.event({
+      category: 'CelebrityProfile',
+      action: 'Click',
+      label: 'Karan Johar',
+    });
+    
     if (isMobile) {
       navigate("/karan-profile");
     } else {

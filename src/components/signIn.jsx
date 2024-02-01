@@ -4,7 +4,7 @@ import { auth } from "../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { sendPasswordResetEmail, signInAnonymously } from "firebase/auth";
 import { toast } from 'react-toastify';
-
+import ReactGA from "react-ga4";
 
 
 const SignIn = () => {
@@ -21,11 +21,24 @@ const SignIn = () => {
   function handleAnonymousLogin() {
     signInAnonymously(auth)
       .then(() => {
+        const user = auth.currentUser;
+
+        ReactGA.set({
+          userId: user.uid,
+        });
+
+
+        ReactGA.event({
+          category: "User",
+          action: "Anonymous Login",
+        });
         navigate("/");
       })
       .catch((error) => {
         console.error("Login failed:", error.message);
       });
+
+   
   }
 
 
@@ -33,6 +46,19 @@ const SignIn = () => {
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
+
+      const user = auth.currentUser;
+
+      ReactGA.set({
+        userId: user.uid,
+      });
+
+      ReactGA.event({
+        category: "User",
+        action: "Login",
+      });
+
+      
       navigate("/");
     })
     .catch((error) => {
@@ -55,6 +81,7 @@ const SignIn = () => {
     console.error("Login failed:", error.message);
    
     });
+    
   };
 
 function handlePasswordReset() {

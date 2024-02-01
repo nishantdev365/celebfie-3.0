@@ -19,6 +19,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { auth } from "./firebase/config";
 import { loginUser, setLoading } from "./store/usersSlice";
+import ReactGA from "react-ga4";
+
+const trackingId = "G-79ZRWZZ3M6"; 
+ReactGA.initialize(trackingId);
 
 
 
