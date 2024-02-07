@@ -44,6 +44,10 @@
 
 body {
   font-family: var(--regular-24px-32);
+  /* make text look crisper and more legible in all brower */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 :root {
@@ -77,6 +81,24 @@ body {
   --br-xs: 12px;
   --br-2xs: 11px;
 }
+
+
+
+.error_page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 10px;
+  opacity: 0.71;
+  background: #000;
+  
+}
+
+
 
 /* ----------intro-screen------------ */
 
@@ -124,14 +146,23 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  left: 0;
   top: 0;
-  min-height: 100%;
+  bottom: 0;
   width: 100%;
-  overflow: hidden;
   background-image: url(./assets/slide-img.jpg);
   background-size: cover;
-  z-index: 1000;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro_screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
 }
 
 .intro_description {
@@ -159,6 +190,13 @@ body {
   }
 }
 
+#reset_intro_logo{
+  width: 15%;
+  left: 25%;
+  /* Start from the center */
+  position: absolute;
+}
+
 #intro_login {
   display: none;
   position: absolute;
@@ -171,7 +209,9 @@ body {
   color: var(--color-white);
   font-family: var(--regular-16px-24);
   width: 424px;
-  min-height: 483px;
+  /* min-height: 483px; */
+  height: auto;
+  gap: 10px;
   flex-shrink: 0;
   border-radius: 10px;
   background: rgba(8, 12, 25, 0.8);
@@ -185,6 +225,65 @@ body {
   }
 }
 
+#reset_page, #forgot_page{
+  position: absolute;
+  left: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  padding: 40px 40px;
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+  font-family: var(--regular-16px-24);
+  width: 424px;
+  gap: 18px;
+  
+  border-radius: 10px;
+  background: rgba(8, 12, 25, 0.8);
+}
+
+.password_validation_container{
+  margin: 0 0 10px 0;
+}
+
+.progress_bar {
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  /* background-color: white;  */
+}
+
+.progress_bar::-webkit-progress-bar {
+  background-color: #8AA6DE; /* Background color */
+}
+
+.progress_bar::-webkit-progress-value {
+  background-color: var(--color-tomato); /* Loading color */
+}
+
+.progress_bar::-moz-progress-bar {
+  background-color: var(--color-tomato); /* Loading color */
+}
+
+
+
+
+
+/* .progress_bar{
+  width: 100%;
+  height: 5px;
+  background-color: #8AA6DE;
+  color: var(--color-tomato);
+} */
+
+.validation_lists{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center
+}
+
 #login_page {
   display: flex;
   position: absolute;
@@ -196,7 +295,9 @@ body {
   color: var(--color-white);
   font-family: var(--regular-16px-24);
   width: 424px;
-  min-height: 483px;
+  /* min-height: 483px; */
+  height: auto;
+  gap: 10px;
   flex-shrink: 0;
   border-radius: 10px;
   background: rgba(8, 12, 25, 0.8);
@@ -220,18 +321,61 @@ body {
   color: var(--color-tomato);
 }
 
+
+/* Styles for the button container */
+.login_with_google_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  max-width: 100%; /* Ensure the button doesn't exceed the width of its container */
+  margin-bottom: 10px;
+ }
+
+.login_with_google_btn:focus {
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5); /* Example focus ring color */
+}
+
+/* Styles for the Google logo */
+.google_logo {
+  width: 24px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 0.5rem; /* Adjust spacing between icon and text */
+  position: absolute;
+  left: 10px;
+}
+
+
+
+
+
+
 .register_page {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: left;
+  position: absolute;
   gap: 20px;
   padding: 20px 40px;
   font-size: var(--font-size-3xl);
   color: var(--color-white);
   font-family: var(--regular-16px-24);
   width: 424px;
-  min-height: fit-content;
+  height: auto;
+  
+  /* min-height: fit-content; */
   flex-shrink: 0;
   border-radius: 10px;
   background: rgba(8, 12, 25, 0.8);
@@ -281,7 +425,7 @@ body {
   cursor: pointer;
 }
 
-.register_page_mobile {
+.register_page_mobile, .forgot_page_mobile{
   display: none;
 }
 
@@ -378,6 +522,8 @@ body {
 .login_page {
   display: none;
 }
+
+
 
 .skip {
   cursor: pointer;
@@ -1651,6 +1797,9 @@ footer {
     }
   }
 
+  
+ 
+
   #intro_logo {
     width: 213px;
     height: 51px;
@@ -1672,6 +1821,8 @@ footer {
   #intro_login {
     display: none;
   }
+
+
 
   #login_page {
     display: none;
@@ -2594,6 +2745,36 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* position: fixed; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* min-height: 100%; */
+    height: auto;
+    width: 100%;
+    /* overflow: hidden; */
+    background: linear-gradient(180deg,
+        #0a0f1f 25%,
+        rgba(10, 15, 31, 0.55) 286.45%),
+      url(./assets/slide-img.jpg);
+    background-size: contain;
+    background-position: calc(100% + 0.5px) 125%;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: var(--color-gray-200);
+    gap: 10px;
+    margin: 60px 0 20px 0;
+  }
+
+  .forgot_page_screen, .reset_page_screen{
+    display: none;
+  }
+
+  .forgot_page_mobile{
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -2607,10 +2788,9 @@ footer {
     background-size: contain;
     background-position: calc(100% + 0.5px) 125%;
     background-repeat: no-repeat;
-    z-index: 1000;
     background-color: var(--color-gray-200);
     gap: 10px;
-    margin-top: 20px;
+    padding-top: 100px;
   }
 
   .navigate_back {
@@ -2654,9 +2834,14 @@ footer {
     bottom: 0;
   }
 
-  .input_sections {
+  .input_sections, .input_reset_sections {
     width: 90%;
     height: 90%;
+  }
+
+  .input_reset_sections>.register_page_btn{
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .input_head {
@@ -2670,7 +2855,7 @@ footer {
     /* 138.889% */
   }
 
-  .input_sections>input , .password_input_mobile>input {
+  .input_sections>input, .input_reset_sections>input ,.password_input_mobile>input {
     color: var(--color-white);
     background-color: var(--color-gray-200);
     border-radius: 8px;
@@ -2679,6 +2864,7 @@ footer {
     height: 50px;
     margin-bottom: 10px;
     padding-left: 10px;
+    
   }
 
   .password_input_mobile{
@@ -2714,7 +2900,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    color: #b5cdff;
+   
     text-align: center;
 
     font-size: 19px;
@@ -2722,23 +2908,43 @@ footer {
     font-weight: 600;
     border-radius: 8px;
     /* background-color: #B5CDFF; */
-
+    color: #b5cdff;
     background-color: #061635;
-    border: 2px solid #b5cdff;
+    border: 2px solid #3F5D9A;
     margin-top: 30px;
+    margin-bottom: 30px;
   }
+
+  /* Styles for the button container */
+.login_with_google_btn {
+ width: 90%;
+ color: #b5cdff;
+ background-color: #061635;
+ border: 2px solid #3F5D9A;
+ }
+
+ .login_with_google_btn:hover {
+  background-color: none;
+}
+
+.login_with_google_btn:focus {
+  box-shadow: none; /* Example focus ring color */
+}
+
 
   .login_page {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
+    position: absolute;
     left: 0;
     top: 0;
     min-height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    /* overflow: hidden; */
     background: linear-gradient(0deg,
         #0a0f1f 64.98%,
         rgba(10, 15, 31, 0.28) 108.46%),
@@ -2753,7 +2959,7 @@ footer {
 
   .login_page_btn>.register_page_btn {
     margin-top: 0 !important;
-    margin-bottom: 40px !important;
+    margin-bottom: 20px !important;
   }
 
   .login_page_logo {

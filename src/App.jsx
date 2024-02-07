@@ -14,6 +14,9 @@ import Malaika from "./pages/Malaika";
 import Karan from "./pages/Karan";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
+import Forgot from "./pages/auth/ForgotPassword";
+import Reset from "./pages/auth/ResetPassword";
+import Error from "./Error";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -74,6 +77,7 @@ function App() {
               <Route path="/sukhwinder-singh" element={<SukhwinderChatPage />} />
               <Route path="/malaika-arora" element={<MalaikaChatPage />} />
               <Route path="/karan-johar" element={<KaranChatPage />} />
+              <Route path="*" element={<Error />} />
             </>
           </Routes>
         </BrowserRouter>
@@ -84,6 +88,9 @@ function App() {
               <Route path="/" element={<Intro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/forgot-password" element={<Forgot />} />
+              <Route path="/reset-password" element={<Reset />} />
+              <Route path="*" element={<Error />} />
             </>
           </Routes>
         </BrowserRouter>

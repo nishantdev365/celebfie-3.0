@@ -7,11 +7,19 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { toast } from "react-toastify";
+import Eye from "../../assets/eye.png";
+import EyeOff from "../../assets/eye-off.png";
+import Check from "../../assets/check-icon.png";
+import CloseCircle from "../../assets/close-circle.png";
+import zxcvbn from 'zxcvbn';
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [passwordValid, setPasswordValid] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(true);
@@ -22,7 +30,8 @@ const Register = () => {
 
   const handleSignUp = (event) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+    if(password === confirmPassword){
+      createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         navigate("/");
         signInWithEmailAndPassword(auth, email, password).then(
@@ -47,6 +56,9 @@ const Register = () => {
 
         console.log(err.message);
       });
+    } else {
+      setPasswordsMatch(false);
+    }
   };
 
   useEffect(() => {
@@ -71,6 +83,24 @@ const Register = () => {
       clearTimeout(timeoutId);
     };
   }, []);
+
+  useEffect(() => {
+    // Password validation logic
+    if (password.length >= 8 && /[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      setPasswordValid(true);
+    } else {
+      setPasswordValid(false);
+    }
+  }, [password]);
+
+  const progressBarValue = () => {
+    const passwordStrength = zxcvbn(password);
+    // Get the password score which ranges from 0 to 4
+    const score = passwordStrength.score;
+    // Convert the score to a percentage (0% to 100%)
+    const value = (score / 2.5) * 100;
+    return value;
+  };
 
   return (
     <>
@@ -109,10 +139,44 @@ const Register = () => {
                 className="frame_child3_intros"
               />
               <span className="password_toogle" onClick={handleTogglePassword}>
-                {" "}
-                {showPassword ? "Show" : "Hide"}{" "}
+              {showPassword ? <img src={EyeOff} /> : <img src={Eye} /> }
               </span>
             </div>
+
+            {password.length > 0 && (
+          <div className="password_validation_container">
+          <progress className="progress_bar" value={progressBarValue()} max="100" />
+            <ul>
+              <li
+                className={`validation_lists ${
+                  password.length >= 8 ? "valid" : "invalid"
+                }`}
+              >
+                <img
+                  src={password.length >= 8 ? Check : CloseCircle}
+                  alt="Length requirement"
+                />
+                Need 8 characters
+              </li>
+              <li
+                className={`validation_lists ${
+                  /[!@#$%^&*(),.?":{}|<>]/.test(password) ? "valid" : "invalid"
+                }`}
+              >
+                <img
+                  src={
+                    /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                      ? Check
+                      : CloseCircle
+                  }
+                  alt="Special character requirement"
+                />
+                Need Special characters
+              </li>
+            </ul>
+          </div>
+        )}
+
             <p className="input_head">Gender</p>
             <div className="radio_btn">
               <input
@@ -188,9 +252,64 @@ const Register = () => {
               className="password_toogle_mobile"
               onClick={handleTogglePassword}
             >
-              {showPassword ? "Show" : "Hide"}
+              {showPassword ? <img src={EyeOff} /> : <img src={Eye} /> }
             </span>
           </div>
+           
+          {password.length > 0 && (
+          <div className="password_validation_container">
+          <progress className="progress_bar" value={progressBarValue()} max="100" />
+            <ul>
+              <li
+                className={`validation_lists ${
+                  password.length >= 8 ? "valid" : "invalid"
+                }`}
+              >
+                <img
+                  src={password.length >= 8 ? Check : CloseCircle}
+                  alt="Length requirement"
+                />
+                Need 8 characters
+              </li>
+              <li
+                className={`validation_lists ${
+                  /[!@#$%^&*(),.?":{}|<>]/.test(password) ? "valid" : "invalid"
+                }`}
+              >
+                <img
+                  src={
+                    /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                      ? Check
+                      : CloseCircle
+                  }
+                  alt="Special character requirement"
+                />
+                Need Special characters
+              </li>
+            </ul>
+          </div>
+        )}
+
+         {/* Add a second password input for re-typing the password */}
+      <div className="input_head">Confirm New Password</div>
+      <div className="password_input_mobile">
+        <input
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          type={showPassword ? "password" : "text"}
+          name="confirmPassword"
+          
+        />
+        <span className="password_toogle_mobile" onClick={handleTogglePassword}>
+          {showPassword ? <img src={EyeOff} /> : <img src={Eye} alt={showPassword ? 'Hide Password' : 'Show Password'} />}
+        </span>
+      </div>
+
+      {/* Show an error message if passwords don't match */}
+      {!passwordsMatch && toast.error('Passwords do not match')}
+
+
+
+
           <p className="input_head">Gender</p>
           <div className="radio_btn">
             <input type="radio" name="Male" id="Male" className="input_radio" />

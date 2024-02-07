@@ -25,15 +25,19 @@ const TaapseeChatPage = () => {
       "mkey",
       "YmM0ODlhYTAtYWVjMS0xMWVlLThjMWQtMjM2MzE0Nzc1MTZh"
     );
+
     script.setAttribute("style", "min-height: 480px");
     script.setAttribute("chathost", "https://messengerx.io");
     script.setAttribute("botname", "mx-tp-ai");
-
+      
+    
     const mcontextElement = document.getElementById("mcontext");
-
+    
+    
     // Clear existing content in mcontextElement
     while (mcontextElement.firstChild) {
       mcontextElement.removeChild(mcontextElement.firstChild);
+
     }
 
     if (mcontextElement) {

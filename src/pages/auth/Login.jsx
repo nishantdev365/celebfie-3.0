@@ -1,12 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+// import { sendPasswordResetEmail } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
 import { toast } from "react-toastify";
 import ReactGA from "react-ga4";
 import { getAnalytics, logEvent } from "firebase/analytics";
+import Eye from "../../assets/eye.png";
+import EyeOff from "../../assets/eye-off.png";
+import Check from "../../assets/check-icon.png";
+import CloseCircle from "../../assets/close-circle.png";
+import GoogleLogo from "../../assets/google.png";
+import AppleLogo from "../../assets/apple.png";
+import AppleLogoBlack from "../../assets/apple-logo.png";
+import zxcvbn from "zxcvbn";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,6 +24,42 @@ const Login = () => {
   const analytics = getAnalytics();
 
   const [showPassword, setShowPassword] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(false);
+
+  const handleGoogleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+
+        if (user) {
+          logEvent(analytics, "login", {
+            method: "google",
+            user_id: user.uid,
+          });
+
+          ReactGA.set({
+            user_id: user.uid,
+          });
+
+          ReactGA.event({
+            category: "User",
+            action: "Login",
+          });
+
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        console.error("Google Sign In Error:", errorCode, errorMessage, email, credential);
+      });
+  };
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
@@ -99,10 +144,38 @@ const Login = () => {
   };
 
   function handlePasswordReset() {
-    const email = prompt("Enter your email address");
-    sendPasswordResetEmail(auth, email);
-    alert("Check your email for password reset link");
+    navigate("/forgot-password");
   }
+
+  useEffect(() => {
+    // Password validation logic
+    if (password.length >= 8 && /[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      setPasswordValid(true);
+    } else {
+      setPasswordValid(false);
+    }
+  }, [password]);
+
+  const progressBarValue = () => {
+    const passwordStrength = zxcvbn(password);
+    // Get the password score which ranges from 0 to 4
+    const score = passwordStrength.score;
+    // Convert the score to a percentage (0% to 100%)
+    let value = (score / 1.5) * 100;
+  
+    // If password length is less than 8 characters or doesn't contain special characters, reduce the progress value
+    if (password.length < 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      value -= 50;
+    }
+  
+    // Ensure the value is not negative
+    if (value < 0) {
+      value = 0;
+    }
+    
+    return value;
+  };
+  
 
   return (
     <>
@@ -110,7 +183,7 @@ const Login = () => {
         <div id="login_page">
           <b className="please_login_intro">Please login </b>
 
-          <div className="username_intro">Email or Username</div>
+          <div className="username_intro">Email</div>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
@@ -127,9 +200,57 @@ const Login = () => {
               className="frame_child3_intros"
             />
             <span className="password_toogle" onClick={handleTogglePassword}>
-              {showPassword ? "Show" : "Hide"}
+              {showPassword ? <img src={EyeOff} /> : <img src={Eye} />}
             </span>
           </div>
+
+          {password.length > 0 && (
+            <div className="password_validation_container">
+              <progress
+                className="progress_bar"
+                value={progressBarValue()}
+                max="100"
+              />
+              <ul>
+                <li
+                  className={`validation_lists ${
+                    password.length >= 8 ? "valid" : "invalid"
+                  }`}
+                >
+                  <img
+                    src={password.length >= 8 ? Check : CloseCircle}
+                    alt="Length requirement"
+                  />
+                  Need 8 characters
+                </li>
+                <li
+                  className={`validation_lists ${
+                    /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                      ? "valid"
+                      : "invalid"
+                  }`}
+                >
+                  <img
+                    src={
+                      /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                        ? Check
+                        : CloseCircle
+                    }
+                    alt="Special character requirement"
+                  />
+                  Need Special characters
+                </li>
+              </ul>
+            </div>
+          )}
+
+<p
+            onClick={handlePasswordReset}
+            className="forgotten_password"
+            style={{ textAlign: "left", cursor: "pointer", textDecoration: "underline", marginBottom: "10px"}}
+          >
+            Forgotten Password?
+          </p>
 
           <div
             onClick={(e) => handleLogin(e)}
@@ -138,28 +259,45 @@ const Login = () => {
             <b className="login1_intro">Login</b>
           </div>
 
-          <Link to="/register">
+          {/* <Link to="/register">
             <p style={{ textAlign: "center" }}>
               New to Celebfie?{" "}
               <span className="register_now">Register now</span>
             </p>
-          </Link>
+          </Link> */}
 
-          <p
-            onClick={handlePasswordReset}
-            className="forgotten_password"
-            style={{ textAlign: "center", cursor: "pointer" }}
-          >
-            Forgotten Password?
-          </p>
+         
+
+          <b className="or_intro">OR</b>
+
+          {/* <b className="skip" onClick={handleAnonymousLogin}>
+            Continue As Guest
+          </b> */}
+
+          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
+          <button type="button" className="login_with_google_btn" onClick={handleGoogleSignIn}>
+            <img className="google_logo" src={GoogleLogo} />
+            Continue With Google
+          </button>
+          <button type="button" className="login_with_google_btn">
+            <img className="google_logo" src={AppleLogoBlack} />
+            Continue With Apple
+          </button>
+
+          <Link to="/register">
+            <p style={{ textAlign: "center" }}>
+            Dont have an account? 
+              <span className="register_now">Register with email</span>
+            </p>
+          </Link>
 
           <b className="skip" onClick={handleAnonymousLogin}>
             Continue As Guest
           </b>
-
-          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
         </div>
       </div>
+
+      
 
       {/* -------------------------FOR-MOBILE------------------------------ */}
       <div className="login_page">
@@ -167,7 +305,7 @@ const Login = () => {
 
         <b className="Please_login">Please login</b>
         <div className="input_sections">
-          <p className="input_head">Email or Username</p>
+          <p className="input_head">Email</p>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
@@ -185,9 +323,49 @@ const Login = () => {
               className="password_toogle_mobile"
               onClick={handleTogglePassword}
             >
-              {showPassword ? "Show" : "Hide"}
+              {showPassword ? <img src={EyeOff} /> : <img src={Eye} />}
             </span>
           </div>
+
+          {password.length > 0 && (
+            <div className="password_validation_container">
+              <progress
+                className="progress_bar"
+                value={progressBarValue()}
+                max="100"
+              />
+              <ul>
+                <li
+                  className={`validation_lists ${
+                    password.length >= 8 ? "valid" : "invalid"
+                  }`}
+                >
+                  <img
+                    src={password.length >= 8 ? Check : CloseCircle}
+                    alt="Length requirement"
+                  />
+                  Need 8 characters
+                </li>
+                <li
+                  className={`validation_lists ${
+                    /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                      ? "valid"
+                      : "invalid"
+                  }`}
+                >
+                  <img
+                    src={
+                      /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                        ? Check
+                        : CloseCircle
+                    }
+                    alt="Special character requirement"
+                  />
+                  Need Special characters
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
 
         <div className="login_page_btn">
@@ -196,34 +374,55 @@ const Login = () => {
             <b className="Register_btn_text">Login</b>
             {/* </Link> */}
           </div>
+          <p
+          onClick={handlePasswordReset}
+          style={{ color: "#B5CDFF", fontSize: "18px", textDecoration: "underline", textAlign: "center", marginBottom: "40px" }}
+          className="forgotten_password"
+        >
+          Forgotten Password?
+        </p>
 
           <div className="or_section">
             <div className="hr_line"></div>
             <b className="login_or">OR</b>
           </div>
 
-          <div className="register_page_btn">
+          {/* <div className="register_page_btn">
             <Link to="/register">
               <b className="Register_btn_text">Register</b>
             </Link>
-          </div>
+          </div> */}
         </div>
 
-        <p
-          onClick={handlePasswordReset}
-          style={{ color: "white" }}
-          className="forgotten_password"
-        >
-          Forgotten Password?
-        </p>
+        
 
         {/* <Link to="/"> */}
-        <b className="skip" onClick={handleAnonymousLogin}>
+        {/* <b className="skip" onClick={handleAnonymousLogin}>
           Continue As Guest
-        </b>
+        </b> */}
         {/* </Link> */}
 
         {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
+
+        <button type="button" className="login_with_google_btn" onClick={handleGoogleSignIn}>
+            <img className="google_logo" src={GoogleLogo} />
+            Continue With Google
+          </button>
+          <button type="button" className="login_with_google_btn">
+            <img className="google_logo" src={AppleLogo} />
+            Continue With Apple
+          </button>
+
+          <Link to="/register">
+            <p style={{ color: "#B5CDFF", fontSize: "16px", textDecoration: "underline", textAlign: "center", margin: "30px 0 20px 0" }}>
+            Dont have an account? 
+              <span className="register_now">Register with email</span>
+            </p>
+          </Link>
+
+          <b className="skip" onClick={handleAnonymousLogin} style={{color: "#B5CDFF", fontSize: "14px", textAlign: "center", margin: "5px 0 20px 0" }}>
+          Continue As Guest
+        </b>
       </div>
     </>
   );
