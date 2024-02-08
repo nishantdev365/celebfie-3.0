@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, OAuthProvider  } from "firebase/auth";
 
 import { signInAnonymously } from "firebase/auth";
 import { toast } from "react-toastify";
@@ -145,6 +145,37 @@ const SignIn = () => {
         console.error("Login failed:", error.message);
       });
   };
+
+  const handleAppleSignIn = () => {
+    const provider = new OAuthProvider('apple.com');
+    signInWithPopup(auth, provider)
+      .then(() => {
+        const user = auth.currentUser;
+
+        if (user) {
+          logEvent(analytics, "login", {
+            method: "apple",
+            user_id: user.uid,
+          });
+
+          ReactGA.set({
+            user_id: user.uid,
+          });
+
+          ReactGA.event({
+            category: "User",
+            action: "Login",
+          });
+
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+      
+        console.error("Login failed:", error.message);
+      });
+  };
+  
   
 
   function handlePasswordReset() {
@@ -291,7 +322,7 @@ const SignIn = () => {
             <img className="google_logo" src={GoogleLogo} />
             Continue With Google
           </button>
-          <button type="button" className="login_with_google_btn">
+          <button type="button" className="login_with_google_btn" onClick={handleAppleSignIn}>
             <img className="google_logo" src={AppleLogoBlack} />
             Continue With Apple
           </button>
