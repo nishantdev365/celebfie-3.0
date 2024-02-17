@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import Info from "../assets/info.png";
-// import Banner from "../assets/slide-img.png"
 import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
 import Play from "../assets/play.png";
@@ -16,20 +14,12 @@ import video from "../assets/video.mp4";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga4";
 
-// import Signup from "../components/signup";
-
-
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
-  // const [showSignup, setShowSignup] = useState(false);
-
-  // const handleSignupButtonClick = () => {
-  //   setShowSignup(!showSignup); // Toggle the state (show/hide)
-  // };
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname })
@@ -96,14 +86,6 @@ const Home = () => {
     }
   };
   
-  // const handlSukhwinderPage = () => {
-  //   if (isMobile) {
-  //     navigate("/sukhwinder-profile");
-  //   } else {
-  //     navigate("/sukhwinder-singh");
-  //   }
-  // };
-  
   const handlMalaikaPage = () => {
     ReactGA.event({
       category: 'CelebrityProfile',
@@ -131,6 +113,13 @@ const Home = () => {
       navigate("/karan-johar");
     }
   };
+
+  const userName = localStorage.getItem("machaaoUser");
+  console.log("Authenticating user:", userName);
+
+  
+
+  
 
   return (
     <>
@@ -201,7 +190,7 @@ const Home = () => {
                 
                 />
               </ReactModal>
-              {/* <img className="banner_play" src={Play} alt="play" /> */}
+            
             </div>
           )}
         </div>
@@ -499,8 +488,6 @@ const Home = () => {
       </div>
       )}
 
-         {/* <Link to="/chatPage"> */}
-              {/* <Link to="/chat/taapsee_pannu"> */}
 
 <div className="profile_section_cards">
 
@@ -508,9 +495,7 @@ const Home = () => {
             Explore <span>Bollywood Artist</span>
           </div>
 <div className="explore_bollywood_section">
-          {/* <div className="Explore_Bollywood">
-            Explore <span>Bollywood Artist</span>
-          </div> */}
+       
           <div className="profile_cards">
             <div
               className="profile taapsee_Pannu_profile"
@@ -604,9 +589,7 @@ const Home = () => {
           </div>
 
         <div className="explore_influencers_section">
-          {/* <div className="Explore_Influencers">
-            Explore <span>Influencers</span>
-          </div> */}
+      
           <div className="profile_cards">
             <div className="profile agnijita_Banerjee_profile" onClick={handleTriggerClick}>
             <div className="profile_center">
@@ -700,9 +683,7 @@ const Home = () => {
           </div>
 
         <div className="explore_sport_influencers_section" onClick={handleTriggerClick}>
-          {/* <div className="Explore_Sport_Influencers">
-            Explore <span>Sport Personalities</span>
-          </div> */}
+        
           <div className="profile_cards">
             <div className="profile virat_Kohli_profile">
             <div className="profile_center">
@@ -836,35 +817,11 @@ const Home = () => {
                   
                   light={true}
                 />
-              {/* <img src={Play} className="play_btn_icon" alt="" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="110"
-                height="110"
-                viewBox="0 0 110 110"
-                fill="none"
-              >
-                <circle opacity="0.51" cx="55" cy="55" r="55" fill="black" />
-              </svg> */}
+      
             </div>
           </div>
         </div>
       </section>
-
-      {/* <div className="mobile_footer">
-     <Link to="/home">   <span className="material-symbols-outlined mobile_footer_icon">
-          explore
-        </span></Link>
-        <Link to="/chatPage">
-        <span className="material-symbols-outlined mobile_footer_icon">
-          forum
-        </span>
-        </Link>
-
-        <span className="material-symbols-outlined mobile_footer_icon">
-          settings
-        </span>
-      </div> */}
 
       <Footer />
 

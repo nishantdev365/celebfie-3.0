@@ -17,13 +17,13 @@ const ForgotPassword = () => {
   const handlePasswordReset = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        // alert("Check your email for password reset link");
+
         toast.success("Check your email for password reset link");
         setEmail("");
-        // console.log("Email state after clearing:", email);
+      
       })
       .catch((error) => {
-        // console.error("Error sending password reset email:", error.message);
+   
         if (error.code === "auth/user-not-found") {
           toast.error("User not found");
         }
@@ -34,7 +34,7 @@ const ForgotPassword = () => {
           toast.error("Please fill in all fields");
         }
 
-        // toast.error(error.message);
+  
       });
   };
 

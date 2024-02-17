@@ -16,7 +16,7 @@ const ResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
-  const [passwordsMatch, setPasswordsMatch] = useState(true); // State to check if passwords match
+  const [passwordsMatch, setPasswordsMatch] = useState(true); 
 
   useEffect(() => {
    
@@ -27,7 +27,7 @@ const ResetPassword = () => {
 }, []);
 
   const handleUpdatePassword = () => {
-    if (password === confirmPassword) { // Check if passwords match
+    if (password === confirmPassword) { 
       const oobCode = getOobCodeFromURL(); 
 
       confirmPasswordReset(auth, oobCode, password)
@@ -61,15 +61,6 @@ const ResetPassword = () => {
       setPasswordValid(false);
     }
   }, [password]);
-
-  // const progressBarValue = () => {
-  //   const passwordStrength = zxcvbn(password);
-  //   // Get the password score which ranges from 0 to 4
-  //   const score = passwordStrength.score;
-  //   // Convert the score to a percentage (0% to 100%)
-  //   const value = (score / 2.5) * 100;
-  //   return value;
-  // };
 
   const progressBarValue = () => {
     const passwordStrength = zxcvbn(password);

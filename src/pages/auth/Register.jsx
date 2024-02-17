@@ -11,10 +11,11 @@ import Eye from "../../assets/eye.png";
 import EyeOff from "../../assets/eye-off.png";
 import Check from "../../assets/check-icon.png";
 import CloseCircle from "../../assets/close-circle.png";
-import zxcvbn from 'zxcvbn';
+import zxcvbn from "zxcvbn";
 
 const Register = () => {
   const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [passwordValid, setPasswordValid] = useState(false);
@@ -30,32 +31,33 @@ const Register = () => {
 
   const handleSignUp = (event) => {
     event.preventDefault();
-    if(password === confirmPassword){
+    if (password === confirmPassword) {
       createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        navigate("/");
-        signInWithEmailAndPassword(auth, email, password).then(
-          updateProfile(auth.currentUser, {
-            displayName: username,
-          })
-        );
-      })
-      .catch((err) => {
-        if (err.code === "auth/email-already-in-use") {
-          toast.error("Email already in use");
-        }
-        if (err.code === "auth/invalid-email") {
-          toast.error("Invalid email");
-        }
-        if (err.code === "auth/weak-password") {
-          toast.error("Password should be at least 6 characters");
-        }
-        if (email === "" || password === "") {
-          toast.error("Please fill required fields");
-        }
+        .then(() => {
+          navigate("/");
+          signInWithEmailAndPassword(auth, email, password).then(
+            updateProfile(auth.currentUser, {
+              displayName: username,
+            })
+          );
+          localStorage.setItem("machaaoUser", username);
+        })
+        .catch((err) => {
+          if (err.code === "auth/email-already-in-use") {
+            toast.error("Email already in use");
+          }
+          if (err.code === "auth/invalid-email") {
+            toast.error("Invalid email");
+          }
+          if (err.code === "auth/weak-password") {
+            toast.error("Password should be at least 6 characters");
+          }
+          if (email === "" || password === "") {
+            toast.error("Please fill required fields");
+          }
 
-        console.log(err.message);
-      });
+          console.log(err.message);
+        });
     } else {
       setPasswordsMatch(false);
     }
@@ -120,10 +122,10 @@ const Register = () => {
               name="username"
               onChange={(e) => setUsername(e.target.value)}
             />
-            <p className="input_head">First Name</p>
-            <input type="firstname" name="firstname" />
-            <p className="input_head">Last Name</p>
-            <input type="lastname" name="lastname" />
+            <p className="input_head">Full Name</p>
+            <input type="fullname" name="fullname" />
+            {/* <p className="input_head">Last Name</p>
+            <input type="lastname" name="lastname" /> */}
             <p className="input_head">Email Address</p>
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -139,60 +141,92 @@ const Register = () => {
                 className="frame_child3_intros"
               />
               <span className="password_toogle" onClick={handleTogglePassword}>
-              {showPassword ? <img src={EyeOff} /> : <img src={Eye} /> }
+                {showPassword ? <img src={EyeOff} /> : <img src={Eye} />}
               </span>
             </div>
 
             {password.length > 0 && (
-          <div className="password_validation_container">
-          <progress className="progress_bar" value={progressBarValue()} max="100" />
-            <ul>
-              <li
-                className={`validation_lists ${
-                  password.length >= 8 ? "valid" : "invalid"
-                }`}
-              >
-                <img
-                  src={password.length >= 8 ? Check : CloseCircle}
-                  alt="Length requirement"
+              <div className="password_validation_container">
+                <progress
+                  className="progress_bar"
+                  value={progressBarValue()}
+                  max="100"
                 />
-                Need 8 characters
-              </li>
-              <li
-                className={`validation_lists ${
-                  /[!@#$%^&*(),.?":{}|<>]/.test(password) ? "valid" : "invalid"
-                }`}
-              >
-                <img
-                  src={
-                    /[!@#$%^&*(),.?":{}|<>]/.test(password)
-                      ? Check
-                      : CloseCircle
-                  }
-                  alt="Special character requirement"
-                />
-                Need Special characters
-              </li>
-            </ul>
-          </div>
-        )}
+                <ul>
+                  <li
+                    className={`validation_lists ${
+                      password.length >= 8 ? "valid" : "invalid"
+                    }`}
+                  >
+                    <img
+                      src={password.length >= 8 ? Check : CloseCircle}
+                      alt="Length requirement"
+                    />
+                    Need 8 characters
+                  </li>
+                  <li
+                    className={`validation_lists ${
+                      /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                        ? "valid"
+                        : "invalid"
+                    }`}
+                  >
+                    <img
+                      src={
+                        /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                          ? Check
+                          : CloseCircle
+                      }
+                      alt="Special character requirement"
+                    />
+                    Need Special characters
+                  </li>
+                </ul>
+              </div>
+            )}
 
-            <p className="input_head">Gender</p>
+            {/* Add a second password input for re-typing the password */}
+            <div className="input_head" style={{marginTop: "10px"}}>Confirm New Password</div>
+            <div className="password_input">
+              <input
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                type={showPassword ? "password" : "text"}
+                name="confirmPassword"
+                className="frame_child3_intros"
+              />
+              <span className="password_toogle" onClick={handleTogglePassword}>
+                {showPassword ? (
+                  <img src={EyeOff} />
+                ) : (
+                  <img
+                    src={Eye}
+                    alt={showPassword ? "Hide Password" : "Show Password"}
+                  />
+                )}
+              </span>
+            </div>
+
+            <p className="input_head" style={{marginTop: "5px"}}>Gender</p>
             <div className="radio_btn">
               <input
                 type="radio"
-                name="Male"
-                id="Male"
+                name="gender"
+                id="male"
                 className="input_radio"
+                value="male"
+                onChange={(e) => setGender(e.target.value)}
               />
-              <p>Male</p>
+              <label htmlFor="male">Male</label>
               <input
                 type="radio"
-                name="Female"
-                id="Female"
+                name="gender"
+                id="female"
                 className="input_radio"
+                style={{ marginLeft: "10px", backgroundColor: "red" }}
+                value="female"
+                onChange={(e) => setGender(e.target.value)}
               />
-              <p>Female</p>
+              <label htmlFor="female">Female</label>
             </div>
 
             <div
@@ -208,7 +242,6 @@ const Register = () => {
                 <span className="register_now">Sign In </span>
               </p>
             </Link>
-            {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
           </div>
         </div>
       </div>
@@ -252,84 +285,103 @@ const Register = () => {
               className="password_toogle_mobile"
               onClick={handleTogglePassword}
             >
-              {showPassword ? <img src={EyeOff} /> : <img src={Eye} /> }
+              {showPassword ? <img src={EyeOff} /> : <img src={Eye} />}
             </span>
           </div>
-           
+
           {password.length > 0 && (
-          <div className="password_validation_container">
-          <progress className="progress_bar" value={progressBarValue()} max="100" />
-            <ul>
-              <li
-                className={`validation_lists ${
-                  password.length >= 8 ? "valid" : "invalid"
-                }`}
-              >
-                <img
-                  src={password.length >= 8 ? Check : CloseCircle}
-                  alt="Length requirement"
-                />
-                Need 8 characters
-              </li>
-              <li
-                className={`validation_lists ${
-                  /[!@#$%^&*(),.?":{}|<>]/.test(password) ? "valid" : "invalid"
-                }`}
-              >
-                <img
-                  src={
+            <div className="password_validation_container">
+              <progress
+                className="progress_bar"
+                value={progressBarValue()}
+                max="100"
+              />
+              <ul>
+                <li
+                  className={`validation_lists ${
+                    password.length >= 8 ? "valid" : "invalid"
+                  }`}
+                >
+                  <img
+                    src={password.length >= 8 ? Check : CloseCircle}
+                    alt="Length requirement"
+                  />
+                  Need 8 characters
+                </li>
+                <li
+                  className={`validation_lists ${
                     /[!@#$%^&*(),.?":{}|<>]/.test(password)
-                      ? Check
-                      : CloseCircle
-                  }
-                  alt="Special character requirement"
+                      ? "valid"
+                      : "invalid"
+                  }`}
+                >
+                  <img
+                    src={
+                      /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                        ? Check
+                        : CloseCircle
+                    }
+                    alt="Special character requirement"
+                  />
+                  Need Special characters
+                </li>
+              </ul>
+            </div>
+          )}
+
+          {/* Add a second password input for re-typing the password */}
+          <div className="input_head">Confirm New Password</div>
+          <div className="password_input_mobile">
+            <input
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              type={showPassword ? "password" : "text"}
+              name="confirmPassword"
+            />
+            <span
+              className="password_toogle_mobile"
+              onClick={handleTogglePassword}
+            >
+              {showPassword ? (
+                <img src={EyeOff} />
+              ) : (
+                <img
+                  src={Eye}
+                  alt={showPassword ? "Hide Password" : "Show Password"}
                 />
-                Need Special characters
-              </li>
-            </ul>
+              )}
+            </span>
           </div>
-        )}
 
-         {/* Add a second password input for re-typing the password */}
-      <div className="input_head">Confirm New Password</div>
-      <div className="password_input_mobile">
-        <input
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          type={showPassword ? "password" : "text"}
-          name="confirmPassword"
-          
-        />
-        <span className="password_toogle_mobile" onClick={handleTogglePassword}>
-          {showPassword ? <img src={EyeOff} /> : <img src={Eye} alt={showPassword ? 'Hide Password' : 'Show Password'} />}
-        </span>
-      </div>
-
-      {/* Show an error message if passwords don't match */}
-      {!passwordsMatch && toast.error('Passwords do not match')}
-
-
-
+          {/* Show an error message if passwords don't match */}
+          {!passwordsMatch && toast.error("Passwords do not match")}
 
           <p className="input_head">Gender</p>
           <div className="radio_btn">
-            <input type="radio" name="Male" id="Male" className="input_radio" />
-            <p>Male</p>
             <input
               type="radio"
-              name="Female"
-              id="Female"
+              name="gender"
+              id="male"
               className="input_radio"
+    
+              value="male"
+              onChange={(e) => setGender(e.target.value)}
             />
-            <p>Female</p>
+            <label htmlFor="male">Male</label>
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              className="input_radio"
+              style={{ marginLeft: "10px"}}
+              value="female"
+              onChange={(e) => setGender(e.target.value)}
+            />
+            <label htmlFor="female">Female</label>
           </div>
 
           <div onClick={handleSignUp} className="register_page_btn">
-            {/* <Link to="/"> */}
             <b className="Register_btn_text">Register</b>
-            {/* </Link> */}
           </div>
-
-          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
         </div>
       </div>
     </>

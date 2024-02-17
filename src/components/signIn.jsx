@@ -2,7 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider, OAuthProvider  } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  OAuthProvider,
+} from "firebase/auth";
 
 import { signInAnonymously } from "firebase/auth";
 import { toast } from "react-toastify";
@@ -15,8 +19,7 @@ import CloseCircle from "../assets/close-circle.png";
 import GoogleLogo from "../assets/google.png";
 
 import AppleLogoBlack from "../assets/apple-logo.png";
-import zxcvbn from 'zxcvbn';
-
+import zxcvbn from "zxcvbn";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -30,8 +33,6 @@ const SignIn = () => {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-
-
 
   function handleAnonymousLogin() {
     signInAnonymously(auth)
@@ -61,8 +62,6 @@ const SignIn = () => {
       });
   }
 
-
-  
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
@@ -141,13 +140,12 @@ const SignIn = () => {
         }
       })
       .catch((error) => {
-      
         console.error("Login failed:", error.message);
       });
   };
 
   const handleAppleSignIn = () => {
-    const provider = new OAuthProvider('apple.com');
+    const provider = new OAuthProvider("apple.com");
     signInWithPopup(auth, provider)
       .then(() => {
         const user = auth.currentUser;
@@ -171,15 +169,11 @@ const SignIn = () => {
         }
       })
       .catch((error) => {
-      
         console.error("Login failed:", error.message);
       });
   };
-  
-  
 
   function handlePasswordReset() {
-   
     navigate("/forgot-password");
   }
 
@@ -221,21 +215,19 @@ const SignIn = () => {
     const score = passwordStrength.score;
     // Convert the score to a percentage (0% to 100%)
     let value = (score / 1.5) * 100;
-  
+
     // If password length is less than 8 characters or doesn't contain special characters, reduce the progress value
     if (password.length < 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       value -= 50;
     }
-  
+
     // Ensure the value is not negative
     if (value < 0) {
       value = 0;
     }
-    
+
     return value;
   };
-  
-  
 
   return (
     <>
@@ -266,10 +258,13 @@ const SignIn = () => {
           </span>
         </div>
 
-        
         {password.length > 0 && (
           <div className="password_validation_container">
-          <progress className="progress_bar" value={progressBarValue()} max="100" />
+            <progress
+              className="progress_bar"
+              value={progressBarValue()}
+              max="100"
+            />
             <ul>
               <li
                 className={`validation_lists ${
@@ -301,42 +296,52 @@ const SignIn = () => {
           </div>
         )}
 
-          <p
+        <p
           onClick={handlePasswordReset}
           className="forgotten_password"
-          style={{ textAlign: "left", cursor: "pointer", textDecoration: "underline", marginBottom: "10px"}}
+          style={{
+            textAlign: "left",
+            cursor: "pointer",
+            textDecoration: "underline",
+            marginBottom: "10px",
+          }}
         >
           Forgotten Password?
         </p>
 
         <div onClick={(e) => handleLogin(e)} className="login_container_intro">
-          {/* <Link to="/home"> */}
           <b className="login1_intro">Login</b>
-          {/* </Link> */}
         </div>
 
-     
         <b className="or_intro">OR</b>
-      
-        <button type="button" className="login_with_google_btn" onClick={handleGoogleSignIn}>
-            <img className="google_logo" src={GoogleLogo} />
-            Continue With Google
-          </button>
-          <button type="button" className="login_with_google_btn" onClick={handleAppleSignIn}>
-            <img className="google_logo" src={AppleLogoBlack} />
-            Continue With Apple
-          </button>
 
-          <Link to="/register">
-            <p style={{ textAlign: "center" }}>
-            Dont have an account? 
-              <span className="register_now">Register with email</span>
-            </p>
-          </Link>
+        <button
+          type="button"
+          className="login_with_google_btn"
+          onClick={handleGoogleSignIn}
+        >
+          <img className="google_logo" src={GoogleLogo} />
+          Continue With Google
+        </button>
+        <button
+          type="button"
+          className="login_with_google_btn"
+          onClick={handleAppleSignIn}
+        >
+          <img className="google_logo" src={AppleLogoBlack} />
+          Continue With Apple
+        </button>
 
-          <b className="skip" onClick={handleAnonymousLogin}>
-            Continue As Guest
-          </b>
+        <Link to="/register">
+          <p style={{ textAlign: "center" }}>
+            Dont have an account?
+            <span className="register_now">Register with email</span>
+          </p>
+        </Link>
+
+        <b className="skip" onClick={handleAnonymousLogin}>
+          Continue As Guest
+        </b>
       </div>
     </>
   );

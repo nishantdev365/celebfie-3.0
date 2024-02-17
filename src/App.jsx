@@ -24,11 +24,8 @@ import { auth } from "./firebase/config";
 import { loginUser, setLoading } from "./store/usersSlice";
 import ReactGA from "react-ga4";
 
-
-const trackingId = "G-79ZRWZZ3M6"; 
+const trackingId = "G-79ZRWZZ3M6";
 ReactGA.initialize(trackingId);
-
-
 
 function App() {
   const dispatch = useDispatch();
@@ -55,18 +52,24 @@ function App() {
   const isLoading = useSelector((state) => state.data.user.isLoading);
 
   return (
-    
     <>
-    
       {isLoading ? (
         <div className="full-page-loader">
-        <div className="lds-dual-ring"></div>
-    </div>
+          <div className="lds-dual-ring"></div>
+        </div>
       ) : user ? (
         <BrowserRouter>
           <Routes>
             <>
-              <Route path="/" element={<><Navbar /><Home /></>} />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Navbar />
+                    <Home />
+                  </>
+                }
+              />
               <Route path="/taapsee-profile" element={<Taapsee />} />
               <Route path="/urvashi-profile" element={<Urvashi />} />
               <Route path="/sukhwinder-profile" element={<Sukhwinder />} />
@@ -74,7 +77,10 @@ function App() {
               <Route path="/karan-profile" element={<Karan />} />
               <Route path="/taapsee-pannu" element={<TaapseeChatPage />} />
               <Route path="/urvashi-rautela" element={<UrvashiChatPage />} />
-              <Route path="/sukhwinder-singh" element={<SukhwinderChatPage />} />
+              <Route
+                path="/sukhwinder-singh"
+                element={<SukhwinderChatPage />}
+              />
               <Route path="/malaika-arora" element={<MalaikaChatPage />} />
               <Route path="/karan-johar" element={<KaranChatPage />} />
               <Route path="*" element={<Error />} />

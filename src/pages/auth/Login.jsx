@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { auth } from "../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-// import { sendPasswordResetEmail } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
 import { toast } from "react-toastify";
 import ReactGA from "react-ga4";
@@ -57,7 +56,13 @@ const Login = () => {
         const errorMessage = error.message;
         const email = error.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-        console.error("Google Sign In Error:", errorCode, errorMessage, email, credential);
+        console.error(
+          "Google Sign In Error:",
+          errorCode,
+          errorMessage,
+          email,
+          credential
+        );
       });
   };
 
@@ -162,20 +167,19 @@ const Login = () => {
     const score = passwordStrength.score;
     // Convert the score to a percentage (0% to 100%)
     let value = (score / 1.5) * 100;
-  
+
     // If password length is less than 8 characters or doesn't contain special characters, reduce the progress value
     if (password.length < 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       value -= 50;
     }
-  
+
     // Ensure the value is not negative
     if (value < 0) {
       value = 0;
     }
-    
+
     return value;
   };
-  
 
   return (
     <>
@@ -244,10 +248,15 @@ const Login = () => {
             </div>
           )}
 
-<p
+          <p
             onClick={handlePasswordReset}
             className="forgotten_password"
-            style={{ textAlign: "left", cursor: "pointer", textDecoration: "underline", marginBottom: "10px"}}
+            style={{
+              textAlign: "left",
+              cursor: "pointer",
+              textDecoration: "underline",
+              marginBottom: "10px",
+            }}
           >
             Forgotten Password?
           </p>
@@ -259,23 +268,13 @@ const Login = () => {
             <b className="login1_intro">Login</b>
           </div>
 
-          {/* <Link to="/register">
-            <p style={{ textAlign: "center" }}>
-              New to Celebfie?{" "}
-              <span className="register_now">Register now</span>
-            </p>
-          </Link> */}
-
-         
-
           <b className="or_intro">OR</b>
 
-          {/* <b className="skip" onClick={handleAnonymousLogin}>
-            Continue As Guest
-          </b> */}
-
-          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
-          <button type="button" className="login_with_google_btn" onClick={handleGoogleSignIn}>
+          <button
+            type="button"
+            className="login_with_google_btn"
+            onClick={handleGoogleSignIn}
+          >
             <img className="google_logo" src={GoogleLogo} />
             Continue With Google
           </button>
@@ -286,7 +285,7 @@ const Login = () => {
 
           <Link to="/register">
             <p style={{ textAlign: "center" }}>
-            Dont have an account? 
+              Dont have an account?
               <span className="register_now">Register with email</span>
             </p>
           </Link>
@@ -296,8 +295,6 @@ const Login = () => {
           </b>
         </div>
       </div>
-
-      
 
       {/* -------------------------FOR-MOBILE------------------------------ */}
       <div className="login_page">
@@ -370,57 +367,66 @@ const Login = () => {
 
         <div className="login_page_btn">
           <div onClick={(e) => handleLogin(e)} className="register_page_btn">
-            {/* <Link to="/home"> */}
             <b className="Register_btn_text">Login</b>
-            {/* </Link> */}
           </div>
           <p
-          onClick={handlePasswordReset}
-          style={{ color: "#B5CDFF", fontSize: "18px", textDecoration: "underline", textAlign: "center", marginBottom: "40px" }}
-          className="forgotten_password"
-        >
-          Forgotten Password?
-        </p>
+            onClick={handlePasswordReset}
+            style={{
+              color: "#B5CDFF",
+              fontSize: "18px",
+              textDecoration: "underline",
+              textAlign: "center",
+              marginBottom: "40px",
+            }}
+            className="forgotten_password"
+          >
+            Forgotten Password?
+          </p>
 
           <div className="or_section">
             <div className="hr_line"></div>
             <b className="login_or">OR</b>
           </div>
-
-          {/* <div className="register_page_btn">
-            <Link to="/register">
-              <b className="Register_btn_text">Register</b>
-            </Link>
-          </div> */}
         </div>
 
-        
+        <button
+          type="button"
+          className="login_with_google_btn"
+          onClick={handleGoogleSignIn}
+        >
+          <img className="google_logo" src={GoogleLogo} />
+          Continue With Google
+        </button>
+        <button type="button" className="login_with_google_btn">
+          <img className="google_logo" src={AppleLogo} />
+          Continue With Apple
+        </button>
 
-        {/* <Link to="/"> */}
-        {/* <b className="skip" onClick={handleAnonymousLogin}>
-          Continue As Guest
-        </b> */}
-        {/* </Link> */}
+        <Link to="/register">
+          <p
+            style={{
+              color: "#B5CDFF",
+              fontSize: "16px",
+              textDecoration: "underline",
+              textAlign: "center",
+              margin: "30px 0 20px 0",
+            }}
+          >
+            Dont have an account?
+            <span className="register_now">Register with email</span>
+          </p>
+        </Link>
 
-        {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
-
-        <button type="button" className="login_with_google_btn" onClick={handleGoogleSignIn}>
-            <img className="google_logo" src={GoogleLogo} />
-            Continue With Google
-          </button>
-          <button type="button" className="login_with_google_btn">
-            <img className="google_logo" src={AppleLogo} />
-            Continue With Apple
-          </button>
-
-          <Link to="/register">
-            <p style={{ color: "#B5CDFF", fontSize: "16px", textDecoration: "underline", textAlign: "center", margin: "30px 0 20px 0" }}>
-            Dont have an account? 
-              <span className="register_now">Register with email</span>
-            </p>
-          </Link>
-
-          <b className="skip" onClick={handleAnonymousLogin} style={{color: "#B5CDFF", fontSize: "14px", textAlign: "center", margin: "5px 0 20px 0" }}>
+        <b
+          className="skip"
+          onClick={handleAnonymousLogin}
+          style={{
+            color: "#B5CDFF",
+            fontSize: "14px",
+            textAlign: "center",
+            margin: "5px 0 20px 0",
+          }}
+        >
           Continue As Guest
         </b>
       </div>

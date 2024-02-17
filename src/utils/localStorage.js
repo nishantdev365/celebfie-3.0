@@ -1,6 +1,4 @@
-// localStorage.js
 
-// Function to set an item in local storage
 export const setItem = (key, value) => {
     try {
       localStorage.setItem(key, value);
@@ -9,7 +7,7 @@ export const setItem = (key, value) => {
     }
   };
   
-  // Function to get an item from local storage
+
   export const getItem = (key) => {
     try {
       return localStorage.getItem(key);
