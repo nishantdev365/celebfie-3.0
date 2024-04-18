@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Intro from "./pages/introPage";
 import Home from "./pages/home";
+import AboutUs from "./pages/aboutUs"
 import TaapseeChatPage from "./pages/Taapsee_Chat_Page";
 import UrvashiChatPage from "./pages/Urvashi_Chat_Page";
 import SukhwinderChatPage from "./pages/Sukhwinder_Chat_Page";
@@ -24,7 +25,7 @@ import { auth } from "./firebase/config";
 import { loginUser, setLoading } from "./store/usersSlice";
 import ReactGA from "react-ga4";
 
-const trackingId = "G-79ZRWZZ3M6";
+const trackingId = "G-21486S7D0P";
 ReactGA.initialize(trackingId);
 
 function App() {
@@ -83,6 +84,9 @@ function App() {
               />
               <Route path="/malaika-arora" element={<MalaikaChatPage />} />
               <Route path="/karan-johar" element={<KaranChatPage />} />
+              <Route path="/AboutUs" element={<>
+                <Navbar /> <AboutUs/> 
+              </>}/>
               <Route path="*" element={<Error />} />
             </>
           </Routes>

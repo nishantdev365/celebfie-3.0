@@ -39,6 +39,12 @@ const Navbar = () => {
               <img src={Logo} alt="Celebfie" />
             </div>
           </Link>
+          
+          <Link to="/aboutus">
+           <p style={{fontSize: "1.0rem", color: "white"}}>Who we are</p>
+          </Link>
+
+
         </div>
 
         <div className="signup_btn">

@@ -66,11 +66,11 @@ const TaapseeChatPage = () => {
   }, []);
 
   const handleCardClick = () => {
-    ReactGA.event({
-      category: 'ChatPage',
-      action: 'Click',
-      label: 'Back Button Clicked',
-    });
+    // ReactGA.event({
+    //   category: 'ChatPage',
+    //   action: 'Click',
+    //   label: 'Back Button Clicked',
+    // });
     
     if (isMobile) {
       navigate("/taapsee-profile");
@@ -79,13 +79,34 @@ const TaapseeChatPage = () => {
     }
   };
 
-  const handleChatroomInteraction = () => {
-    ReactGA.event({
-      category: 'ChatPage',
-      action: 'Interaction',
-      label: 'ChatpageInteraction',
-    });
+useEffect(() => {
+  const handleMessage = (event) => {
+    try {
+      const eventData = event.data;
+      console.log('Received message:', eventData);
+      
+      if (eventData && eventData.ga) {
+        console.log('Event data:', eventData);
+
+        ReactGA.event({
+          category: eventData.details.event_category,
+          action: eventData.type,
+          label: eventData.details.event_label
+        });
+      }
+    } catch (error) {
+      console.error('Error handling message:', error);
+    }
   };
+
+  window.addEventListener('message', handleMessage);
+
+  return () => {
+    window.removeEventListener('message', handleMessage);
+  };
+}, []);
+
+
 
   return (
     <>
@@ -122,7 +143,7 @@ const TaapseeChatPage = () => {
           className="main_chatroom_section"
           id="mcontext"
           style={{ width: "100%", height: "100%" }}
-          onClick={handleChatroomInteraction}
+          // onClick={handleChatroomInteraction}
         ></div>
       </div>
     </>
