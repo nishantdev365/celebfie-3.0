@@ -24,18 +24,18 @@ const aboutUs = () => {
     <>
       <main>
         <div className="about_us_hero_section" style={{color: "white"}}>
-          <div className="hero_section_text" style={{display: "block", paddingLeft: "60px", paddingTop: "120px"}}>
-          <p style={{fontSize: "46px", fontWeight: "700", marginBottom: "20px"}}>We Are</p>
-          <img src={Logo} alt="" />
-          <p style={{fontSize: "27px", lineHeight: "46px", marginTop: "40px"}}>Creating Unforgettable Memories</p>
-          <p style={{fontSize: "27px", lineHeight: "46px"}}>✓ #1 Celeb Engagement App For Brands & Fans</p>
-          <p style={{fontSize: "27px", lineHeight: "46px"}}>✓ Exclusive Celeb Videos</p>
+          <div className="hero_section_text">
+          <p  className="we_are">We Are</p>
+          <img src={Logo} alt="" className="celebfie_logo"/>
+          <p  className="hero_section_text_line1">Creating Unforgettable Memories</p>
+          <p className="hero_section_text_line2">✓ #1 Celeb Engagement App For Brands & Fans</p>
+          <p  className="hero_section_text_line3">✓ Exclusive Celeb Videos</p>
           </div>
         </div>
 
         <div className="how_this_works">
           <div className="content">
-            <h1 style={{ fontSize: "45px", fontWeight: "700" }}>
+            <h1 style={{ fontSize: "45px", fontWeight: "700"}}>
               How this works
             </h1>
             <p style={{ fontSize: "16px", lineHeight: "27px" }}>
@@ -112,7 +112,7 @@ const aboutUs = () => {
                 lorem, cursus non.
               </p>
               <p style={{ fontSize: "27px", lineHeight: "46px" }}>
-                . Raminder Singgh
+                . Raminder Singh
               </p>
             </div>
             <div className="image2">
@@ -120,16 +120,15 @@ const aboutUs = () => {
             </div>
           </div>
 
-          <div className="our_team">
-            <p
-              style={{
-                fontSize: "45px",
-                lineHeight: "44px",
-                marginBottom: "20px",
-              }}
+          <p
+         
+              className="our_team_text"
             >
               Our Team
             </p>
+
+          <div className="our_team">
+           
             <div className="team_profile_cards">
               <div className="profile_card1 card">
                 <img src={TeamProfile1} alt="" />
@@ -233,8 +232,8 @@ const aboutUs = () => {
               <input style={{height: "100px"}} type="text" />
 
               <div
-              className="register_page_btn"
-              style={{ width: "197px" , height: "48px",position: "absolute",  right: "25px", bottom: "25px"}}
+              className="register_form_page_btn"
+    
             >
               <b className="Register_btn_text">Send Message</b>
             </div>
@@ -242,6 +241,8 @@ const aboutUs = () => {
           </div>
         </div>
       </main>
+
+
 
       <footer>
         <div className="footer_left">
