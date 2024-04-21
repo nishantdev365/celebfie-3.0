@@ -25,7 +25,7 @@ import { auth } from "./firebase/config";
 import { loginUser, setLoading } from "./store/usersSlice";
 import ReactGA from "react-ga4";
 
-const trackingId = "G-21486S7D0P";
+const trackingId = "G-79ZRWZZ3M6";
 ReactGA.initialize(trackingId);
 
 function App() {
