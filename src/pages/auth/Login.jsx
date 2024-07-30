@@ -25,6 +25,10 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
   const [passwordValid, setPasswordValid] = useState(false);
 
+  const handleAppleSignIn = () => {
+    toast.error("Apple login is temporarily unavailable. Please try another login method.");
+  }
+
   const handleGoogleSignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
@@ -278,7 +282,7 @@ const Login = () => {
             <img className="google_logo" src={GoogleLogo} />
             Continue With Google
           </button>
-          <button type="button" className="login_with_google_btn">
+          <button type="button" className="login_with_google_btn" onClick={handleAppleSignIn}>
             <img className="google_logo" src={AppleLogoBlack} />
             Continue With Apple
           </button>
@@ -397,7 +401,7 @@ const Login = () => {
           <img className="google_logo" src={GoogleLogo} />
           Continue With Google
         </button>
-        <button type="button" className="login_with_google_btn">
+        <button type="button" className="login_with_google_btn" onClick={handleAppleSignIn}>
           <img className="google_logo" src={AppleLogo} />
           Continue With Apple
         </button>

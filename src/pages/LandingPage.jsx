@@ -1,7 +1,7 @@
 import QuoteImg from "../assets/quote.png";
 import RaminderSingh from "../assets/raminder_singh.jpg";
 
-import TeamProfile2 from "../assets/team_profile2.png";
+// import TeamProfile2 from "../assets/team_profile2.png";
 // import TeamProfile3 from "../assets/team_profile3.png";
 // import TeamProfile4 from "../assets/team_profile4.png";
 // import TeamProfile5 from "../assets/team_profile5.png";
@@ -26,8 +26,9 @@ import Logo from "../assets/logo.svg";
 import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
 import Visa from "../assets/visa-mastercard-icon.png";
-import Facebook_Vector from "../assets/facebook_vector.png";
+// import Facebook_Vector from "../assets/facebook_vector.png";
 import Instagram_Vector from "../assets/instagram_vector.png";
+import Linkedin_vector from "../assets/linkedin_vector.png"
 import { useState } from "react";
 
 const testimonials = [
@@ -106,19 +107,19 @@ const Landingpage = () => {
         "Hey there! I’m Raminder, the Founder behind this magical world of Celebfie. Think of me as your guide to the ultimate fan experience! I’m on a mission to help you connect with your fave celebs in ways you never thought possible—seriously, chatting with them after binge-watching their latest movie isn’t just a dream anymore! Buckle up for a fun ride as we dive into this wild adventure together. Let’s make some unforgettable memories.",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/raminders/",
-        instagram: Instagram_Vector,
-        facebook: Facebook_Vector,
+        instagram: "https://www.instagram.com/ramindersinggh/",
+       
       },
     },
     {
       name: "Harshal Dhir",
       role: "AI Tech Wiz",
-      image: TeamProfile2,
+      image: null,
       content:
         "Hi! I’m Harshal, the tech wizard behind the AI magic at Celebfie 3.0. I’m passionate about blending cutting-edge technology with creativity to make those magical connections happen. It’s all about bringing fans and celebrities closer together, so get ready for some awesome interactions powered by AI! Can’t wait for you to join us on this exciting journey.",
       socialLinks: {
+        linkedin: Linkedin_vector,
         instagram: Instagram_Vector,
-        facebook: Facebook_Vector,
       },
     },
   ];
@@ -407,9 +408,9 @@ const Landingpage = () => {
 
         <div className="bottom_section">
          
-
+        <p className="About_heading our_team_text">Our Team</p>
           <div className="our_team">
-          <p className="About_heading">Our Team</p>
+        
             <div className="team_profile_cards">
               {teamProfiles.map((profile, index) => (
                 <div
@@ -432,16 +433,22 @@ const Landingpage = () => {
                           rel="noreferrer"
                         >
                           <img
-                            src={profile.socialLinks.instagram}
-                            alt="Instagram Vector"
+                            src={Linkedin_vector}
+                            alt="linkedin Vector"
                           />
                         </a>
                       )}
                       {profile.socialLinks.instagram && (
+                         <a
+                         href={profile.socialLinks.instagram}
+                         target="_blank"
+                         rel="noreferrer"
+                       >
                         <img
-                          src={profile.socialLinks.instagram}
+                          src={Instagram_Vector}
                           alt="Instagram Vector"
                         />
+                        </a>
                       )}
                       {profile.socialLinks.facebook && (
                         <img
@@ -560,7 +567,7 @@ const Landingpage = () => {
             <p>EH2/001 Ground Floor, Eldeco Utopia Sec 93A, Noida 201304</p>
           </div>
 
-          <div className="form_section">
+          <div className="about_form_section">
             <form action="post">
               <label
                 htmlFor="html"

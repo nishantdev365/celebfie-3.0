@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import {
   signInWithPopup,
   GoogleAuthProvider,
-  OAuthProvider,
+  
 } from "firebase/auth";
 
 import { signInAnonymously } from "firebase/auth";
@@ -145,32 +145,33 @@ const SignIn = () => {
   };
 
   const handleAppleSignIn = () => {
-    const provider = new OAuthProvider("apple.com");
-    signInWithPopup(auth, provider)
-      .then(() => {
-        const user = auth.currentUser;
+    // const provider = new OAuthProvider("apple.com");
+    // signInWithPopup(auth, provider)
+    //   .then(() => {
+    //     const user = auth.currentUser;
 
-        if (user) {
-          logEvent(analytics, "login", {
-            method: "apple",
-            user_id: user.uid,
-          });
+    //     if (user) {
+    //       logEvent(analytics, "login", {
+    //         method: "apple",
+    //         user_id: user.uid,
+    //       });
 
-          ReactGA.set({
-            user_id: user.uid,
-          });
+    //       ReactGA.set({
+    //         user_id: user.uid,
+    //       });
 
-          ReactGA.event({
-            category: "User",
-            action: "Login",
-          });
+    //       ReactGA.event({
+    //         category: "User",
+    //         action: "Login",
+    //       });
 
-          navigate("/home");
-        }
-      })
-      .catch((error) => {
-        console.error("Login failed:", error.message);
-      });
+    //       navigate("/home");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error("Login failed:", error.message);
+    //   });
+    toast.error("Apple login is temporarily unavailable. Please try another login method.");
   };
 
   function handlePasswordReset() {

@@ -1381,7 +1381,8 @@ footer {
 }
 
 .Facebook_icon,
-.instagram_icon {
+.instagram_icon, 
+.linkedin_icon {
   width: 46px;
   height: 46px;
 }
@@ -1866,14 +1867,14 @@ footer {
 
 }
 
-/* .our_team_text {
-  font-size: 45px;
+.our_team_text {
+  font-Size: 2em;
+  font-Weight: 700;
+  line-Height: normal;
   padding-left: 80px;
-  font-weight: 700;
-
   padding-top: 50px;
 
-} */
+}
 
 .image2{
   width: 650px;
@@ -3179,7 +3180,7 @@ nav {
     position: absolute;
     left: 0;
     top: 0;
-    height: auto;
+    height: 100vh;
     width: 100%;
     background: linear-gradient(180deg,
         #0a0f1f 25%,
@@ -3235,6 +3236,10 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .login_btn {
+    height: 35px;
   }
 
   .back_btn_register {
@@ -3664,11 +3669,11 @@ nav {
 
   }
 
-  /* .our_team_text {
-    margin-top: 20px;
-    font-size: 35px;
-    padding-left: 20px;
-  } */
+  .our_team_text {
+
+    font-size: 1.7em;
+    padding-left: 50px;
+  }
 
   .our_team {
     display: flex;
@@ -3819,7 +3824,7 @@ nav {
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 80vh;
+    /* height: 100vh; */
     width: 100%;
     padding: 0;
     margin-top: 50px;
@@ -3840,6 +3845,7 @@ nav {
     width: 100%;
     right: 0;
     bottom: 0;
+    position: relative;
   }
 
 
