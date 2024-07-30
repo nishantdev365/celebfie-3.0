@@ -54,7 +54,7 @@ const SignIn = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {
@@ -82,7 +82,7 @@ const SignIn = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
 
@@ -136,7 +136,7 @@ const SignIn = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {
@@ -165,7 +165,7 @@ const SignIn = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {

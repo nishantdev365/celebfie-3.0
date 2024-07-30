@@ -13,11 +13,14 @@ const Footer = () => {
           <img
             src={Explore}
             alt="explore"
-            className="material-symbols-outlined mobile_footer_icon active"
-          />
+            className={`mobile_footer_icon ${location.pathname === "/home" ? "active" : ""}`}/>
         </Link>
 
-        <img src={Message} alt="chat" className="mobile_footer_icon" />
+        <Link to="/chat/urvashi-rautela">
+        <img src={Message} alt="chat" className={`mobile_footer_icon ${location.pathname === "/chat" ? "active" : ""}`} />
+        </Link>
+
+        
         <img src={Settings} alt="settings" />
       </div>
     </>

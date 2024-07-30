@@ -13,8 +13,10 @@ import ReactModal from "react-modal";
 import video from "../assets/video.mp4";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga4";
+import chatBot from "../api/chatBot"
+// import chatBot2 from "../api/chatBot"
 
-const Home = () => {
+const Home = ({ addProfile }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
@@ -59,66 +61,22 @@ const Home = () => {
     };
   }, []);
 
-  const handlTaapseePage = () => {
-    ReactGA.event({
-      category: 'CelebrityProfile',
-      action: 'Click',
-      label: 'Taapsee Pannu',
-    });
-
-    if (isMobile) {
-      navigate("/taapsee-profile");
-    } else {
-      navigate("/taapsee-pannu");
-    }
-  };
-  const handlUrvashiPage = () => {
-    ReactGA.event({
-      category: 'CelebrityProfile',
-      action: 'Click',
-      label: 'Urvashi Rautela',
-    });
-  
-    if (isMobile) {
-      navigate("/urvashi-profile");
-    } else {
-      navigate("/urvashi-rautela");
-    }
-  };
-  
-  const handlMalaikaPage = () => {
-    ReactGA.event({
-      category: 'CelebrityProfile',
-      action: 'Click',
-      label: 'Malaika Arora',
-    });
-
-    if (isMobile) {
-      navigate("/malaika-profile");
-    } else {
-      navigate("/malaika-arora");
-    }
-  };
-
-  const handlKaranPage = () => {
-    ReactGA.event({
-      category: 'CelebrityProfile',
-      action: 'Click',
-      label: 'Karan Johar',
-    });
-    
-    if (isMobile) {
-      navigate("/karan-profile");
-    } else {
-      navigate("/karan-johar");
-    }
-  };
 
   const userName = localStorage.getItem("machaaoUser");
   console.log("Authenticating user:", userName);
 
-  
 
+  const handleClick = (event, bot) => {
+    event.preventDefault();
+    if (bot.mkey === null) {
+      setPopupOpen(!isPopupOpen);
+    } else {
+      
+      navigate(isMobile ? `/profile/${bot.name}` : `/chat/${bot.name}`)
+      // window.location.href = isMobile ? `/profile/${bot.name}` : `/bot/${bot.name}`;
+    }
+    console.log("Bot clicked:", bot);
+  };
   
 
   return (
@@ -497,7 +455,43 @@ const Home = () => {
 <div className="explore_bollywood_section">
        
           <div className="profile_cards">
-            <div
+
+
+          {chatBot.map(bot => (
+              <div
+                className="profile"
+                // onClick={handlTaapseePage}
+                key={bot.id} onClick={(event) => { handleClick(event, bot); addProfile(bot); }}
+
+                // className="flex gap-8"
+                style={{ background: `linear-gradient(2deg, rgba(0, 0, 0, 0.79) 15.8%, rgba(0, 0, 0, 0) 55.83%), url(${bot.profileImage}), lightgray`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
+              >
+
+
+      
+          {/* <Link to={isMobile ? `/profile/${bot.name}` : `/bot/${bot.name}`}> */}
+           
+                 <div className="profile_center">
+                  <div className="horizontal_line"></div>
+                  <div className="red_circle"></div>
+                </div>
+
+                <div className="filmmaker-and-television">
+                  <b className="celeb_name">{bot.celebname}</b>
+                  <br />
+                  <p className="bottom_text">{bot.description}</p>
+                </div>
+                <p className="start">Start Chat</p>
+          {/* </Link> */}
+      
+    
+              </div>
+              ))} 
+
+
+
+
+            {/* <div
               className="profile taapsee_Pannu_profile"
               onClick={handlTaapseePage}
             >
@@ -515,7 +509,7 @@ const Home = () => {
               
               </div>
               <p className="start">Start Chat</p>
-              {/* </Link> */}
+         
             </div>
 
             <div className="profile urvashi_Rautela_profile" onClick={handlUrvashiPage} >
@@ -531,7 +525,7 @@ const Home = () => {
                 <p className="bottom_text">Bollywood actress, ace dancer</p>
               </div>
               <p className="start">Start Chat</p>
-              {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
+             
             </div>
 
             <div className="profile sukhwinder_Singh_profile" onClick={handleTriggerClick}>
@@ -547,7 +541,7 @@ const Home = () => {
                 <p className="bottom_text">Singer, Rockstar Performer</p>
               </div>
               <p className="start">Start Chat</p>
-              {/* <p className="members_only"> <span className="members_span">(</span> Members Only <span className="members_span">)</span> </p> */}
+           
             </div>
 
             <div className="profile malaika_Arora_profile" onClick={handlMalaikaPage}>
@@ -580,7 +574,7 @@ const Home = () => {
                 <p className="bottom_text">Producer, Director and TV host</p>
               </div>
               <p className="start">Start Chat</p>
-            </div>
+            </div> */}
           </div>
         </div>
 

@@ -48,7 +48,7 @@ const Login = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {
@@ -90,7 +90,7 @@ const Login = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {
@@ -119,7 +119,7 @@ const Login = () => {
             action: "Login",
           });
 
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {
