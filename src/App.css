@@ -1295,8 +1295,8 @@ nav {
   font-size: var(--font-size-base);
   line-height: 27px;
   display: inline-block;
-  width: 618px;
-  height: 133px;
+  width: 45%;
+  height: 100%;
   color: white;
 }
 
