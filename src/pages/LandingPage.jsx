@@ -170,7 +170,7 @@ const Landingpage = () => {
             >
               Your Star-Studded Guide!
             </h1>
-            <p style={{ fontSize: "1.2em", lineHeight: "27px", textAlign: "justify" }}>
+            <p style={{ fontSize: "1.2em", lineHeight: "27px"}}>
               Join the fun by chatting with our AI celebrity personas! Just pick
               your favorite star, send texts, share pics, or even hop on a voice
               or video call. It’s like having your own celeb BFF—right in your
@@ -199,7 +199,7 @@ const Landingpage = () => {
               >
                 Explore Your Fan-tastic Journey!
               </h1>
-              <p style={{ fontSize: "1.2em", lineHeight: "27px", textAlign: "justify" }}>
+              <p style={{ fontSize: "1.2em", lineHeight: "27px" }}>
                 Dive into a world of fun with Celebfie 3.0! Enjoy tons of
                 engaging features where you can chat and connect with your
                 favorite celebs like never before. As you interact, earn
@@ -228,7 +228,7 @@ const Landingpage = () => {
               >
                 Join the Brand-tastic Revolution!
               </h1>
-              <p style={{ fontSize: "1.2em", lineHeight: "27px", textAlign: "justify" }}>
+              <p style={{ fontSize: "1.2em", lineHeight: "27px"}}>
                 Get in on the action with Celebfie 3.0! Leverage our superstar
                 celebs to showcase your products and promotions to a passionate
                 fan base that’s ready to engage. With Celebfie, you don’t just
@@ -256,7 +256,7 @@ const Landingpage = () => {
               >
                 Claim Your AI Star Power!
               </h1>
-              <p style={{ fontSize: "1.2em", lineHeight: "27px", textAlign: "justify" }}>
+              <p style={{ fontSize: "1.2em", lineHeight: "27px"}}>
                 Step into the future with Celebfie 3.0! By creating your
                 official AI persona, you can connect with your fans like never
                 before. This virtual sidekick is always there to share your
@@ -474,7 +474,7 @@ const Landingpage = () => {
                         width: "35px",
                         height: "35px",
                         marginBottom: "10px",
-                        textAlign: "justify"
+                       
                       }}
                       alt=""
                     />
