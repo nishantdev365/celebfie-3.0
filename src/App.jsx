@@ -188,6 +188,7 @@ import Home from "./pages/home";
 import LandingPage from "./pages/LandingPage";
 import ChatPage from "./pages/ChatPage";
 import ProfilePage from "./pages/ProfilePage"
+import SearchPage from "./pages/SearchPage";
 // import TaapseeChatPage from "./pages/Taapsee_Chat_Page";
 // import UrvashiChatPage from "./pages/Urvashi_Chat_Page";
 // import SukhwinderChatPage from "./pages/Sukhwinder_Chat_Page";
@@ -303,6 +304,8 @@ function App() {
               <Route path="/profile/:name" element=  {<ProtectedRoute>{<ProfilePage />} </ProtectedRoute> } />
               {/* <Route path="/chat" element={<ChatPage />} /> */}
                   <Route path="/chat/:name" element={<ProtectedRoute><ChatPage /> </ProtectedRoute>} />
+                  {/* <Route path="/search" element={<ProtectedRoute>  <Navbar /><SearchPage /> </ProtectedRoute>} /> */}
+                  <Route path="/search" element={<> <Navbar /><SearchPage /> </>} />
             <Route
               path="/taapsee-profile"
               element={

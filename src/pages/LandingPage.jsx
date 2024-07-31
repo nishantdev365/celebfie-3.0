@@ -490,9 +490,11 @@ const Landingpage = () => {
                 >
                   {" "}
                   . {selectedProfile.name}
+                  
                 </p>
+                <p> ( {selectedProfile.role} )</p>
               </div>
-              <div className="image2">
+              <div className="image_team">
                 <img
                   src={selectedProfile.image}
                   alt={selectedProfile.name}
@@ -577,7 +579,7 @@ const Landingpage = () => {
               >
                 Name
               </label>
-              <input type="text" />
+              <input type="text" placeholder="Your Full Name" />
 
               <label
                 htmlFor="html"
@@ -585,7 +587,7 @@ const Landingpage = () => {
               >
                 Email
               </label>
-              <input type="text" />
+              <input type="text" placeholder="Your Email ID"/>
 
               <label
                 htmlFor="html"
@@ -593,7 +595,7 @@ const Landingpage = () => {
               >
                 Phone Number
               </label>
-              <input type="text" />
+              <input type="text" placeholder="Your Phone Number"/>
 
               <label
                 htmlFor="html"
@@ -601,7 +603,7 @@ const Landingpage = () => {
               >
                 Message
               </label>
-              <input style={{ height: "100px" }} type="text" />
+              <input style={{ height: "100px", lineHeight: "40px", paddingRight: "20px" }} type="text" placeholder="Write Your Message Here"/>
 
               <div className="register_form_page_btn">
                 <b className="Register_btn_text">Send Message</b>

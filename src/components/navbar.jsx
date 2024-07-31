@@ -207,11 +207,14 @@ const Navbar = () => {
                 </b>
               </li>
             </Link>
+
+            <Link to="/search">
             <li>
-              <b className="nav_options">
+              <b className={`nav_options ${location.pathname === "/search" ? "active" : ""}`}>
                 <span className="material-symbols-outlined ico">search</span> Search
               </b>
             </li>
+            </Link>
           </ul>
         </div>
 

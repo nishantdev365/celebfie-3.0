@@ -1380,8 +1380,9 @@ footer {
   display: flex;
 }
 
+
 .Facebook_icon,
-.instagram_icon, 
+.instagram_icon,
 .linkedin_icon {
   width: 46px;
   height: 46px;
@@ -1782,7 +1783,7 @@ footer {
 }
 
 
-.About_heading{
+.About_heading {
   font-Size: 2em;
   font-Weight: 700;
   line-Height: normal;
@@ -1835,7 +1836,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
-  padding: 40px 60px 80px 60px;
+  padding: 80px 60px 80px 60px;
   /* translate: 0 280px; */
 }
 
@@ -1843,7 +1844,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 60px 60px 60px;
+  padding: 80px 60px 80px 60px;
   background: #172141;
   border-top: 1px solid #5D72B6;
   border-bottom: 1px solid #5D72B6;
@@ -1855,7 +1856,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 60px 120px 60px;
+  padding: 80px 60px 120px 60px;
 
 }
 
@@ -1876,11 +1877,18 @@ footer {
 
 }
 
-.image2{
+.image2 {
   width: 650px;
-  height: 400px;
+  /* height: 400px; */
+
 
 }
+
+/* 
+.image_team{
+  width: 650px;
+  height: 400px;
+} */
 
 .our_team {
   display: flex;
@@ -1991,7 +1999,10 @@ footer {
   display: flex;
   z-index: 99;
   cursor: pointer;
+  margin-right: 80px;
   gap: 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .fan_profile_pic_section {
@@ -2068,6 +2079,7 @@ footer {
   height: 400px;
   border: white solid 3px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .quote_and_fan_name {
@@ -2134,7 +2146,6 @@ footer {
   color: white;
   border-bottom: 2px solid #E8E8E8;
   border-top: 2px solid #E8E8E8
-
 }
 
 .team_profile_info {
@@ -3533,13 +3544,19 @@ nav {
 
   /* ______________________About_US_______________________________ */
 
-  .image2{
+  .image2 {
     width: 325px;
     height: 200px;
-  
+
   }
 
-  .About_heading{
+
+  .image_team {
+    width: 325px;
+    height: 200px;
+  }
+
+  .About_heading {
     font-size: 1.7em;
     margin-bottom: 15px;
   }
@@ -3558,11 +3575,12 @@ nav {
 
   .hero_section_text_line {
     font-size: 1.4em;
-    margin-top: 5px;
+    margin-top: 10px;
+    line-height: normal;
   }
 
   .hero_section_text_line1 {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: normal;
 
   }
@@ -3582,8 +3600,8 @@ nav {
 
     animation: scrollBackground 60s linear infinite;
     height: 100vh;
-    
-  
+
+
   }
 
 
@@ -3608,7 +3626,7 @@ nav {
     color: white;
     height: auto;
     padding-top: 0;
-    
+
   }
 
   .how_this_works {
@@ -3623,7 +3641,7 @@ nav {
 
   .how_this_works>.content {
     width: 100%;
-   
+
   }
 
   .explain_content1 {
@@ -3643,8 +3661,8 @@ nav {
     align-items: center;
     padding: 50px 20px 50px 20px;
     background: #172141;
-  border-top: 1px solid #5D72B6;
-  border-bottom: 1px solid #5D72B6;
+    border-top: 1px solid #5D72B6;
+    border-bottom: 1px solid #5D72B6;
     flex-direction: column;
     gap: 20px;
     /* translate: 0 380px; */
@@ -3850,10 +3868,10 @@ nav {
 
 
   .testimonial_container {
-   
+
     position: relative;
-    padding: 20px 10px; 
-    
+    padding: 20px 10px;
+
   }
 
   .testimonial_title {
@@ -3971,6 +3989,11 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  .search__input {
+    min-width: 90vw;
+  }
+
 
 }
 
@@ -4114,3 +4137,71 @@ nav {
   padding: 12px;
   border-radius: 25px;
 } */
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* .search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 12em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+} */
+
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 35vw;
+  transition: all ease-in-out .5s;
+  margin-top: 2rem;
+
+}
+
+.search__input:hover,
+.search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #7a7676;
+}
+
+.search__input:focus+.search__button {
+  background-color: #f0eeee;
+}
+
+
+.search_page {
+  color: white;
+  background: var(--color-gray-200);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
