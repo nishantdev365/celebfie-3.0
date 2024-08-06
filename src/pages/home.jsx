@@ -417,7 +417,7 @@ const Home = ({ addProfile }) => {
         </div>
 
         {isPopupOpen && (
-           <div className="modal_back_blur">
+           <div className="modal_back_blur" onClick={ClosePopup}>
           <div className="coming_soon_popup open">
             <div className="coming_soon_popup_inner">
               <img src={Group} alt="group" />

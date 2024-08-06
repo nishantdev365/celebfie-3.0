@@ -209,7 +209,7 @@ const Team = () => {
   return (
     <>
       {isOpen && selectedProfile && (
-      <div className="modal_back_blur">
+      <div className="modal_back_blur" onClick={handleClose}>
           <div className="team_dialog_box open">
           <div className="team_dialog_box_inner">
             <div className="team_profile_image">
