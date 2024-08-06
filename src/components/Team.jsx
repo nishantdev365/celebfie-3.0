@@ -251,7 +251,7 @@ const Team = () => {
                   <p className="team_name">{profile.name}</p>
                   <p style={{fontSize: "0.9em"}}>({profile.role})</p>
                   <div
-                    className="social_icons"
+                    className="social_icons_team"
                     style={{ gap: "10px", marginTop: "10px" }}
                   >
                     {profile.socialLinks.linkedin && (
