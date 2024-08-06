@@ -1,141 +1,76 @@
-import QuoteImg from "../assets/quote.png";
-import RaminderSingh from "../assets/raminder_singh.jpg";
+// import QuoteImg from "../assets/quote.png";
+// import RaminderSingh from "../assets/raminder_singh.jpg";
+import { useEffect } from "react";
 
-// import TeamProfile2 from "../assets/team_profile2.png";
-// import TeamProfile3 from "../assets/team_profile3.png";
-// import TeamProfile4 from "../assets/team_profile4.png";
-// import TeamProfile5 from "../assets/team_profile5.png";
 import Img1 from "../assets/image1.png";
 import Img2 from "../assets/image2.png";
 import Img3 from "../assets/image3.png";
-import ArrowRight from "../assets/arrow-right.png";
-import ArrowLeft from "../assets/arrow-left.png";
+
 import AboutImg1 from "../assets/about-page-img1.jpg";
 import AboutImg2 from "../assets/about-page-img2.jpg";
 import AboutImg3 from "../assets/about-page-img3.png";
-
-import TestimonialPic1 from "../assets/testimonialpic1.png";
-import TestimonialPic2 from "../assets/testimonialpic2.png";
-import TestimonialPic3 from "../assets/testimonialpic3.png";
-import TestimonialPic4 from "../assets/testimonialpic4.png";
-import TestimonialPic5 from "../assets/testimonialpic5.png";
-import TestimonialPic6 from "../assets/testimonialpic6.png";
-import TestimonialPic7 from "../assets/testimonialpic7.png";
 
 import Logo from "../assets/logo.svg";
 import Facebook from "../assets/facebook_icon.png";
 import Instagram from "../assets/instagram_icon.png";
 import Visa from "../assets/visa-mastercard-icon.png";
-// import Facebook_Vector from "../assets/facebook_vector.png";
-import Instagram_Vector from "../assets/instagram_vector.png";
-import Linkedin_vector from "../assets/linkedin_vector.png"
-import { useState } from "react";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Aamarr P.",
-    image: TestimonialPic1,
-    quote:
-      "Chatting with my favorite celeb feels so personal! I loved earning Celeboins just by sharing moments together. Best experience ever",
-  },
-  {
-    id: 2,
-    name: "Sophie T.",
-    image: TestimonialPic2,
-    quote:
-      "The AI interaction is mind-blowing! I can text my fave stars anytime and feel like they really get me. It’s more than just a fan site",
-  },
-  {
-    id: 3,
-    name: "Sandeep S., CEO of EcoTech Solutions",
-    image: TestimonialPic3,
-    quote:
-      "Partnering with Celebfie means tapping into a vibrant fan community. Our campaigns feel more alive when celebs are genuinely connected",
-  },
-  {
-    id: 4,
-    name: "Simran K.",
-    image: TestimonialPic4,
-    quote:
-      "I never thought I could actually virtually hang out with my idols. The emojis turn into Celeboins, and I have already got merch on the way",
-  },
-  {
-    id: 5,
-    name: "Dolly J., Marketing Manager at Trendy Apparel",
-    image: TestimonialPic5,
-    quote:
-      "“Celebfie allowed us to showcase our products through authentic celebrity interactions, and we’ve seen our brand loyalty skyrocke",
-  },
-  {
-    id: 6,
-    name: "Vick R., Brand Strategist at Foodies Unite",
-    image: TestimonialPic6,
-    quote:
-      "The innovative platform helped us engage fans in a fun, fresh way. Leveraging celeb influence has opened new doors for our brand",
-  },
-  {
-    id: 7,
-    name: "Nidhi V.",
-    image: TestimonialPic7,
-    quote:
-      "I snagged VIP passes to a concert just by interacting with my stars! Celebfie 3.0 makes fandom totally rewarding",
-  },
-];
+// import Instagram_Vector from "../assets/instagram_vector.png";
+// import Linkedin_vector from "../assets/linkedin_vector.png"
+// import { useState } from "react";
+import Testimonial from "../components/Testimonial";
+import Team from "../components/Team";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Landingpage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoverIndex, setHoverIndex] = useState(null);
-  const [selectedProfile, setSelectedProfile] = useState(null);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration (ms)
+      once: true, // Animation happens only once - while scrolling down
+      easing: "ease-out-cubic", // Easing for AOS animations
+    });
+  }, []);
+  // const [selectedProfile, setSelectedProfile] = useState(null);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
+  // const teamProfiles = [
+  //   {
+  //     name: "Raminder Singh",
+  //     role: "Founder and CEO",
+  //     image: RaminderSingh,
+  //     content:
+  //       "Hey there! I’m Raminder, the Founder behind this magical world of Celebfie. Think of me as your guide to the ultimate fan experience! I’m on a mission to help you connect with your fave celebs in ways you never thought possible—seriously, chatting with them after binge-watching their latest movie isn’t just a dream anymore! Buckle up for a fun ride as we dive into this wild adventure together. Let’s make some unforgettable memories.",
+  //     socialLinks: {
+  //       linkedin: "https://www.linkedin.com/in/raminders/",
+  //       instagram: "https://www.instagram.com/ramindersinggh/",
 
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
-    );
-  };
+  //     },
+  //   },
+  //   {
+  //     name: "Harshal Dhir",
+  //     role: "AI Tech Wiz",
+  //     image: null,
+  //     content:
+  //       "Hi! I’m Harshal, the tech wizard behind the AI magic at Celebfie 3.0. I’m passionate about blending cutting-edge technology with creativity to make those magical connections happen. It’s all about bringing fans and celebrities closer together, so get ready for some awesome interactions powered by AI! Can’t wait for you to join us on this exciting journey.",
+  //     socialLinks: {
+  //       linkedin: Linkedin_vector,
+  //       instagram: Instagram_Vector,
+  //     },
+  //   },
+  // ];
 
-  const teamProfiles = [
-    {
-      name: "Raminder Singh",
-      role: "Founder and CEO",
-      image: RaminderSingh,
-      content:
-        "Hey there! I’m Raminder, the Founder behind this magical world of Celebfie. Think of me as your guide to the ultimate fan experience! I’m on a mission to help you connect with your fave celebs in ways you never thought possible—seriously, chatting with them after binge-watching their latest movie isn’t just a dream anymore! Buckle up for a fun ride as we dive into this wild adventure together. Let’s make some unforgettable memories.",
-      socialLinks: {
-        linkedin: "https://www.linkedin.com/in/raminders/",
-        instagram: "https://www.instagram.com/ramindersinggh/",
-       
-      },
-    },
-    {
-      name: "Harshal Dhir",
-      role: "AI Tech Wiz",
-      image: null,
-      content:
-        "Hi! I’m Harshal, the tech wizard behind the AI magic at Celebfie 3.0. I’m passionate about blending cutting-edge technology with creativity to make those magical connections happen. It’s all about bringing fans and celebrities closer together, so get ready for some awesome interactions powered by AI! Can’t wait for you to join us on this exciting journey.",
-      socialLinks: {
-        linkedin: Linkedin_vector,
-        instagram: Instagram_Vector,
-      },
-    },
-  ];
-
-  const handleCardClick = (profile) => {
-    if (selectedProfile === profile) {
-      setSelectedProfile(null); // Deselect if the same profile is clicked again
-    } else {
-      setSelectedProfile(profile);
-    }
-  };
+  // const handleCardClick = (profile) => {
+  //   if (selectedProfile === profile) {
+  //     setSelectedProfile(null); // Deselect if the same profile is clicked again
+  //   } else {
+  //     setSelectedProfile(profile);
+  //   }
+  // };
 
   return (
     <>
-      <main>
-        <div className="about_us_hero_section" style={{ color: "white"}}>
+      <main style={{backgroundColor: "#0a0f1f"}}>
+        <div className="about_us_hero_section" style={{ color: "white" }}>
           <div className="hero_section_text">
             <p className="we_are">We Are</p>
             <img src={Logo} alt="" className="celebfie_logo" />
@@ -158,9 +93,14 @@ const Landingpage = () => {
         </div>
 
         <div className="how_this_works">
-          <div className="content">
+          <div
+            className="content"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
             <h1
-            className="About_heading"
+              className="About_heading"
               // style={{
               //   fontSize: "2em",
               //   fontWeight: "700",
@@ -170,7 +110,7 @@ const Landingpage = () => {
             >
               Your Star-Studded Guide!
             </h1>
-            <p style={{ fontSize: "1em", lineHeight: "27px"}}>
+            <p style={{ fontSize: "1em", lineHeight: "27px" }}>
               Join the fun by chatting with our AI celebrity personas! Just pick
               your favorite star, send texts, share pics, or even hop on a voice
               or video call. It’s like having your own celeb BFF—right in your
@@ -186,10 +126,15 @@ const Landingpage = () => {
         </div>
 
         <div className="aboutus_middle_section">
-          <div className="explain_content1">
+          <div
+            className="explain_content1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <div className="content2">
               <h1
-               className="About_heading"
+                className="About_heading"
                 // style={{
                 //   fontSize: "2em",
                 //   fontWeight: "700",
@@ -215,10 +160,15 @@ const Landingpage = () => {
             </div>
           </div>
 
-          <div className="explain_content2">
+          <div
+            className="explain_content2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <div className="content2">
               <h1
-               className="About_heading"
+                className="About_heading"
                 // style={{
                 //   fontSize: "2em",
                 //   fontWeight: "700",
@@ -228,7 +178,7 @@ const Landingpage = () => {
               >
                 Join the Brand-tastic Revolution!
               </h1>
-              <p style={{ fontSize: "1em", lineHeight: "27px"}}>
+              <p style={{ fontSize: "1em", lineHeight: "27px" }}>
                 Get in on the action with Celebfie 3.0! Leverage our superstar
                 celebs to showcase your products and promotions to a passionate
                 fan base that’s ready to engage. With Celebfie, you don’t just
@@ -243,10 +193,15 @@ const Landingpage = () => {
             </div>
           </div>
 
-          <div className="explain_content1">
+          <div
+            className="explain_content3"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <div className="content2">
               <h1
-               className="About_heading"
+                className="About_heading"
                 // style={{
                 //   fontSize: "2em",
                 //   fontWeight: "700",
@@ -256,7 +211,7 @@ const Landingpage = () => {
               >
                 Claim Your AI Star Power!
               </h1>
-              <p style={{ fontSize: "1em", lineHeight: "27px"}}>
+              <p style={{ fontSize: "1em", lineHeight: "27px" }}>
                 Step into the future with Celebfie 3.0! By creating your
                 official AI persona, you can connect with your fans like never
                 before. This virtual sidekick is always there to share your
@@ -273,143 +228,23 @@ const Landingpage = () => {
               <img src={AboutImg3} alt="" style={{ borderRadius: "12px" }} />
             </div>
           </div>
-
-          <hr className="hr_line" />
-
-          <div className="testimonial_container">
-            <div className="testimonial_title">
-              <p className="About_heading" style={{marginTop: "10px"}}>Some of our Happy Fans</p>
-
-              <div className="arrow_icons">
-                <img onClick={handlePrev} src={ArrowLeft} alt="" />
-                <img onClick={handleNext} src={ArrowRight} alt="" />
-              </div>
-            </div>
-            <div className="fan_profile_pic_section">
-              {/* {testimonials.map((testimonial, index) => (
-        <img
-          key={testimonial.id}
-          src={testimonial.image}
-          alt={testimonial.name}
-          className={`fan_profile_pic ${index === currentIndex ? 'active' : ''} ${index === hoverIndex ? 'hover' : ''}`}
-          onClick={() => setCurrentIndex(index)}
-          onMouseEnter={() => setHoverIndex(index)}
-          onMouseLeave={() => setHoverIndex(null)}
-        />
-      ))} */}
-
-              {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className="profile_container">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className={`fan_profile_pic ${
-                      index === currentIndex ? "active" : ""
-                    } ${index === hoverIndex ? "hover" : ""}`}
-                    onClick={() => setCurrentIndex(index)}
-                    onMouseEnter={() => setHoverIndex(index)}
-                    onMouseLeave={() => setHoverIndex(null)}
-                  />
-                  {index === currentIndex && <div className="active_dot"></div>}
-                </div>
-              ))}
-            </div>
-
-            <div className="testimonial_content">
-              <img
-                src={testimonials[currentIndex].image}
-                alt={testimonials[currentIndex].name}
-                className="testimonial_image"
-              />
-              <div className="quote_and_fan_name">
-                <img
-                  style={{ width: "40px", height: "40px" }}
-                  src={QuoteImg}
-                  alt=""
-                />
-
-                <p className="quote">{testimonials[currentIndex].quote}</p>
-                <p className="author">- {testimonials[currentIndex].name}</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* <div className="bottom_section">
-         
+        <hr className="hr_line" style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f" }} />
 
-          <p
-         
-              className="our_team_text"
-            >
-              Our Team
+        <div className="testimonial_container">
+          <div className="testimonial_title">
+            <p className="About_heading" style={{ marginTop: "10px" }}>
+              Some of our Happy Fans
             </p>
-
-          <div className="our_team">
-           
-            <div className="team_profile_cards">
-              <div className="profile_card1 card ">
-                <img src={TeamProfile1} alt="" />
-            
-                <div className="team_profile_info">
-                  <p className="team_name">Raminder Singh </p>
-                  <p>(Founder and CEO)</p>
-                  <div className="social_icons" style={{gap: "10px", marginTop: "10px"}}>
-                 <a href="https://www.linkedin.com/in/raminders/" target="_blank" rel="noreferrer"> 
-                 <img src={Instagram_Vector} alt="Instagram Vector" /></a>
-                    <img src={Facebook_Vector} alt="facebook vector" />
-                  </div>
-                </div>
-               
-              </div>
-            
-
-            
-
-              <div className="profile_card2 card">
-                <img src={TeamProfile2} alt="" />
-                <div className="team_profile_info">
-                  <p className="team_name">Harshal Dhir </p>
-                  <p>(AI Tech Wiz)</p>
-                  <div className="social_icons" style={{gap: "10px", marginTop: "10px"}}>
-                  <img src={Instagram_Vector} alt="Instagram Vector" />
-                    <img src={Facebook_Vector} alt="facebook vector" />
-                  </div>
-                </div>
-              </div>
-
-       
-            </div>
           </div>
 
-
-          <div className="explain_content3">
-            <div className="content2">
-              <p style={{ fontSize: "1.6em", lineHeight: "35px" }}>
-                <span>
-                  <img src={QuoteImg} style={{width: "25px", height: "25px"}} alt="" />
-                </span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus sodales, turpis sed sodales ullamcorper, ligula urna
-                cursus augue, a ullamcorper est nulla eu magna. Maecenas lacus
-                lorem, cursus non.
-              </p>
-              <p style={{ fontSize: "1.4em", lineHeight: "35px" }}>
-                . harshal dhir
-              </p>
-            </div>
-            <div className="image2">
-              <img src={RaminderSingh} alt="" />
-            </div>
-          </div>
-
-          
-        </div> */}
+          <Testimonial />
+        </div>
 
         <div className="bottom_section">
-         
-        <p className="About_heading our_team_text">Our Team</p>
-          <div className="our_team">
+          <p className="About_heading our_team_text">Our Team</p>
+          {/* <div className="our_team">
         
             <div className="team_profile_cards">
               {teamProfiles.map((profile, index) => (
@@ -464,7 +299,7 @@ const Landingpage = () => {
           </div>
 
           {selectedProfile && (
-            <div className="explain_content3">
+            <div className="our_team_container">
               <div className="content2">
                 <p style={{ fontSize: "1.3em", lineHeight: "30px" }}>
                   <span>
@@ -508,13 +343,15 @@ const Landingpage = () => {
                 />
               </div>
             </div>
-          )}
+          )} */}
+
+          <Team />
         </div>
 
         <div className="contact_section">
           <div className="contact_info_section">
             <h1
-             className="About_heading"
+              className="About_heading"
               // style={{
               //   fontSize: "45px",
               //   fontWeight: "700",
@@ -525,10 +362,10 @@ const Landingpage = () => {
             </h1>
             <p
               style={{
-                fontSize: "18px",
+                fontSize: "1em",
                 lineHeight: "27px",
                 paddingBottom: "50px",
-                textAlign: "justify"
+                textAlign: "justify",
               }}
             >
               We’re here for you! Whether you have questions, feedback, or just
@@ -537,12 +374,7 @@ const Landingpage = () => {
               Let’s make this experience even more amazing together.
             </p>
 
-            <p
-            className="About_heading"
-          
-            >
-              Our Locations
-            </p>
+            <p className="About_heading">Our Locations</p>
 
             <p
               style={{
@@ -572,7 +404,7 @@ const Landingpage = () => {
           </div>
 
           <div className="about_form_section">
-            <form action="post">
+            {/* <form action="post">
               <label
                 htmlFor="html"
                 style={{ fontSize: "18px", lineHeight: "40px" }}
@@ -608,7 +440,77 @@ const Landingpage = () => {
               <div className="register_form_page_btn">
                 <b className="Register_btn_text">Send Message</b>
               </div>
-            </form>
+            </form> */}
+            <div className="about-form-section">
+              <form action="/submit" method="post">
+                <div className="form-group">
+                  <label htmlFor="name">
+                    Name <span className="required">*</span>
+                  </label>
+                  <input
+                    className="input_form"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Full Name"
+                    required
+                    aria-required="true"
+                    aria-label="Full Name"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">
+                    Email <span className="required">*</span>
+                  </label>
+                  <input
+                    className="input_form"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your Email ID"
+                    required
+                    aria-required="true"
+                    aria-label="Email"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phone">
+                    Phone Number <span className="required">*</span>
+                  </label>
+                  <input
+                    className="input_form"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Your Phone Number"
+                    required
+                    aria-required="true"
+                    aria-label="Phone Number"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    title="Phone number format: 123-456-7890"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write Your Message Here"
+                    required
+                    aria-required="true"
+                    aria-label="Message"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <button type="submit" className="register-form-page-btn">
+                  <span className="register-btn-text">Send Message</span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </main>
