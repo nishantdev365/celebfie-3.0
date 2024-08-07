@@ -203,6 +203,28 @@ const Team = () => {
         instagram: Instagram_Vector,
       },
     },
+    {
+      name: "Harshal Dhir",
+      role: "AI Tech Wiz",
+      image: RaminderSingh,
+      content:
+        "Hi! I’m Harshal, the tech wizard behind the AI magic at Celebfie 3.0. I’m passionate about blending cutting-edge technology with creativity to make those magical connections happen. It’s all about bringing fans and celebrities closer together, so get ready for some awesome interactions powered by AI! Can’t wait for you to join us on this exciting journey.",
+      socialLinks: {
+        linkedin: Linkedin_vector,
+        instagram: Instagram_Vector,
+      },
+    },
+    {
+      name: "Harshal Dhir",
+      role: "AI Tech Wiz",
+      image: RaminderSingh,
+      content:
+        "Hi! I’m Harshal, the tech wizard behind the AI magic at Celebfie 3.0. I’m passionate about blending cutting-edge technology with creativity to make those magical connections happen. It’s all about bringing fans and celebrities closer together, so get ready for some awesome interactions powered by AI! Can’t wait for you to join us on this exciting journey.",
+      socialLinks: {
+        linkedin: Linkedin_vector,
+        instagram: Instagram_Vector,
+      },
+    },
  
   ];
 

@@ -6,6 +6,7 @@
   /* list-style: none; */
   box-sizing: border-box;
   /* scrollbar-width: thin; */
+  list-style: none;
   /* scrollbar-color: #ec6a63 #dfe9eb; */
 }
 
@@ -438,6 +439,7 @@ body {
 
 .radio_btn {
   display: flex;
+  align-items: baseline;
   color: var(--color-white);
   gap: 5px;
   margin-bottom: 10px;
@@ -1801,11 +1803,12 @@ footer {
 
 .about_us_hero_section {
   background: linear-gradient(1deg,
-      #0a0f1f 0.34%,
+      #0a0f1f 5.34%,
       rgba(10, 15, 31, 0.21) 99.44%),
-    url(./assets/slide-img2.jpg);
+    url(./assets/slide-img.png);
   background-size: cover;
-  height: 120vh;
+  height: 100vh;
+  /* height: auto; */
 
 }
 
@@ -1826,12 +1829,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 60px 0 60px;
+  padding: 0 60px 0 60px;
   color: white;
   /* position: absolute;
   top: 600px; */
-  position: absolute;
-  translate: 0 -280px;
+  /* position: absolute; */
+  /* translate: 0 -280px; */
+ height: 100vh;
+
 }
 
 .how_this_works>.content {
@@ -2389,10 +2394,907 @@ nav {
 
 
 /* Tablet styles */
-@media only screen and (max-width: 768px) {}
+/* @media only screen and (max-width: 1450px) {
+  
+} */
+
+@media only screen and (max-width: 1450px) {
+
+ 
+
+  .burger_menu {
+    display: block;
+  }
+
+  .nav_options {
+    display: flex;
+    font-size: 1rem;
+    color: grey;
+    text-decoration: none;
+   
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+
+
+
+  nav {
+    /* position: fixed; */
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    height: 60px;
+    /* width: 100vw; */
+  }
+
+  .homepage {
+    padding: 0;
+    gap: 0;
+    /* height: 100vh; */
+  }
+
+  .logo>img {
+    width: 122px;
+    height: 29px;
+  }
+
+  .burger_menu {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .icon-menu {
+    --gap: 5px;
+    --height-bar: 2.5px;
+    --pos-y-bar-one: 0;
+    --pos-y-bar-three: 0;
+    --scale-bar: 1;
+    --rotate-bar-one: 0;
+    --rotate-bar-three: 0;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--color-tomato);
+  }
+
+  .bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition: top 200ms 100ms, transform 100ms;
+  }
+
+  .bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+  }
+
+  .bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition: bottom 200ms 100ms, transform 100ms;
+  }
+
+  .check-icon:checked+.icon-menu>.bar--1 {
+    transition: top 200ms, transform 200ms 100ms;
+  }
+
+  .check-icon:checked+.icon-menu>.bar--3 {
+    transition: bottom 200ms, transform 200ms 100ms;
+  }
+
+  .check-icon:checked+.icon-menu {
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    width: 100%;
+    padding: 20px;
+    font-size: large;
+    left: 0;
+    color: white;
+    background-color: var(--color-gray-100);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: menu 0.3s ease;
+    opacity: 1;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    border-radius: 18px;
+
+  }
+
+  /* .menu:hover {
+    color: var(--color-tomato);
+  } */
+
+  .logout_menu {
+    fill: var(--color-tomato);
+    width: 20px;
+   
+  }
+
+  .mobile_logout {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .menu_item_mobile {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .menu_item_mobile.active,
+  .menu_item_mobile:hover {
+    border-radius: 8px;
+    background-color: var(--color-tomato);
+
+  }
+
+
+
+
+  .banner_section,
+  .signup_btn,
+  .how_to_use_section,
+  footer {
+    display: none;
+  }
+
+  .mobile_banner {
+    display: flex;
+    /* width: 329.312px; */
+    width: 95vw;
+    height: 175.851px;
+    background-image: url(./assets/slide-img.jpg);
+    background-size: cover;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 0.5px solid var(--color-dark-blue-grey);
+    position: relative;
+  }
+
+  .video {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    /* position: relative; */
+  }
+
+  .close_modal_btn {
+    cursor: pointer;
+    background: transparent;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: white;
+    z-index: 1000;
+  }
+
+  .banner_play {
+    background-image: url(./assets/play.svg);
+    background-size: 78px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--color-light-black);
+    opacity: 0.51;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mobile_footer {
+    display: flex;
+    /* position: fixed; */
+    position: sticky;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+    z-index: 100;
+    /* width: 100vw; */
+    height: 55px;
+    border: 1px solid #1c1a51;
+    background: #0d152f;
+    box-shadow: 0px 0px 61px 0px rgba(29, 54, 183, 0.25);
+  }
+
+  .mobile_footer_icon {
+    color: var(--color-white);
+  }
+
+  .mobile_footer_icon:first-child {
+    color: var(--color-tomato);
+  }
+
+  .mobile_footer_icon:hover {
+    color: var(--color-tomato);
+  }
+
+
+  .explore_bollywood_section,
+  .explore_influencers_section,
+  .explore_sport_influencers_section {
+    padding: 20px 10px 20px 10px;
+    /* width: 100vw; */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .explore_bollywood_section::-webkit-scrollbar,
+  .explore_influencers_section::-webkit-scrollbar,
+  .explore_sport_influencers_section::-webkit-scrollbar {
+    display: none;
+  }
+
+  .explore_sport_influencers_section {
+    margin-bottom: 10px;
+  }
+
+  .explore_influencers_section {
+    background-color: var(--color-gray-200);
+    border: none;
+  }
+
+  .profile_cards {
+    min-width: fit-content;
+    /* flex-direction: row;
+    justify-content: center; */
+
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* gap: 10px; */
+    padding: 20px;
+  }
+
+  .horizontal_line {
+    display: none;
+  }
+
+  .profile_cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .profile {
+    justify-content: flex-end;
+    /* width: 140px;
+    height: 220px; */
+    width: 8.75rem;
+    height: 18.75rem;
+    box-shadow: none;
+    opacity: 1;
+    transition: opacity 1s ease 0s;
+  }
+
+  .profile:hover {
+    opacity: 0.6;
+  }
+
+  .members_only {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 2px;
+  }
+
+  .Explore_Sport_Influencers,
+  .Explore_Bollywood,
+  .Explore_Influencers {
+    padding: 2px;
+    font-size: 17px;
+    padding-left: 35px;
+    margin-top: 20px;
+  }
+
+  .Explore_Influencers {
+    background-color: inherit;
+  }
+
+  .celeb_name {
+    font-size: 13px;
+    /* width: 118px;
+      height: 25px;
+      font-weight: 700; */
+  }
+
+  .bottom_text {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    /* line-height: 14px; */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit the text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+  }
+
+  .filmmaker-and-television {
+    color: var(--color-white);
+    padding: 10px;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    height: 30%;
+    background: #202946;
+  }
+
+  .start {
+    display: none;
+  }
+
+  .red_circle {
+    width: 30.933px;
+    height: 30.973px;
+    background-size: 60%;
+    right: 10px;
+    bottom: 76px;
+    z-index: 1;
+  }
+
+  .red_circle:hover {
+    width: 40.933px;
+    height: 40.973px;
+  }
+
+
+  .chatroom_area {
+    background-color: var(--color-gray-200);
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  .search_bar {
+    width: 100%;
+  }
+
+  .main_chatroom_section {
+    width: 80%;
+    height: 100vh;
+    background-color: var(--color-gray-300);
+  }
+
+  .chat_profile_options {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .chats_text {
+    display: none;
+  }
+
+  .taapsee-pannu-parent {
+    width: 80%;
+  }
+
+  .rectangle-group {
+    padding-left: 20px;
+  }
+
+  .taapsee-pannu {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    /* 160% */
+  }
+
+  .profile_header {
+    top: 0;
+    width: 100%;
+  }
+
+  .filmmaker-and-television2 {
+    width: 100%;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+    /* 92.857% */
+  }
+
+  .profile_page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-gray-200);
+    gap: 10px;
+    transition: filter 0.5s ease;
+  }
+
+  .blur-background {
+    filter: blur(5px);
+  }
+
+  .tapsee_pannu_profile_background {
+    background: linear-gradient(0deg, #0a0f1f 0%, rgba(10, 15, 31, 0) 72.93%),
+      url(./assets/profile/Taapsee-Pannu-bg.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  .malaika_arora_profile_background {
+    background: linear-gradient(0deg, #0a0f1f 0%, rgba(10, 15, 31, 0) 72.93%),
+      url(./assets/profile/MalaikaArora-BG.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  .sukhwinder_singh_profile_background {
+    background: linear-gradient(0deg, #0a0f1f 0%, rgba(10, 15, 31, 0) 72.93%),
+      url(./assets/profile/Sukhwinder-Singh-BG.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  .karan_johar_profile_background {
+    background: linear-gradient(0deg, #0a0f1f 0%, rgba(10, 15, 31, 0) 72.93%),
+      url(./assets/profile/Karan-Johar-BG.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+  .urvashi_rautela_profile_background {
+    background: linear-gradient(0deg, #0a0f1f 0%, rgba(10, 15, 31, 0) 72.93%),
+      url(./assets/profile/Urvashi-Rautela-bg.png), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+  }
+
+
+  .popup_info {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    flex-shrink: 0;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    background-color: #262f4d;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .popup_background {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .profile_paragraph {
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .close_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  .first_para {
+    color: #fff;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .second_para {
+    color: #fff;
+    width: 90%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  li {
+    /* list-style-type: decimal; */
+    display: list-item;
+    color: #fff;
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .popup_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    width: 100%;
+    height: 50px;
+    flex-shrink: 0;
+    color: #fff;
+    text-align: center;
+    font-family: "Source Sans Pro";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    /* 126.316% */
+    border-radius: 7px;
+    background: #2d477d;
+  }
+
+  .popup_arrow {
+    position: absolute;
+    right: 50px;
+  }
+
+  .profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05ff00;
+    background: linear-gradient(2deg,
+        rgba(0, 0, 0, 0.79) 15.8%,
+        rgba(0, 0, 0, 0) 55.83%),
+      url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Taapsee-Pannu.png);
+  }
+
+  .malaika_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05ff00;
+    background: linear-gradient(2deg,
+        rgba(0, 0, 0, 0.79) 15.8%,
+        rgba(0, 0, 0, 0) 55.83%),
+      url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Malaika-Arora.png);
+  }
+
+  .sukhwinder_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05ff00;
+    background: linear-gradient(2deg,
+        rgba(0, 0, 0, 0.79) 15.8%,
+        rgba(0, 0, 0, 0) 55.83%),
+      url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Sukhwinder-Singh.png);
+  }
+
+  .karan_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05ff00;
+    background: linear-gradient(2deg,
+        rgba(0, 0, 0, 0.79) 15.8%,
+        rgba(0, 0, 0, 0) 55.83%),
+      url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Karan-Johar.png);
+  }
+
+  .urvashi_profile_pic {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 152px;
+    border: 5px solid #05ff00;
+    background: linear-gradient(2deg,
+        rgba(0, 0, 0, 0.79) 15.8%,
+        rgba(0, 0, 0, 0) 55.83%),
+      url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 0px 74px 0px rgba(0, 0, 0, 0.93);
+    background-image: url(./assets/Celebrity-profiles/Urvashi-Rautela.png);
+  }
+
+  .profile_name {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile_discription {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .primary_btn {
+    display: flex;
+    justify-content: space-between;
+
+    width: 90vw;
+  }
+
+  .secondary_btn {
+    width: 90vw;
+  }
+
+  .subscribe,
+  .talk_2_me {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 44vw;
+    height: 50px;
+    border-radius: 7px;
+    border: 2px solid #4967a6;
+    background: #0a0f1f;
+
+    gap: 10px;
+    color: #85a0d9;
+    text-align: center;
+
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .horizontal {
+    width: 90vw;
+    height: 1px;
+    margin: 10px 0 10px 0;
+    background: #354269;
+  }
+
+  .services {
+    color: #7585cb;
+
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    width: 321px;
+    height: 17px;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .get_advice,
+  .learn,
+  .gifts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    color: #b5cdff;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    background-color: #061635;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    border: 2px solid #4967a6;
+    border-radius: 7px;
+  }
+
+  .back_btn_profile {
+    background-image: url(./assets/left-arrow.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80.587px;
+    height: 80px;
+  }
+
+ 
+
+  .horizontal_line,
+  .filmmaker-and-television,
+  .red_circle,
+  .start {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .coming_soon_popup_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .coming_soon_popup_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+  }
+
+  .coming_soon_heading {
+    font-size: 25px;
+    width: 90%;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  .coming_soon_para {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .comming_soon_close_btn {
+    width: 90%;
+    height: 45px;
+    border-radius: 7px;
+    background: #2d477d;
+  }
+
+  .coming_soon_popup {
+    width: 50%;
+    height: 60%;
+    font-size: 17px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+
+    background: #262f4d;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    transform-origin: center;
+  }
+
+  @keyframes myAnim {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .soon_popup {
+    color: var(--color-tomato);
+    margin-left: 5px;
+  }
+
+  .close_popup {
+    background-size: 80%;
+    top: 15px;
+    right: 10px;
+  }
+
+  .Btn{
+    display: none;
+  }
+
+  
+  .chatroom_area {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-gray-200);
+    /* position: absolute; */
+    padding: 0 10px 0 10px;
+    position: fixed;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+  /* ______________________About_US_______________________________ */
+
+
+  /* img{
+    width: 100%;
+    height: 100%;
+  } */
+
+  .profile_header {
+    top: 0;
+    width: 80%;
+}
+
+
+  
+
+}
 
 /* Mobile styles */
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 768px) {
 
   .intro_screen {
     background: linear-gradient(1deg,
@@ -2774,6 +3676,7 @@ nav {
     -ms-overflow-style: none;
     scrollbar-width: none;
     gap: 10px;
+    padding: 0;
   }
 
   .horizontal_line {
@@ -3703,7 +4606,8 @@ nav {
   .about_us_hero_section {
 
     animation: scrollBackground 60s linear infinite;
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
   }
 
 
@@ -3734,8 +4638,10 @@ nav {
   .how_this_works {
 
     flex-direction: column;
-    padding: 50px 20px 50px 20px;
+    /* padding: 50px 20px 50px 20px; */
+    padding: 20px;
     translate: 0;
+    gap: 35px;
     position: relative;
     background-color: var(--color-gray-200);
 
@@ -4539,7 +5445,7 @@ nav {
 
 .team {
   display: flex;
-
+  padding: 15px 0;
 }
 
 .team::-webkit-scrollbar {
@@ -4607,13 +5513,13 @@ nav {
 }
 
 .team-card:hover .team-card-back {
-  transform: scaleY(1.04) scaleX(1.06) translateY(20%);
+  transform: scaleY(1.04) scaleX(1.06) translateY(15%);
 
 }
 
 .team-card:hover .team-card-front {
   transition: transform 0.9s ease-in-out;
-  transform: scaleY(1.02)
+  transform: translateY(-5%);
 }
 
 .team-card .team-card-front {
@@ -4627,9 +5533,9 @@ nav {
   height: 20%;
   bottom: 0;
   position: absolute;
-
   text-align: center;
   font-size: 0.8em;
+  padding: 0 5px 0 5px;
 }
 
 .modal_back_blur {
@@ -4760,7 +5666,8 @@ nav {
   .team {
     overflow-y: hidden;
     overflow-x: auto;
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
+    padding: 0 0 55px 0;
   }
 
   .team::-webkit-scrollbar {

@@ -125,7 +125,7 @@ const Landingpage = () => {
           </div>
         </div>
 
-        <div className="aboutus_middle_section">
+        <div className="aboutus_middle_section" style={{display: "none"}}>
           <div
             className="explain_content1"
             data-aos="fade-up"
@@ -230,9 +230,9 @@ const Landingpage = () => {
           </div>
         </div>
 
-        <hr className="hr_line" style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f" }} />
+        <hr className="hr_line" style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f", display: "none" }} />
 
-        <div className="testimonial_container">
+        <div className="testimonial_container" style={{display: "none"}}>
           <div className="testimonial_title">
             <p className="About_heading" style={{ marginTop: "10px" }}>
               Some of our Happy Fans
@@ -242,7 +242,7 @@ const Landingpage = () => {
           <Testimonial />
         </div>
 
-        <div className="bottom_section">
+        <div className="bottom_section" style={{display: "none"}}>
           <p className="About_heading our_team_text">Our Team</p>
           {/* <div className="our_team">
         
@@ -348,7 +348,7 @@ const Landingpage = () => {
           <Team />
         </div>
 
-        <div className="contact_section">
+        <div className="contact_section" style={{display: "none"}}>
           <div className="contact_info_section">
             <h1
               className="About_heading"

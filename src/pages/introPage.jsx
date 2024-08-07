@@ -14,7 +14,8 @@ const IntroPage = () => {
         window.innerWidth ||
         document.documentElement.clientWidth ||
         document.body.clientWidth;
-      setIsLaptopScreen(screenWidth > 1200);
+      // setIsLaptopScreen(screenWidth > 1200);
+      setIsLaptopScreen(screenWidth > 768 );
     };
 
     handleIntroSignupDisplay();

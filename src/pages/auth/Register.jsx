@@ -109,7 +109,7 @@ const Register = () => {
       <div className="intro_screen">
         <div className="register_page">
           <div className="navigate_back">
-            <Link to="/login">
+            <Link to="/">
               <div className="back_btn_register"></div>
             </Link>
             <b className="register_heading">Register</b>
@@ -250,7 +250,7 @@ const Register = () => {
 
       <div className="register_page_mobile">
         <div className="navigate_back">
-          <Link to="/login">
+          <Link to="/">
             {" "}
             <div className="back_btn_register"></div>
           </Link>

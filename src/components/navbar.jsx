@@ -209,7 +209,7 @@ const Navbar = () => {
             </Link>
 
             <Link to="/search">
-            <li>
+            <li style={{display: "none"}}>
               <b className={`nav_options ${location.pathname === "/search" ? "active" : ""}`}>
                 <span className="material-symbols-outlined ico">search</span> Search
               </b>
@@ -281,7 +281,7 @@ const Navbar = () => {
         {menuVisible && !isLoggedOut && ( // Only show menu if burger menu is visible and user is logged in
           <div className="menu">
             <p >
-              Hello <span>{user.username}</span>
+            <span>{user.username ? user.username : "Guest User"}</span>
             </p>
             <br />
             <Link to="/home">
@@ -289,8 +289,15 @@ const Navbar = () => {
                  Home
                 </div>
               </Link>
+              <Link to="/chat/urvashi-rautela">
+          
+                <div className={`menu_item_mobile ${location.pathname === "/chat" ? "active" : ""}`}>
+                 Chat
+                </div>
+          
+            </Link>
               <Link to="/search">
-                <div className={`menu_item_mobile ${location.pathname === "/search" ? "active" : ""}`}>
+                <div className={`menu_item_mobile ${location.pathname === "/search" ? "active" : ""}`} style={{display: "none"}}>
                  Search
                 </div>
               </Link>
