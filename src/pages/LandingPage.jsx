@@ -71,7 +71,7 @@ const Landingpage = () => {
     <>
       <main style={{backgroundColor: "#0a0f1f"}}>
         <div className="about_us_hero_section" style={{ color: "white" }}>
-          <div className="hero_section_text">
+          <div className="hero_section_text" style={{marginBottom: "4rem"}}>
             <p className="we_are">We Are</p>
             <img src={Logo} alt="" className="celebfie_logo" />
             <p className="hero_section_text_line">
@@ -91,6 +91,8 @@ const Landingpage = () => {
             </p>
           </div>
         </div>
+
+        <hr className="hr_line" style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f"}} />
 
         <div className="how_this_works">
           <div

@@ -4639,11 +4639,12 @@ nav {
 
     flex-direction: column;
     /* padding: 50px 20px 50px 20px; */
-    padding: 20px;
+    padding: 40px 20px 40px 20px;
     translate: 0;
     gap: 35px;
     position: relative;
     background-color: var(--color-gray-200);
+    height: auto;
 
   }
 
