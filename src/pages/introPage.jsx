@@ -43,7 +43,7 @@ const IntroPage = () => {
           </div>
           <br />
           <div className="register_container_intro redirectButton">
-            <Link to="/register">
+            <Link to="/signup">
               <b className="login1_intro">Register</b>
             </Link>
           </div>

@@ -333,7 +333,7 @@ const SignIn = () => {
           Continue With Apple
         </button>
 
-        <Link to="/register">
+        <Link to="/signup">
           <p style={{ textAlign: "center" }}>
             Dont have an account?
             <span className="register_now">Register with email</span>

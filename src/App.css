@@ -392,6 +392,15 @@ body {
   left: 10px;
 }
 
+.registration_screen{
+display: flex;
+justify-content: center;
+align-items: center;
+
+overflow-x: hidden;
+
+
+}
 
 
 
@@ -408,9 +417,10 @@ body {
   font-size: var(--font-size-3xl);
   color: var(--color-white);
   font-family: var(--regular-16px-24);
-  width: 424px;
-  height: auto;
-
+  width: 26.5rem;
+  
+  max-width: auto;
+  right: (-50%, -50%);
   /* min-height: fit-content; */
   flex-shrink: 0;
   border-radius: 10px;
@@ -443,7 +453,34 @@ body {
   color: var(--color-white);
   gap: 5px;
   margin-bottom: 10px;
+ 
 }
+
+input[type="radio"] {
+ 
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Create the custom radio button */
+input[type="radio"]:checked::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-dark-blue-grey); /* Change to desired color */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 
 .register_page_btn {
   line-height: 32px;
@@ -4204,12 +4241,14 @@ nav {
     top: 0;
     height: 100vh;
     width: 100%;
+ 
+
     background: linear-gradient(180deg,
         #0a0f1f 25%,
         rgba(10, 15, 31, 0.55) 286.45%),
       url(./assets/slide-img.jpg);
-    background-size: contain;
-    background-position: calc(100% + 0.5px) 125%;
+    /* background-size: contain;
+    background-position: calc(100% + 0.5px) 125%; */
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: var(--color-gray-200);
@@ -4350,10 +4389,7 @@ nav {
   }
 
 
-  .input_radio {
-    height: 20px !important;
-    width: 20px !important;
-  }
+
 
   .register_page_btn {
     display: flex;
@@ -4373,8 +4409,8 @@ nav {
     color: #b5cdff;
     background-color: #061635;
     border: 2px solid #3F5D9A;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+   
   }
 
   .login_with_google_btn {

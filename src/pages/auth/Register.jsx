@@ -7,6 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { toast } from "react-toastify";
+import SplashScreen from "../../assets/slide-img.png"
 import Eye from "../../assets/eye.png";
 import EyeOff from "../../assets/eye-off.png";
 import Check from "../../assets/check-icon.png";
@@ -107,6 +108,8 @@ const Register = () => {
   return (
     <>
       <div className="intro_screen">
+      {/* <div className="registration_screen md:hidden"/> */}
+        {/* <img src={SplashScreen} alt="" style={{maxWidth: "fit-content"}} className="md:hidden"/> */}
         <div className="register_page">
           <div className="navigate_back">
             <Link to="/">
@@ -206,7 +209,7 @@ const Register = () => {
               </span>
             </div>
 
-            <p className="input_head" style={{marginTop: "5px"}}>Gender</p>
+            <p className="input_head" style={{marginTop: "10px"}}>Gender</p>
             <div className="radio_btn">
               <input
                 type="radio"

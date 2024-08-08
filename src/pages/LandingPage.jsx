@@ -99,10 +99,7 @@ const Landingpage = () => {
             </p>
           </div>
 
-          <hr
-            className="hr_line_mobile"
-            style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f" }}
-          />
+        
 
           <div className="how_this_works_mobile">
             <div
