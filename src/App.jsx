@@ -287,7 +287,7 @@ function App() {
             />
             <Route path="/signin" element={<Intro />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/signup" element={<Register />} />
             <Route path="/forgot-password" element={<Forgot />} />
             <Route path="/reset-password" element={<Reset />} />
             <Route

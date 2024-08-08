@@ -69,11 +69,19 @@ const Landingpage = () => {
 
   return (
     <>
-      <main style={{backgroundColor: "#0a0f1f"}}>
+      <main style={{ backgroundColor: "#0a0f1f" }}>
         <div className="about_us_hero_section" style={{ color: "white" }}>
-          <div className="hero_section_text" style={{marginBottom: "4rem"}}>
-            <p className="we_are">We Are</p>
-            <img src={Logo} alt="" className="celebfie_logo" />
+          <div className="hero_section_text" style={{ marginBottom: "4rem" }}>
+            <p className="we_are">
+              We Are 
+            </p>
+            <p className="custom-lg:hidden" style={{ color: "#ec5048", fontSize: "2.7em", fontWeight: "700" }}>Celebfie <span style={{fontSize: "0.6em"}}>3.0</span></p>
+            <img
+              src={Logo}
+              alt=""
+              className="celebfie_logo"
+              
+            />
             <p className="hero_section_text_line">
               Bringing You Closer to Celebrities with AI Magic!
             </p>
@@ -90,9 +98,50 @@ const Landingpage = () => {
               celebs for epic collabs and marketing that actually speaks to fans
             </p>
           </div>
+
+          <hr
+            className="hr_line_mobile"
+            style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f" }}
+          />
+
+          <div className="how_this_works_mobile">
+            <div
+              className="content"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="200"
+            >
+              <h1
+                className="About_heading"
+                // style={{
+                //   fontSize: "2em",
+                //   fontWeight: "700",
+                //   lineHeight: "normal",
+                //   marginBottom: "10px",
+                // }}
+              >
+                Your Star-Studded Guide!
+              </h1>
+              <p style={{ fontSize: "1em", lineHeight: "27px" }}>
+                Join the fun by chatting with our AI celebrity personas! Just
+                pick your favorite star, send texts, share pics, or even hop on
+                a voice or video call. It’s like having your own celeb BFF—right
+                in your pocket! Get ready for an interactive experience that
+                brings you closer to the stars you love.
+              </p>
+            </div>
+            <div className="image">
+              <img src={Img1} alt="" className="image_1" />
+              <img src={Img2} alt="" className="image_2" />
+              <img src={Img3} alt="" className="image_3" />
+            </div>
+          </div>
         </div>
 
-        <hr className="hr_line" style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f"}} />
+        <hr
+          className="hr_line"
+          style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f" }}
+        />
 
         <div className="how_this_works">
           <div
@@ -127,7 +176,7 @@ const Landingpage = () => {
           </div>
         </div>
 
-        <div className="aboutus_middle_section" style={{display: "none"}}>
+        <div className="aboutus_middle_section" style={{ display: "none" }}>
           <div
             className="explain_content1"
             data-aos="fade-up"
@@ -232,9 +281,16 @@ const Landingpage = () => {
           </div>
         </div>
 
-        <hr className="hr_line" style={{ border: "0.5px solid grey", backgroundColor: "#0a0f1f", display: "none" }} />
+        <hr
+          className="hr_line"
+          style={{
+            border: "0.5px solid grey",
+            backgroundColor: "#0a0f1f",
+            display: "none",
+          }}
+        />
 
-        <div className="testimonial_container" style={{display: "none"}}>
+        <div className="testimonial_container" style={{ display: "none" }}>
           <div className="testimonial_title">
             <p className="About_heading" style={{ marginTop: "10px" }}>
               Some of our Happy Fans
@@ -244,7 +300,7 @@ const Landingpage = () => {
           <Testimonial />
         </div>
 
-        <div className="bottom_section" style={{display: "none"}}>
+        <div className="bottom_section" style={{ display: "none" }}>
           <p className="About_heading our_team_text">Our Team</p>
           {/* <div className="our_team">
         
@@ -350,7 +406,7 @@ const Landingpage = () => {
           <Team />
         </div>
 
-        <div className="contact_section" style={{display: "none"}}>
+        <div className="contact_section" style={{ display: "none" }}>
           <div className="contact_info_section">
             <h1
               className="About_heading"

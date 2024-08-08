@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'custom-lg': '1450px', // Adding custom breakpoint
+      },
+    },
   },
   plugins: [],
 }
