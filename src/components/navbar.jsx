@@ -145,6 +145,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { logoutUser } from "../store/usersSlice";
 import { auth } from "../firebase/config";
+import  ChatBot  from "../assets/chatbot.png";
 import ReactGA from "react-ga4";
 
 const Navbar = () => {
@@ -282,9 +283,12 @@ const Navbar = () => {
                     Celeb Chat
                   </b>
                 </button>
+               <div className="flex justify-center items-center gap-3">
+               <img className="w-4 h-4 custom-lg:hidden lg:hidden" src={ChatBot} alt="chatbto icon celebfie" />
                 <b className="text-white hover:text-[#ec5048] hover:underline custom-lg:hidden md:hidden">
-                  Celeb Chat
+                 Celeb Chat
                 </b>
+               </div>
               </Link>
             </>
           ) : isLoggedOut ? (

@@ -4244,10 +4244,10 @@ nav {
     width: 100%;
  
 
-    background: linear-gradient(180deg,
+    /* background: linear-gradient(180deg,
         #0a0f1f 25%,
         rgba(10, 15, 31, 0.55) 286.45%),
-      url(./assets/slide-img.jpg);
+     ; */
     /* background-size: contain;
     background-position: calc(100% + 0.5px) 125%; */
     background-repeat: no-repeat;
