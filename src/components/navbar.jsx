@@ -204,7 +204,7 @@ const Navbar = () => {
                 </b>
               </li>
             </Link>
-            <Link to="/chat/urvashi-rautela">
+            {/* <Link to="/chat/urvashi-rautela">
               <li>
                 <b
                   className={`nav_options ${
@@ -215,7 +215,7 @@ const Navbar = () => {
                   Chat
                 </b>
               </li>
-            </Link>
+            </Link> */}
 
             <Link to="/search">
               <li style={{ display: "none" }}>
@@ -248,7 +248,7 @@ const Navbar = () => {
                   <span className="material-symbols-outlined ico">forum</span>
                 </b>
               </Link> */}
-              <Link to="/chat/urvashi-rautela">
+              {/* <Link to="/chat/urvashi-rautela">
                 <button
                   className="register_btn hidden custom-lg:hidden"
                   id="register_btn"
@@ -274,16 +274,16 @@ const Navbar = () => {
                 <b className="text-white hover:text-[#ec5048] hover:underline custom-lg:hidden md:hidden">
                   Sign Up
                 </b>
-              </Link>
+              </Link> */}
 
               <Link to="/signin">
                 <button className="login_btn hidden md:block">
                   <b className="text-white hover:text-[#ec5048] hover:underline custom-lg:hover:text-white md:hover:text-white">
-                    Sign In
+                    Celeb Chat
                   </b>
                 </button>
                 <b className="text-white hover:text-[#ec5048] hover:underline custom-lg:hidden md:hidden">
-                  Sign In
+                  Celeb Chat
                 </b>
               </Link>
             </>
@@ -418,7 +418,7 @@ const Navbar = () => {
                     location.pathname === "/chat" ? "active" : ""
                   }`}
                 >
-                  Chat
+                  Celeb Chat
                 </div>
               </Link>
               <Link to="/search">

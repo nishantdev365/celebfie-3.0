@@ -4487,12 +4487,13 @@ nav {
     -webkit-text-stroke-width: 4;
     -webkit-text-stroke-color: #0a0f1f;
     font-family: "Source Sans Pro";
-    font-size: 22px;
+    font-size: 1.2em;
     font-style: normal;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 1.3rem;
     z-index: 10;
     background-color: var(--color-gray-200);
+    margin-bottom: 1.3rem;
   }
 
   .or_section {
@@ -4716,7 +4717,7 @@ nav {
     display: block;
     flex-direction: column;
     /* padding: 50px 20px 50px 20px; */
-    padding: 40px 20px 40px 20px;
+    padding: 0 20px 40px 20px;
     translate: 0;
     gap: 35px;
     position: relative;
@@ -4873,7 +4874,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-top: 2.5rem
   }
 
   .image_1,
