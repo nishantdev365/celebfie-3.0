@@ -283,9 +283,9 @@ const Navbar = () => {
                     Celeb Chat
                   </b>
                 </button>
-               <div className="flex justify-center items-center gap-3">
-               <img className="w-4 h-4 custom-lg:hidden lg:hidden" src={ChatBot} alt="chatbto icon celebfie" />
-                <b className="text-white hover:text-[#ec5048] hover:underline custom-lg:hidden md:hidden">
+               <div className="flex justify-center items-center gap-2">
+               <img className="w-5 h-5 custom-lg:hidden lg:hidden" src={ChatBot} alt="chatbto icon celebfie" />
+                <b className="text-white hover:text-[#ec5048] custom-lg:hidden md:hidden">
                  Celeb Chat
                 </b>
                </div>

@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { toast } from "react-toastify";
-import SplashScreen from "../../assets/slide-img.png"
+import SplashScreen from "../../assets/slide-img.png";
 import Eye from "../../assets/eye.png";
 import EyeOff from "../../assets/eye-off.png";
 import Check from "../../assets/check-icon.png";
@@ -108,7 +108,7 @@ const Register = () => {
   return (
     <>
       <div className="intro_screen">
-      {/* <div className="registration_screen md:hidden"/> */}
+        {/* <div className="registration_screen md:hidden"/> */}
         {/* <img src={SplashScreen} alt="" style={{maxWidth: "fit-content"}} className="md:hidden"/> */}
         <div className="register_page">
           <div className="navigate_back">
@@ -189,7 +189,9 @@ const Register = () => {
             )}
 
             {/* Add a second password input for re-typing the password */}
-            <div className="input_head" style={{marginTop: "10px"}}>Confirm New Password</div>
+            <div className="input_head" style={{ marginTop: "10px" }}>
+              Confirm New Password
+            </div>
             <div className="password_input">
               <input
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -209,7 +211,9 @@ const Register = () => {
               </span>
             </div>
 
-            <p className="input_head" style={{marginTop: "10px"}}>Gender</p>
+            <p className="input_head" style={{ marginTop: "10px" }}>
+              Gender
+            </p>
             <div className="radio_btn">
               <input
                 type="radio"
@@ -365,7 +369,6 @@ const Register = () => {
               name="gender"
               id="male"
               className="input_radio"
-    
               value="male"
               onChange={(e) => setGender(e.target.value)}
             />
@@ -375,7 +378,7 @@ const Register = () => {
               name="gender"
               id="female"
               className="input_radio"
-              style={{ marginLeft: "10px"}}
+              style={{ marginLeft: "10px" }}
               value="female"
               onChange={(e) => setGender(e.target.value)}
             />
